@@ -17,6 +17,8 @@ type PricingItem = {
   common_pains: string[];
   affiliate_url: string;
   is_book_only: boolean;
+  quality_score: number;
+  note: string | null;
 };
 
 type ResultItem = {
@@ -26,6 +28,7 @@ type ResultItem = {
   reason: string;
   affiliate_url: string;
   monthly_per_box: number;
+  qualityScore: number;
 };
 
 const quickBoxOptions = [1, 3, 5, 10];
@@ -36,6 +39,10 @@ export default function Home() {
   const [storageMonths, setStorageMonths] = useState<number>(6);
   const [results, setResults] = useState<ResultItem[]>([]);
   const [sortBy, setSortBy] = useState<"total" | "monthly" | "quality">("total");
+  const [retrievalFreq, setRetrievalFreq] = useState<string>("年に数回");
+  const [itemTypes, setItemTypes] = useState<string[]>([]);
+  const [priority, setPriority] = useState<string>("安さ");
+  const [expandedAccordion, setExpandedAccordion] = useState<boolean>(false);
 
   const handleDiagnose = () => {
     if (boxCount <= 0 || storageMonths <= 0) {
@@ -43,13 +50,24 @@ export default function Home() {
       return;
     }
 
-    const calculated = (pricing as PricingItem[])
-      .filter(service => !service.is_book_only)
+    const retrievalMultiplier = 
+      retrievalFreq === "ほぼ取り出さない" ? 0.5 :
+      retrievalFreq === "月1回以上" ? 12 : 1;
+
+    const filteredPricing = (pricing as PricingItem[]).filter(service => 
+      itemTypes.includes("本・書類") ? true : !service.is_book_only
+    );
+
+    const pricingMap = Object.fromEntries(
+      (pricing as PricingItem[]).map(p => [p.slug, p])
+    );
+
+    const calculated = filteredPricing
       .map((service) => {
       const total =
         service.monthly_per_box * boxCount * storageMonths +
         service.initial_fee +
-        service.retrieval_fee;
+        service.retrieval_fee * retrievalMultiplier;
 
       return {
         name: service.name,
@@ -58,10 +76,21 @@ export default function Home() {
         reason: service.reason,
         affiliate_url: service.affiliate_url,
         monthly_per_box: service.monthly_per_box,
+        qualityScore: service.quality_score,
       };
     });
 
-    let sorted = calculated.sort((a, b) => a.total - b.total);
+    let sorted = calculated.sort((a, b) => {
+      if (priority === "取り出しやすさ") {
+        const aRetrieval = pricingMap[a.slug].retrieval_fee;
+        const bRetrieval = pricingMap[b.slug].retrieval_fee;
+        return aRetrieval - bRetrieval;
+      }
+      if (priority === "保管品質") {
+        return (b.qualityScore ?? 0) - (a.qualityScore ?? 0);
+      }
+      return a.total - b.total;
+    });
 
     if (sortBy === "monthly") {
       sorted = calculated.sort((a, b) => a.monthly_per_box - b.monthly_per_box);
@@ -203,6 +232,95 @@ export default function Home() {
             </div>
           </div>
 
+          {/* アコーディオン */}
+          <div className="mb-8 border-t pt-8">
+            <button
+              onClick={() => setExpandedAccordion(!expandedAccordion)}
+              className="w-full flex items-center justify-between p-4 bg-[#F5F0E8] rounded-lg hover:bg-[#EDE5D9] transition"
+            >
+              <span className="font-bold text-[#2D5016]">
+                もっと正確に絞り込む（任意）
+              </span>
+              <span className="text-xl text-[#2D5016]">
+                {expandedAccordion ? "−" : "＋"}
+              </span>
+            </button>
+
+            {expandedAccordion && (
+              <div className="mt-4 space-y-6 p-4 bg-white rounded-lg border border-gray-200">
+                {/* 取り出し頻度 */}
+                <div>
+                  <label className="block text-sm font-bold text-[#2D5016] mb-3">
+                    取り出し頻度
+                  </label>
+                  <div className="space-y-2">
+                    {["ほぼ取り出さない", "年に数回", "月1回以上"].map((option) => (
+                      <label key={option} className="flex items-center gap-3 cursor-pointer">
+                        <input
+                          type="radio"
+                          name="retrieval"
+                          value={option}
+                          checked={retrievalFreq === option}
+                          onChange={(e) => setRetrievalFreq(e.target.value)}
+                          className="w-4 h-4"
+                        />
+                        <span className="text-gray-700">{option}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+
+                {/* 荷物の種類 */}
+                <div>
+                  <label className="block text-sm font-bold text-[#2D5016] mb-3">
+                    荷物の種類（複数選択可）
+                  </label>
+                  <div className="space-y-2">
+                    {["衣類", "本・書類", "季節物", "趣味の品", "思い出の品"].map((option) => (
+                      <label key={option} className="flex items-center gap-3 cursor-pointer">
+                        <input
+                          type="checkbox"
+                          checked={itemTypes.includes(option)}
+                          onChange={(e) => {
+                            if (e.target.checked) {
+                              setItemTypes([...itemTypes, option]);
+                            } else {
+                              setItemTypes(itemTypes.filter(t => t !== option));
+                            }
+                          }}
+                          className="w-4 h-4"
+                        />
+                        <span className="text-gray-700">{option}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+
+                {/* 重視ポイント */}
+                <div>
+                  <label className="block text-sm font-bold text-[#2D5016] mb-3">
+                    重視ポイント
+                  </label>
+                  <div className="space-y-2">
+                    {["安さ", "取り出しやすさ", "保管品質"].map((option) => (
+                      <label key={option} className="flex items-center gap-3 cursor-pointer">
+                        <input
+                          type="radio"
+                          name="priority"
+                          value={option}
+                          checked={priority === option}
+                          onChange={(e) => setPriority(e.target.value)}
+                          className="w-4 h-4"
+                        />
+                        <span className="text-gray-700">{option}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+
           {/* CTA */}
           <button
             onClick={handleDiagnose}
@@ -240,6 +358,9 @@ export default function Home() {
                     ? (results[1].total - results[0].total).toLocaleString()
                     : "0"}{" "}
                   おトク
+                </p>
+                <p className="text-gray-500 text-xs mt-4">
+                  ※表示金額は入力条件をもとにした概算です。実際の料金はサービスにより異なる場合があります。各サービスの詳細ページまたは公式サイトにてご確認ください。
                 </p>
               </div>
 

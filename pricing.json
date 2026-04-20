@@ -26,7 +26,8 @@
     ],
     "affiliate_url": "#",
     "note": null,
-    "is_book_only": false
+    "is_book_only": false,
+    "quality_score": 9
   },
   {
     "name": "minikura",
@@ -55,7 +56,8 @@
     ],
     "affiliate_url": "#",
     "note": null,
-    "is_book_only": false
+    "is_book_only": false,
+    "quality_score": 8
   },
   {
     "name": "AZUKEL",
@@ -84,7 +86,8 @@
     ],
     "affiliate_url": "#",
     "note": null,
-    "is_book_only": false
+    "is_book_only": false,
+    "quality_score": 7
   },
   {
     "name": "カラエト",
@@ -113,7 +116,8 @@
     ],
     "affiliate_url": "#",
     "note": null,
-    "is_book_only": false
+    "is_book_only": false,
+    "quality_score": 8
   },
   {
     "name": "エアトランク",
@@ -141,14 +145,15 @@
       "荷物の梱包が面倒"
     ],
     "affiliate_url": "#",
-    "note": "※月額料金は保管スペース0.3㎥プランを箱数換算した近似値です。取り出し送料は無料ですが月額料金は他社より高めです。対応エリアは首都圏・一部地域限定です。",
-    "is_book_only": false
+    "note": "※月額料金はスペース単位のサービスを箱数換算した近似値です。実際の料金は保管量により異なります。取り出し送料は無料ですが月額は他社より高めです。対応エリアは首都圏・一部地域限定です。正確な料金は公式サイトでご確認ください。",
+    "is_book_only": false,
+    "quality_score": 9
   },
   {
     "name": "宅トラ",
     "slug": "takutora",
     "monthly_per_box": 494,
-    "initial_fee": 4950,
+    "initial_fee": 0,
     "retrieval_fee": 1500,
     "reason": "ヤマト運輸が運営する安心感と、大型荷物にも対応できる幅広さが特徴です。",
     "description": "クロネコヤマト運営の宅配収納サービス。ダンボールから大型家具まで幅広く対応。",
@@ -170,8 +175,9 @@
       "信頼できる会社に預けたい"
     ],
     "affiliate_url": "#",
-    "note": "※ちびトラ3プラン（3箱）の月額料金を1箱換算した金額です。初期費用（初回引取料）4,950円が別途かかります。最低利用期間は6ヶ月です。",
-    "is_book_only": false
+    "note": "※ちびトラ3プラン（3箱）の月額料金を1箱換算した金額です。別途、初回引取料4,950円が必要です（初回のみ）。最低利用期間は6ヶ月です。",
+    "is_book_only": false,
+    "quality_score": 9
   },
   {
     "name": "リソコ",
@@ -200,7 +206,8 @@
     ],
     "affiliate_url": "#",
     "note": null,
-    "is_book_only": true
+    "is_book_only": true,
+    "quality_score": 9
   },
   {
     "name": "東京書庫",
@@ -229,7 +236,8 @@
     ],
     "affiliate_url": "#",
     "note": "※書籍専門の宅配収納サービスです。衣類・雑貨には対応していません。預け入れ・取り出し送料は無料です。",
-    "is_book_only": true
+    "is_book_only": true,
+    "quality_score": 9
   },
   {
     "name": "2nd STORAGE",
@@ -257,7 +265,8 @@
       "頻繁に出し入れするのでコストが気になる"
     ],
     "affiliate_url": "#",
-    "note": "※月額料金はスペースプランを箱数換算した近似値です。取り出し配送料は無料ですが月額は他社より高めです。対応エリアは東京都・横浜市・川崎市・市川市・浦安市限定です。",
-    "is_book_only": false
+    "note": "※月額料金はスペース単位のサービスを箱数換算した近似値です。実際の料金は保管量により異なります。取り出し送料は無料ですが月額は他社より高めです。対応エリアは東京都・横浜市・川崎市・市川市・浦安市限定です。正確な料金は公式サイトでご確認ください。",
+    "is_book_only": false,
+    "quality_score": 9
   }
 ]
