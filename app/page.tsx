@@ -130,7 +130,8 @@ export default function Home() {
             <span className="underline decoration-[#E8873A] decoration-4 underline-offset-[3px]">すぐ分かる。</span>
           </h1>
           <p className="text-[14px] text-[#444441] mt-[14px]">
-            8社の料金を自動で比較。登録不要で3秒で診断できます。
+            8社の料金を自動で比較。<br />
+            登録不要で3秒で診断できます。
           </p>
           <div className="flex gap-2 overflow-x-auto py-3">
             {[
@@ -346,10 +347,12 @@ export default function Home() {
           </button>
 
           {/* 信頼シグナル */}
-          <div className="flex justify-center gap-4 text-[12px] text-[#444441]">
-            <span>✓ 入力は3秒</span>
-            <span>✓ 登録不要</span>
-            <span>✓ 広告で順位は変わりません</span>
+          <div className="text-center text-[12px] text-[#888780]">
+            <div className="flex justify-center gap-4 mb-1">
+              <span>✓ 入力は3秒</span>
+              <span>✓ 登録不要</span>
+            </div>
+            <div>✓ 広告で順位は変わりません</div>
           </div>
         </div>
 
