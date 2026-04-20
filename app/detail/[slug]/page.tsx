@@ -18,6 +18,7 @@ type PricingItem = {
   selected_reasons: string[];
   common_pains: string[];
   affiliate_url: string;
+  note: string | null;
 };
 
 const faqs = [
@@ -255,6 +256,21 @@ export default function DetailPage() {
               </tbody>
             </table>
           </div>
+          {service.note && (
+            <div
+              style={{
+                backgroundColor: '#FFF8F0',
+                border: '1px solid #E8873A',
+                borderRadius: '8px',
+                padding: '12px 16px',
+                fontSize: '13px',
+                color: '#7A4A1E',
+                marginTop: '16px'
+              }}
+            >
+              ⚠️ {service.note}
+            </div>
+          )}
         </div>
 
         {/* 比較テーブル */}
