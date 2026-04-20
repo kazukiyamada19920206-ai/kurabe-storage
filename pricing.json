@@ -54,7 +54,7 @@
       "自分の荷物に合ったサイズの箱がない",
       "保管中の荷物の状況が分からない"
     ],
-    "affiliate_url": "#",
+    "affiliate_url": "https://minikura.com/",
     "note": null,
     "is_book_only": false,
     "quality_score": 8
@@ -84,7 +84,7 @@
       "短期間だけ使いたいのに長期契約が必要",
       "余計なオプションで料金が上がる"
     ],
-    "affiliate_url": "#",
+    "affiliate_url": "https://www.azukel.com/",
     "note": null,
     "is_book_only": false,
     "quality_score": 7
@@ -114,7 +114,7 @@
       "何を預けたか忘れてしまう",
       "不用品を整理したいが手間がかかる"
     ],
-    "affiliate_url": "#",
+    "affiliate_url": "https://www.trunk.services/",
     "note": null,
     "is_book_only": false,
     "quality_score": 8
@@ -144,7 +144,7 @@
       "大きい荷物を預ける場所がない",
       "荷物の梱包が面倒"
     ],
-    "affiliate_url": "#",
+    "affiliate_url": "https://www.air-trunk.net/",
     "note": "※月額料金はスペース単位のサービスを箱数換算した近似値です。実際の料金は保管量により異なります。取り出し送料は無料ですが月額は他社より高めです。対応エリアは首都圏・一部地域限定です。正確な料金は公式サイトでご確認ください。",
     "is_book_only": false,
     "quality_score": 9
@@ -204,7 +204,7 @@
       "衣類も本も一緒に預けたい",
       "信頼できる企業に預けたい"
     ],
-    "affiliate_url": "#",
+    "affiliate_url": "https://risoco.jp/",
     "note": null,
     "is_book_only": true,
     "quality_score": 9
@@ -234,7 +234,7 @@
       "大切な本を捨てられない",
       "本の保管環境が心配"
     ],
-    "affiliate_url": "#",
+    "affiliate_url": "https://www.tokyo-shoko.com/",
     "note": "※書籍専門の宅配収納サービスです。衣類・雑貨には対応していません。預け入れ・取り出し送料は無料です。",
     "is_book_only": true,
     "quality_score": 9
@@ -264,7 +264,7 @@
       "荷物の梱包が面倒",
       "頻繁に出し入れするのでコストが気になる"
     ],
-    "affiliate_url": "#",
+    "affiliate_url": "https://www.2ndstorage.com/",
     "note": "※月額料金はスペース単位のサービスを箱数換算した近似値です。実際の料金は保管量により異なります。取り出し送料は無料ですが月額は他社より高めです。対応エリアは東京都・横浜市・川崎市・市川市・浦安市限定です。正確な料金は公式サイトでご確認ください。",
     "is_book_only": false,
     "quality_score": 9
