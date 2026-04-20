@@ -412,21 +412,6 @@ export default function DetailPage() {
           </div>
         </div>
 
-        {/* LINE バナー */}
-        <div className="bg-gradient-to-r from-green-50 to-green-100 rounded-[12px] border-2 border-green-300 p-8 text-center mb-8">
-          <h4 className="text-2xl font-bold text-[#2D5016] mb-2">
-            このサービス、あとで決めたい？
-          </h4>
-          <p className="text-gray-700 mb-6">
-            LINEで詳細情報を保存できます。
-          </p>
-          <a
-            href="#"
-            className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold px-8 py-4 rounded-lg transition"
-          >
-            <span>💬</span> 保存する
-          </a>
-        </div>
       </div>
 
       {/* フッター固定CTA */}

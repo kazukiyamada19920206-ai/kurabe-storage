@@ -525,22 +525,6 @@ export default function Home() {
               })}
             </div>
 
-            {/* LINE バナー */}
-            <div className="bg-gradient-to-r from-green-50 to-green-100 rounded-[12px] border-2 border-green-300 p-8 text-center">
-              <h4 className="text-2xl font-bold text-[#2D5016] mb-2">
-                あとでじっくり比較したい？
-              </h4>
-              <p className="text-gray-700 mb-6">
-                診断結果をLINEで受け取れます。気になったとき、いつでも見返せます。
-              </p>
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold px-8 py-4 rounded-lg transition"
-              >
-                <span>💬</span> 結果を保存
-              </a>
-            </div>
-
             {/* 再診断 */}
             <div className="text-center py-8">
               <p className="text-gray-600 mb-4">
