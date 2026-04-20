@@ -123,15 +123,12 @@ export default function Home() {
           <p className="text-[13px] text-[#5F5E5A] mb-2">
             荷物を預けたいけど、どこがお得か分からない。
           </p>
-          <h2 className="text-[32px] font-[500] text-[#2D5016] leading-[1.25] tracking-[-0.5px] mb-4">
-            箱数と期間を入れるだけ。<br />
-            <span className="block underline decoration-[#E8873A] decoration-3 underline-offset-[3px]">
-              最安1社が
-            </span>
-            <span className="block underline decoration-[#E8873A] decoration-3 underline-offset-[3px]">
-              すぐ分かる。
-            </span>
-          </h2>
+          <h1 className="text-[36px] font-[700] text-[#2D5016] leading-[1.3] tracking-[-0.5px] mb-4">
+            箱数と期間を<br />
+            入れるだけ。<br />
+            <span className="underline decoration-[#E8873A] decoration-4 underline-offset-[3px]">最安1社が</span><br />
+            <span className="underline decoration-[#E8873A] decoration-4 underline-offset-[3px]">すぐ分かる。</span>
+          </h1>
           <p className="text-[13px] text-[#5F5E5A] mt-[14px]">
             8社の料金を自動で比較。登録不要で3秒で診断できます。
           </p>
