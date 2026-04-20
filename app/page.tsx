@@ -112,11 +112,11 @@ export default function Home() {
       </header>
 
       {/* ヒーロー */}
-      <div className="bg-white border-b border-gray-200 py-12">
+      <div className="bg-white border-b border-gray-200 pt-3 pb-12">
         <div className="mx-auto max-w-6xl px-6">
           <div className="flex items-center gap-2 mb-4">
-            <div className="w-3 h-3 rounded-full bg-[#E8873A]"></div>
-            <span className="text-sm font-medium text-[#E8873A]">
+            <div className="w-3 h-3 rounded-full bg-[#C4620A]"></div>
+            <span className="text-sm font-[600] text-[#C4620A]">
               宅配収納サービス 比較診断
             </span>
           </div>
@@ -152,7 +152,7 @@ export default function Home() {
       </div>
 
       {/* メインコンテンツ */}
-      <div className="mx-auto max-w-6xl px-6 py-12">
+      <div className="mx-auto max-w-6xl px-6 pt-6 pb-12">
         {/* 入力フォーム */}
         <div className="bg-white rounded-[12px] border border-gray-200 p-8 mb-12">
           <div className="space-y-8 mb-8">
