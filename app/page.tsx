@@ -157,41 +157,39 @@ export default function Home() {
           <div className="space-y-8 mb-8">
             {/* 箱数入力 */}
             <div>
-              <div className="flex justify-between items-start mb-4">
-                <label className="text-[16px] font-[500] text-[#2D5016]">
-                  何箱くらい預けたい？
-                </label>
-                <span className="text-[12px] text-[#5F5E5A] whitespace-nowrap">
-                  押し入れ1段分くらい
-                </span>
-              </div>
+              <label className="text-[16px] font-[700] text-[#2C2C2A] mb-1">
+                何箱くらい預けたい？
+              </label>
+              <span className="text-[12px] text-[#888780] mb-[14px] block">
+                押し入れ1段分くらい
+              </span>
 
               {/* ステッパー */}
-              <div className="flex items-center gap-4 mb-6 justify-center">
+              <div className="flex items-center bg-[#F5F0E8] rounded-[12px] p-[8px_12px] justify-between mb-[14px]">
                 <button
                   onClick={() => setBoxCount(Math.max(1, boxCount - 1))}
-                  className="w-12 h-12 rounded-lg bg-gray-200 font-bold text-lg hover:bg-gray-300 transition flex-shrink-0"
+                  className="w-[44px] h-[44px] bg-white border-[0.5px] border-[#D3D1C7] rounded-[10px] text-[22px] hover:bg-gray-50 transition flex-shrink-0"
                 >
                   −
                 </button>
-                <span className="text-4xl font-bold text-[#2D5016] w-24 text-center">
-                  {boxCount}
+                <span className="text-[28px] font-[700] text-[#2D5016]">
+                  {boxCount}箱
                 </span>
                 <button
                   onClick={() => setBoxCount(boxCount + 1)}
-                  className="w-12 h-12 rounded-lg bg-gray-200 font-bold text-lg hover:bg-gray-300 transition flex-shrink-0"
+                  className="w-[44px] h-[44px] bg-white border-[0.5px] border-[#D3D1C7] rounded-[10px] text-[22px] hover:bg-gray-50 transition flex-shrink-0"
                 >
                   ＋
                 </button>
               </div>
 
               {/* クイック選択 */}
-              <div className="flex gap-2 flex-wrap justify-center">
+              <div className="grid grid-cols-4 gap-2">
                 {quickBoxOptions.map((opt) => (
                   <button
                     key={opt}
                     onClick={() => setBoxCount(opt)}
-                    className={`px-4 py-2 rounded-lg font-medium transition text-[14px] text-[#444441] ${
+                    className={`p-[10px_4px] text-[14px] font-[500] rounded-[10px] text-center transition ${
                       boxCount === opt
                         ? "bg-[#2D5016] text-white"
                         : "bg-gray-100 text-gray-700 hover:bg-gray-200"
@@ -205,41 +203,39 @@ export default function Home() {
 
             {/* 保管月数入力 */}
             <div>
-              <div className="flex justify-between items-start mb-4">
-                <label className="text-[16px] font-[500] text-[#2D5016]">
-                  どのくらい預けたい？
-                </label>
-                <span className="text-[12px] text-[#5F5E5A] whitespace-nowrap">
-                  あとで変更もできます
-                </span>
-              </div>
+              <label className="text-[16px] font-[700] text-[#2C2C2A] mb-1">
+                どのくらい預けたい？
+              </label>
+              <span className="text-[12px] text-[#888780] mb-[14px] block">
+                あとで変更もできます
+              </span>
 
               {/* ステッパー */}
-              <div className="flex items-center gap-4 mb-6 justify-center">
+              <div className="flex items-center bg-[#F5F0E8] rounded-[12px] p-[8px_12px] justify-between mb-[14px]">
                 <button
                   onClick={() => setStorageMonths(Math.max(1, storageMonths - 1))}
-                  className="w-12 h-12 rounded-lg bg-gray-200 font-bold text-lg hover:bg-gray-300 transition flex-shrink-0"
+                  className="w-[44px] h-[44px] bg-white border-[0.5px] border-[#D3D1C7] rounded-[10px] text-[22px] hover:bg-gray-50 transition flex-shrink-0"
                 >
                   −
                 </button>
-                <span className="text-4xl font-bold text-[#2D5016] w-24 text-center">
-                  {storageMonths}
+                <span className="text-[28px] font-[700] text-[#2D5016]">
+                  {storageMonths}ヶ月
                 </span>
                 <button
                   onClick={() => setStorageMonths(storageMonths + 1)}
-                  className="w-12 h-12 rounded-lg bg-gray-200 font-bold text-lg hover:bg-gray-300 transition flex-shrink-0"
+                  className="w-[44px] h-[44px] bg-white border-[0.5px] border-[#D3D1C7] rounded-[10px] text-[22px] hover:bg-gray-50 transition flex-shrink-0"
                 >
                   ＋
                 </button>
               </div>
 
               {/* クイック選択 */}
-              <div className="flex gap-2 flex-wrap justify-center">
+              <div className="grid grid-cols-3 gap-2">
                 {quickMonthOptions.map((opt) => (
                   <button
                     key={opt}
                     onClick={() => setStorageMonths(opt)}
-                    className={`px-4 py-2 rounded-lg font-medium transition text-[14px] text-[#444441] ${
+                    className={`p-[10px_4px] text-[14px] font-[500] rounded-[10px] text-center transition ${
                       storageMonths === opt
                         ? "bg-[#2D5016] text-white"
                         : "bg-gray-100 text-gray-700 hover:bg-gray-200"
@@ -253,12 +249,12 @@ export default function Home() {
           </div>
 
           {/* アコーディオン */}
-          <div className="mb-8 border-t pt-8">
+          <div className="mb-8">
             <button
               onClick={() => setExpandedAccordion(!expandedAccordion)}
-              className="w-full flex items-center justify-between p-4 bg-[#F5F0E8] rounded-lg hover:bg-[#EDE5D9] transition"
+              className="w-full flex items-center justify-between bg-[#F5F0E8] rounded-[10px] p-[14px_16px] hover:bg-[#EDE5D9] transition"
             >
-              <span className="font-bold text-[14px] text-[#444441]">
+              <span className="text-[14px] font-[500] text-[#444441]">
                 もっと正確に絞り込む（任意）
               </span>
               <span className="text-xl text-[#2D5016]">
@@ -344,16 +340,16 @@ export default function Home() {
           {/* CTA */}
           <button
             onClick={handleDiagnose}
-            className="w-full bg-[#E8873A] hover:bg-[#D97A2D] text-white font-bold py-4 rounded-lg text-lg transition mb-4"
+            className="w-full bg-[#E8873A] hover:bg-[#D97A2D] text-white p-[18px] rounded-[12px] text-[17px] font-[700] transition mb-4"
           >
             無料で診断する →
           </button>
 
           {/* 信頼シグナル */}
-          <div className="flex justify-center gap-6 text-[13px] text-[#444441] flex-wrap">
+          <div className="flex justify-center gap-4 text-[12px] text-[#444441]">
             <span>✓ 入力は3秒</span>
             <span>✓ 登録不要</span>
-            <span>✓ 広告で順位を変えません</span>
+            <span>✓ 広告で順位は変わりません</span>
           </div>
         </div>
 
