@@ -120,13 +120,36 @@ export default function Home() {
               宅配収納サービス 比較診断
             </span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-[#2D5016] mb-4 leading-tight">
-            箱数と期間を入れるだけ。<br />
-            あなたに一番トクな1社が分かります。
-          </h2>
-          <p className="text-gray-600 text-sm md:text-base">
-            比較対象 8社 / 所要3秒 / 登録不要。広告料で順位は変わりません。
+          <p className="text-[13px] text-[#5F5E5A] mb-2">
+            荷物を預けたいけど、どこがお得か分からない。
           </p>
+          <h2 className="text-[32px] font-[500] text-[#2D5016] leading-[1.25] tracking-[-0.5px] mb-4">
+            箱数と期間を入れるだけ。<br />
+            <span className="block underline decoration-[#E8873A] decoration-3 underline-offset-[3px]">
+              最安1社が
+            </span>
+            <span className="block underline decoration-[#E8873A] decoration-3 underline-offset-[3px]">
+              すぐ分かる。
+            </span>
+          </h2>
+          <p className="text-[13px] text-[#5F5E5A] mt-[14px]">
+            8社の料金を自動で比較。登録不要で3秒で診断できます。
+          </p>
+          <div className="flex gap-2 overflow-x-auto py-3">
+            {[
+              "衣替えしたい",
+              "引越しの一時保管",
+              "趣味グッズを整理",
+              "思い出の品を保管",
+            ].map((chip) => (
+              <span
+                key={chip}
+                className="flex-shrink-0 bg-white border border-[#D3D1C7] rounded-[20px] px-3 py-[6px] text-[12px] text-[#5F5E5A] whitespace-nowrap"
+              >
+                {chip}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -335,6 +358,29 @@ export default function Home() {
             <span>✓ 登録不要</span>
             <span>✓ 広告で順位を変えません</span>
           </div>
+        </div>
+
+        <div className="text-center text-[12px] text-[#888780] mb-[10px]">
+          比較対象サービス
+        </div>
+        <div className="flex flex-wrap justify-center gap-2 mb-12">
+          {[
+            "サマリーポケット",
+            "minikura",
+            "AZUKEL",
+            "カラエト",
+            "エアトランク",
+            "宅トラ",
+            "リソコ",
+            "2nd STORAGE",
+          ].map((service) => (
+            <span
+              key={service}
+              className="bg-white border border-[#D3D1C7] rounded-[8px] px-2.5 py-1 text-[11px] text-[#5F5E5A]"
+            >
+              {service}
+            </span>
+          ))}
         </div>
 
         {results.length > 0 && (
