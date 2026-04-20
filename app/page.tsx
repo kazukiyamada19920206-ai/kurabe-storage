@@ -120,7 +120,7 @@ export default function Home() {
               宅配収納サービス 比較診断
             </span>
           </div>
-          <p className="text-[13px] text-[#5F5E5A] mb-2">
+          <p className="text-[15px] text-[#2C2C2A] font-[500] mb-2">
             荷物を預けたいけど、どこがお得か分からない。
           </p>
           <h1 className="text-[36px] font-[700] text-[#2D5016] leading-[1.3] tracking-[-0.5px] mb-4">
@@ -129,7 +129,7 @@ export default function Home() {
             <span className="underline decoration-[#E8873A] decoration-4 underline-offset-[3px]">最安1社が</span><br />
             <span className="underline decoration-[#E8873A] decoration-4 underline-offset-[3px]">すぐ分かる。</span>
           </h1>
-          <p className="text-[13px] text-[#5F5E5A] mt-[14px]">
+          <p className="text-[14px] text-[#444441] mt-[14px]">
             8社の料金を自動で比較。登録不要で3秒で診断できます。
           </p>
           <div className="flex gap-2 overflow-x-auto py-3">
@@ -158,10 +158,10 @@ export default function Home() {
             {/* 箱数入力 */}
             <div>
               <div className="flex justify-between items-start mb-4">
-                <label className="text-lg font-bold text-[#2D5016]">
+                <label className="text-[16px] font-[500] text-[#2D5016]">
                   何箱くらい預けたい？
                 </label>
-                <span className="text-xs text-gray-500">
+                <span className="text-[12px] text-[#5F5E5A] whitespace-nowrap">
                   押し入れ1段分くらい
                 </span>
               </div>
@@ -191,7 +191,7 @@ export default function Home() {
                   <button
                     key={opt}
                     onClick={() => setBoxCount(opt)}
-                    className={`px-4 py-2 rounded-lg font-medium transition ${
+                    className={`px-4 py-2 rounded-lg font-medium transition text-[14px] text-[#444441] ${
                       boxCount === opt
                         ? "bg-[#2D5016] text-white"
                         : "bg-gray-100 text-gray-700 hover:bg-gray-200"
@@ -206,10 +206,10 @@ export default function Home() {
             {/* 保管月数入力 */}
             <div>
               <div className="flex justify-between items-start mb-4">
-                <label className="text-lg font-bold text-[#2D5016]">
+                <label className="text-[16px] font-[500] text-[#2D5016]">
                   どのくらい預けたい？
                 </label>
-                <span className="text-xs text-gray-500">
+                <span className="text-[12px] text-[#5F5E5A] whitespace-nowrap">
                   あとで変更もできます
                 </span>
               </div>
@@ -239,7 +239,7 @@ export default function Home() {
                   <button
                     key={opt}
                     onClick={() => setStorageMonths(opt)}
-                    className={`px-4 py-2 rounded-lg font-medium transition ${
+                    className={`px-4 py-2 rounded-lg font-medium transition text-[14px] text-[#444441] ${
                       storageMonths === opt
                         ? "bg-[#2D5016] text-white"
                         : "bg-gray-100 text-gray-700 hover:bg-gray-200"
@@ -258,7 +258,7 @@ export default function Home() {
               onClick={() => setExpandedAccordion(!expandedAccordion)}
               className="w-full flex items-center justify-between p-4 bg-[#F5F0E8] rounded-lg hover:bg-[#EDE5D9] transition"
             >
-              <span className="font-bold text-[#2D5016]">
+              <span className="font-bold text-[14px] text-[#444441]">
                 もっと正確に絞り込む（任意）
               </span>
               <span className="text-xl text-[#2D5016]">
@@ -350,7 +350,7 @@ export default function Home() {
           </button>
 
           {/* 信頼シグナル */}
-          <div className="flex justify-center gap-6 text-sm text-gray-600 flex-wrap">
+          <div className="flex justify-center gap-6 text-[13px] text-[#444441] flex-wrap">
             <span>✓ 入力は3秒</span>
             <span>✓ 登録不要</span>
             <span>✓ 広告で順位を変えません</span>
