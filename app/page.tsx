@@ -112,7 +112,7 @@ export default function Home() {
       </header>
 
       {/* ヒーロー */}
-      <div className="bg-[#F5F0E8] border-b border-gray-200 pt-2 pb-2">
+      <div className="bg-white border-b border-gray-200 pt-2 pb-2">
         <div className="mx-auto max-w-6xl px-6">
           <div className="flex items-center gap-2 mb-4">
             <div className="w-3 h-3 rounded-full bg-[#C4620A]"></div>
@@ -133,7 +133,7 @@ export default function Home() {
             8社の料金を自動で比較。<br />
             登録不要で3秒で診断できます。
           </p>
-          <div className="flex gap-2 overflow-x-auto py-3">
+          <div className="flex gap-2 overflow-x-auto py-2">
             {[
               "衣替えしたい",
               "引越しの一時保管",
@@ -154,7 +154,7 @@ export default function Home() {
       {/* メインコンテンツ */}
       <div className="mx-auto max-w-6xl px-6 pt-2 pb-12">
         {/* 入力フォーム */}
-        <div className="bg-white rounded-[12px] border border-gray-200 p-8 mb-12">
+        <div className="bg-white rounded-[12px] border border-gray-200 p-8 mt-2 mb-12">
           <div className="space-y-8 mb-8">
             {/* 箱数入力 */}
             <div>
