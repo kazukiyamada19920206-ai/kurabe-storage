@@ -97,9 +97,6 @@ export default function DetailPage() {
             <div className="w-6 h-6 bg-[#2D5016] rounded-sm"></div>
             <h1 className="text-xl font-bold text-[#2D5016]">くらべる収納</h1>
           </div>
-          <span className="inline-block bg-[#2D5016] text-white text-xs font-bold px-3 py-1 rounded-full">
-            PoC
-          </span>
         </div>
       </header>
 
