@@ -16,6 +16,7 @@ type PricingItem = {
   selected_reasons: string[];
   common_pains: string[];
   affiliate_url: string;
+  is_book_only: boolean;
 };
 
 type ResultItem = {
@@ -42,7 +43,9 @@ export default function Home() {
       return;
     }
 
-    const calculated = (pricing as PricingItem[]).map((service) => {
+    const calculated = (pricing as PricingItem[])
+      .filter(service => !service.is_book_only)
+      .map((service) => {
       const total =
         service.monthly_per_box * boxCount * storageMonths +
         service.initial_fee +
@@ -76,9 +79,6 @@ export default function Home() {
             <div className="w-6 h-6 bg-[#2D5016] rounded-sm"></div>
             <h1 className="text-xl font-bold text-[#2D5016]">くらべる収納</h1>
           </div>
-          <span className="inline-block bg-[#2D5016] text-white text-xs font-bold px-3 py-1 rounded-full">
-            PoC
-          </span>
         </div>
       </header>
 
