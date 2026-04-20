@@ -347,7 +347,7 @@ export default function Home() {
           </button>
 
           {/* 信頼シグナル */}
-          <div className="text-center text-[12px] text-[#888780]">
+          <div className="text-center text-[14px] text-[#5F5E5A]">
             <div className="flex justify-center gap-4 mb-1">
               <span>✓ 入力は3秒</span>
               <span>✓ 登録不要</span>
