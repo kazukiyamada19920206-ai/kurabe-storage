@@ -348,36 +348,55 @@ export default function DetailClient() {
           <div className="bg-white rounded-[12px] border border-gray-200 p-8 mb-8">
             <h3 className="text-2xl font-bold text-[#2D5016] mb-8">REVIEW - 利用者の声</h3>
             <div className="grid md:grid-cols-3 gap-6">
-              {service.reviews.map((review, index) => (
-                <div
-                  key={index}
-                  className="bg-gradient-to-br from-[#F5F0E8] to-white rounded-[12px] border border-gray-200 p-6 flex flex-col"
-                >
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-full bg-[#E8873A] flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
-                      {review.author.charAt(0)}
+              {service.reviews.map((review, index) => {
+                const isFemale = review.author.includes("女性");
+                return (
+                  <div
+                    key={index}
+                    className="bg-gradient-to-br from-[#F5F0E8] to-white rounded-[12px] border border-gray-200 p-6 flex flex-col"
+                  >
+                    <div className="flex items-center gap-3 mb-3">
+                      {isFemale ? (
+                        <svg viewBox="0 0 40 40" width="40" height="40" className="flex-shrink-0">
+                          <circle cx="20" cy="20" r="20" fill="#E8873A"/>
+                          <circle cx="20" cy="15" r="7" fill="white"/>
+                          <path d="M6 36 Q6 26 20 26 Q34 26 34 36" fill="white"/>
+                          <path d="M13 12 Q14 6 20 8 Q26 6 27 12" fill="#E8873A"/>
+                          <path d="M13 13 Q11 10 12 8 Q13 6 15 8" fill="white"/>
+                          <path d="M27 13 Q29 10 28 8 Q27 6 25 8" fill="white"/>
+                        </svg>
+                      ) : (
+                        <svg viewBox="0 0 40 40" width="40" height="40" className="flex-shrink-0">
+                          <circle cx="20" cy="20" r="20" fill="#2D5016"/>
+                          <circle cx="20" cy="15" r="7" fill="white"/>
+                          <path d="M6 36 Q6 26 20 26 Q34 26 34 36" fill="white"/>
+                        </svg>
+                      )}
+                      <div>
+                        <p className="font-bold text-gray-900 text-sm">{review.author}</p>
+                        <span style={{ fontSize: "14px", color: "#E8873A" }}>★★★★★</span>
+                      </div>
                     </div>
-                    <p className="font-bold text-gray-900 text-sm">{review.author}</p>
+                    <p className="text-gray-700 text-sm leading-6 flex-1">{review.comment}</p>
+                    <div className="mt-4 pt-3 border-t border-gray-200">
+                      {review.source_url ? (
+                        <a
+                          href={review.source_url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{ fontSize: "11px", color: "#888780", textDecoration: "underline" }}
+                        >
+                          出典：{review.source}
+                        </a>
+                      ) : (
+                        <span style={{ fontSize: "11px", color: "#888780" }}>
+                          出典：{review.source}
+                        </span>
+                      )}
+                    </div>
                   </div>
-                  <p className="text-gray-700 text-sm leading-6 flex-1">{review.comment}</p>
-                  <div className="mt-4 pt-3 border-t border-gray-200">
-                    {review.source_url ? (
-                      <a
-                        href={review.source_url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        style={{ fontSize: "11px", color: "#888780", textDecoration: "underline" }}
-                      >
-                        出典：{review.source}
-                      </a>
-                    ) : (
-                      <span style={{ fontSize: "11px", color: "#888780" }}>
-                        出典：{review.source}
-                      </span>
-                    )}
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         )}
