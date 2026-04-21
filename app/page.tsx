@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import pricing from "../pricing.json";
 
 type PricingItem = {
@@ -30,6 +30,7 @@ type ResultItem = {
   affiliate_url: string;
   monthly_per_box: number;
   qualityScore: number;
+  quality_score: number;
 };
 
 const quickBoxOptions = [1, 3, 5, 10];
@@ -39,11 +40,25 @@ export default function Home() {
   const [boxCount, setBoxCount] = useState<number>(5);
   const [storageMonths, setStorageMonths] = useState<number>(6);
   const [results, setResults] = useState<ResultItem[]>([]);
-  const [sortBy, setSortBy] = useState<"total" | "monthly" | "quality">("total");
+  const [sortType, setSortType] = useState<string>("総費用順");
   const [retrievalFreq, setRetrievalFreq] = useState<string>("年に数回");
   const [itemTypes, setItemTypes] = useState<string[]>([]);
   const [priority, setPriority] = useState<string>("安さ");
   const [expandedAccordion, setExpandedAccordion] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (results.length === 0) return;
+    const sorted = [...results].sort((a, b) => {
+      if (sortType === "月額単価順") {
+        return a.monthly_per_box - b.monthly_per_box;
+      }
+      if (sortType === "口コミ順") {
+        return (b.quality_score ?? 0) - (a.quality_score ?? 0);
+      }
+      return a.total - b.total;
+    });
+    setResults(sorted);
+  }, [sortType]);
 
   const handleDiagnose = () => {
     if (boxCount <= 0 || storageMonths <= 0) {
@@ -80,6 +95,7 @@ export default function Home() {
         affiliate_url: service.affiliate_url,
         monthly_per_box: service.monthly_per_box,
         qualityScore: service.quality_score,
+        quality_score: service.quality_score,
       };
     });
 
@@ -94,10 +110,6 @@ export default function Home() {
       }
       return a.total - b.total;
     });
-
-    if (sortBy === "monthly") {
-      sorted = calculated.sort((a, b) => a.monthly_per_box - b.monthly_per_box);
-    }
 
     setResults(sorted.slice(0, 3));
   };
@@ -394,11 +406,11 @@ export default function Home() {
           <div className="space-y-8">
             {/* 結果ヘッド */}
             <div className="bg-white rounded-[12px] border border-gray-200 p-8">
-              <div className="text-center mb-4">
+              <div className="mb-4">
                 <p className="text-[#E8873A] text-sm font-bold uppercase tracking-wide mb-2">
                   Diagnosis Result
                 </p>
-                <h3 className="text-3xl font-bold text-[#2D5016] mb-4">
+                <h3 className="text-[26px] font-bold text-[#2D5016] mb-4">
                   あなたに一番合うのは{" "}
                   <span className="text-[#E8873A]">{results[0]?.name}</span>{" "}
                   でした
@@ -418,22 +430,23 @@ export default function Home() {
               </div>
 
               {/* ソートタブ */}
-              <div className="flex gap-4 justify-center mt-6 border-t pt-6">
-                {[
-                  { value: "total", label: "総費用順" },
-                  { value: "monthly", label: "月額単価順" },
-                  { value: "quality", label: "口コミ順" },
-                ].map((tab) => (
+              <div className="flex gap-[6px] mt-6 border-t pt-6">
+                {["総費用順", "月額単価順", "口コミ順"].map((label) => (
                   <button
-                    key={tab.value}
-                    onClick={() => setSortBy(tab.value as any)}
-                    className={`px-4 py-2 rounded-lg font-medium transition ${
-                      sortBy === tab.value
-                        ? "bg-[#2D5016] text-white"
-                        : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                    }`}
+                    key={label}
+                    onClick={() => setSortType(label)}
+                    className="transition"
+                    style={{
+                      fontSize: "13px",
+                      padding: "8px 12px",
+                      borderRadius: "8px",
+                      fontWeight: 500,
+                      background: sortType === label ? "#2D5016" : "white",
+                      color: sortType === label ? "white" : "#444441",
+                      border: sortType === label ? "none" : "0.5px solid #D3D1C7",
+                    }}
                   >
-                    {tab.label}
+                    {label}
                   </button>
                 ))}
               </div>
