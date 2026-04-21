@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import pricing from "../pricing.json";
 
 type PricingItem = {
@@ -400,6 +401,31 @@ export default function Home() {
               {service.name}
             </a>
           ))}
+        </div>
+
+        {/* ナビゲーションリンク */}
+        <div className="flex flex-wrap justify-center gap-3 mb-12">
+          <Link
+            href="/guide/what-is-takuhai-storage"
+            className="bg-white border border-[#D3D1C7] rounded-[8px] px-3 py-2 text-[12px] font-[500] hover:border-[#2D5016] hover:text-[#2D5016] transition"
+            style={{ color: "#5F5E5A", textDecoration: "none" }}
+          >
+            宅配収納とは？
+          </Link>
+          <Link
+            href="/compare"
+            className="bg-white border border-[#D3D1C7] rounded-[8px] px-3 py-2 text-[12px] font-[500] hover:border-[#2D5016] hover:text-[#2D5016] transition"
+            style={{ color: "#5F5E5A", textDecoration: "none" }}
+          >
+            サービス比較一覧
+          </Link>
+          <Link
+            href="/compare/ranking"
+            className="bg-white border border-[#D3D1C7] rounded-[8px] px-3 py-2 text-[12px] font-[500] hover:border-[#2D5016] hover:text-[#2D5016] transition"
+            style={{ color: "#5F5E5A", textDecoration: "none" }}
+          >
+            おすすめランキング
+          </Link>
         </div>
 
         {results.length > 0 && (
