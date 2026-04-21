@@ -17,6 +17,7 @@ type PricingItem = {
   common_pains: string[];
   affiliate_url: string;
   is_book_only: boolean;
+  is_space_based: boolean;
   quality_score: number;
   note: string | null;
 };
@@ -54,9 +55,11 @@ export default function Home() {
       retrievalFreq === "ほぼ取り出さない" ? 0.5 :
       retrievalFreq === "月1回以上" ? 12 : 1;
 
-    const filteredPricing = (pricing as PricingItem[]).filter(service => 
-      itemTypes.includes("本・書類") ? true : !service.is_book_only
-    );
+    const filteredPricing = (pricing as PricingItem[]).filter(service => {
+      if (service.is_space_based) return false;
+      if (!itemTypes.includes("本・書類") && service.is_book_only) return false;
+      return true;
+    });
 
     const pricingMap = Object.fromEntries(
       (pricing as PricingItem[]).map(p => [p.slug, p])
@@ -134,18 +137,24 @@ export default function Home() {
             登録不要で3秒で診断できます。
           </p>
           <div className="flex gap-2 overflow-x-auto py-2">
-            {[
-              "衣替えしたい",
-              "引越しの一時保管",
-              "趣味グッズを整理",
-              "思い出の品を保管",
-            ].map((chip) => (
-              <span
-                key={chip}
-                className="flex-shrink-0 bg-white border border-[#D3D1C7] rounded-[20px] px-3 py-[6px] text-[12px] text-[#5F5E5A] whitespace-nowrap"
+            {([
+              { label: "衣替えしたい", itemType: "衣類" },
+              { label: "引越しの一時保管", itemType: "季節物" },
+              { label: "趣味グッズを整理", itemType: "趣味の品" },
+              { label: "思い出の品を保管", itemType: "思い出の品" },
+            ] as { label: string; itemType: string }[]).map((chip) => (
+              <button
+                key={chip.label}
+                onClick={() => {
+                  setItemTypes((prev) =>
+                    prev.includes(chip.itemType) ? prev : [...prev, chip.itemType]
+                  );
+                  setExpandedAccordion(true);
+                }}
+                className="flex-shrink-0 bg-white border border-[#D3D1C7] rounded-[20px] px-3 py-[6px] text-[12px] text-[#5F5E5A] whitespace-nowrap cursor-pointer hover:border-[#2D5016] hover:text-[#2D5016] transition"
               >
-                {chip}
-              </span>
+                {chip.label}
+              </button>
             ))}
           </div>
         </div>
@@ -360,22 +369,24 @@ export default function Home() {
           比較対象サービス
         </div>
         <div className="flex flex-wrap justify-center gap-2 mb-12">
-          {[
-            "サマリーポケット",
-            "minikura",
-            "AZUKEL",
-            "カラエト",
-            "エアトランク",
-            "宅トラ",
-            "リソコ",
-            "2nd STORAGE",
-          ].map((service) => (
-            <span
-              key={service}
-              className="bg-white border border-[#D3D1C7] rounded-[8px] px-2.5 py-1 text-[11px] text-[#5F5E5A]"
+          {([
+            { name: "サマリーポケット", slug: "summary-pocket" },
+            { name: "minikura", slug: "minikura" },
+            { name: "AZUKEL", slug: "azukel" },
+            { name: "カラエト", slug: "caraeto" },
+            { name: "エアトランク", slug: "airtrunk" },
+            { name: "宅トラ", slug: "takutora" },
+            { name: "リソコ", slug: "risoco" },
+            { name: "2nd STORAGE", slug: "2nd-storage" },
+          ] as { name: string; slug: string }[]).map((service) => (
+            <a
+              key={service.slug}
+              href={`/detail/${service.slug}?boxes=${boxCount}&months=${storageMonths}`}
+              style={{ color: "#2D5016", textDecoration: "none" }}
+              className="bg-white border border-[#D3D1C7] rounded-[8px] px-2.5 py-1 text-[11px] hover:border-[#2D5016] transition"
             >
-              {service}
-            </span>
+              {service.name}
+            </a>
           ))}
         </div>
 
