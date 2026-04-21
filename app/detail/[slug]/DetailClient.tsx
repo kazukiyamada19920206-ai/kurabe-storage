@@ -5,6 +5,13 @@ import Link from "next/link";
 import { useState } from "react";
 import pricing from "../../../pricing.json";
 
+type Review = {
+  author: string;
+  comment: string;
+  source: string;
+  source_url: string;
+};
+
 type PricingItem = {
   name: string;
   slug: string;
@@ -19,6 +26,7 @@ type PricingItem = {
   common_pains: string[];
   affiliate_url: string;
   note: string | null;
+  reviews?: Review[];
 };
 
 const faqs = [
@@ -36,26 +44,6 @@ const faqs = [
   },
 ];
 
-const reviews = [
-  {
-    name: "田中花子",
-    attribute: "会社員・東京都",
-    rating: 5,
-    text: "季節用品を預けたら家がスッキリ。必要な時にすぐ取り出せて便利です。",
-  },
-  {
-    name: "佐藤太郎",
-    attribute: "主婦・神奈川県",
-    rating: 4,
-    text: "使い方も簡単で、子どもの成長に合わせて荷物を整理できています。",
-  },
-  {
-    name: "鈴木美咲",
-    attribute: "フリーランス・大阪府",
-    rating: 5,
-    text: "引っ越しの一時保管に使いました。急な対応もしてくれて助かりました。",
-  },
-];
 
 export default function DetailClient() {
   const params = useParams();
@@ -356,32 +344,43 @@ export default function DetailClient() {
         </div>
 
         {/* 口コミセクション */}
-        <div className="bg-white rounded-[12px] border border-gray-200 p-8 mb-8">
-          <h3 className="text-2xl font-bold text-[#2D5016] mb-8">REVIEW - 利用者の声</h3>
-          <div className="grid md:grid-cols-3 gap-6">
-            {reviews.map((review, index) => (
-              <div
-                key={index}
-                className="bg-gradient-to-br from-[#F5F0E8] to-white rounded-[12px] border border-gray-200 p-6"
-              >
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-[#E8873A] flex items-center justify-center text-white font-bold">
-                    {review.name.charAt(0)}
+        {service.reviews && service.reviews.length > 0 && (
+          <div className="bg-white rounded-[12px] border border-gray-200 p-8 mb-8">
+            <h3 className="text-2xl font-bold text-[#2D5016] mb-8">REVIEW - 利用者の声</h3>
+            <div className="grid md:grid-cols-3 gap-6">
+              {service.reviews.map((review, index) => (
+                <div
+                  key={index}
+                  className="bg-gradient-to-br from-[#F5F0E8] to-white rounded-[12px] border border-gray-200 p-6 flex flex-col"
+                >
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-full bg-[#E8873A] flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
+                      {review.author.charAt(0)}
+                    </div>
+                    <p className="font-bold text-gray-900 text-sm">{review.author}</p>
                   </div>
-                  <div>
-                    <p className="font-bold text-gray-900">{review.name}</p>
-                    <p className="text-xs text-gray-600">{review.attribute}</p>
+                  <p className="text-gray-700 text-sm leading-6 flex-1">{review.comment}</p>
+                  <div className="mt-4 pt-3 border-t border-gray-200">
+                    {review.source_url ? (
+                      <a
+                        href={review.source_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ fontSize: "11px", color: "#888780", textDecoration: "underline" }}
+                      >
+                        出典：{review.source}
+                      </a>
+                    ) : (
+                      <span style={{ fontSize: "11px", color: "#888780" }}>
+                        出典：{review.source}
+                      </span>
+                    )}
                   </div>
                 </div>
-                <div className="mb-3">
-                  {'★'.repeat(review.rating)}
-                  {'☆'.repeat(5 - review.rating)}
-                </div>
-                <p className="text-gray-700 text-sm leading-6">{review.text}</p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
         {/* FAQアコーディオン */}
         <div className="bg-white rounded-[12px] border border-gray-200 p-8 mb-8">

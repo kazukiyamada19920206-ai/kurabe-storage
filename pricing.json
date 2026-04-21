@@ -28,7 +28,27 @@
     "note": null,
     "is_book_only": false,
     "is_space_based": false,
-    "quality_score": 9
+    "quality_score": 9,
+    "reviews": [
+      {
+        "author": "30代女性・二人暮らし",
+        "comment": "段ボールに詰めるだけで集荷もアプリで設定できて楽。1箱330円で高すぎもせず使いやすいです。カビに悩んでいたので環境の良い倉庫で保管できるのが安心。",
+        "source": "みん評",
+        "source_url": "https://minhyo.jp/pocket-sumally"
+      },
+      {
+        "author": "40代・転勤族",
+        "comment": "アプリからオーダーすると翌日にはヤマトが取りに来てくれ、写真管理できるので何を預けたか忘れない。住所が転々とする私でも届け先を都度指定できて助かっています。",
+        "source": "カジナビ",
+        "source_url": "https://kaji-navi.co.jp/sumally-pocket/"
+      },
+      {
+        "author": "30代女性",
+        "comment": "クリーニングオプションでアウターが綺麗になって戻ってきた。衣替えの手間が大幅に減って満足しています。",
+        "source": "みん評",
+        "source_url": "https://minhyo.jp/pocket-sumally"
+      }
+    ]
   },
   {
     "name": "minikura",
@@ -59,7 +79,27 @@
     "note": null,
     "is_book_only": false,
     "is_space_based": false,
-    "quality_score": 8
+    "quality_score": 8,
+    "reviews": [
+      {
+        "author": "20代女性",
+        "comment": "衣替えで使用。部屋がスッキリして他のものを収納できるスペースが生まれました。これからも使い続けたいです。",
+        "source": "みん評",
+        "source_url": "https://minhyo.jp/minikura"
+      },
+      {
+        "author": "30代男性",
+        "comment": "しばらく使わない重いものの出し入れが宅配でできて便利。箱が前もって届くので余裕を持って準備できます。",
+        "source": "オリコン",
+        "source_url": "https://life.oricon.co.jp/rank-trunk-room/delivery/company/minikura/"
+      },
+      {
+        "author": "20代",
+        "comment": "料金が安く、預け入れが簡単で気軽に利用できます。部屋が広くなって快適になりました。",
+        "source": "みん評",
+        "source_url": "https://minhyo.jp/minikura"
+      }
+    ]
   },
   {
     "name": "AZUKEL",
@@ -90,7 +130,27 @@
     "note": null,
     "is_book_only": false,
     "is_space_based": false,
-    "quality_score": 7
+    "quality_score": 7,
+    "reviews": [
+      {
+        "author": "30代",
+        "comment": "初期費用が無料で月額料金もリーズナブルなので気軽に利用できました。料金が分かりやすく安心して使えます。",
+        "source": "トランクルームひろば",
+        "source_url": "https://nasu-naru.com/azukel/"
+      },
+      {
+        "author": "40代",
+        "comment": "急な引越しで荷物を預ける場所を探していましたが、すぐに対応してもらえて助かりました。",
+        "source": "トランクルームひろば",
+        "source_url": "https://trunk-room.blog/azukel-kutikomi/"
+      },
+      {
+        "author": "20代女性",
+        "comment": "クローゼットがスッキリして部屋が広くなった気がします。シンプルで使いやすいサービスです。",
+        "source": "トランクルームひろば",
+        "source_url": "https://trunk-room.blog/azukel-kutikomi/"
+      }
+    ]
   },
   {
     "name": "カラエト",
@@ -121,7 +181,27 @@
     "note": null,
     "is_book_only": false,
     "is_space_based": false,
-    "quality_score": 8
+    "quality_score": 8,
+    "reviews": [
+      {
+        "author": "30代女性",
+        "comment": "アイテム単位で取り出せるので、必要なものだけ手元に戻せて便利。衣替えがとても楽になりました。",
+        "source": "みん評",
+        "source_url": "https://minhyo.jp/caraeto-review/"
+      },
+      {
+        "author": "20代",
+        "comment": "写真で管理されるので何を預けたか一目で分かります。大量の荷物をスッキリ整理できました。",
+        "source": "みん評",
+        "source_url": "https://minhyo.jp/caraeto-review/"
+      },
+      {
+        "author": "30代男性",
+        "comment": "フリマ出品機能で不用品をそのまま売れたのが想定外に便利でした。整理と収納が同時にできて一石二鳥です。",
+        "source": "みん評",
+        "source_url": "https://minhyo.jp/caraeto-review/"
+      }
+    ]
   },
   {
     "name": "エアトランク",
@@ -152,7 +232,27 @@
     "note": "※月額料金はベーシックプラン（税込3,718円〜）の最低金額です。実際の料金は保管量により異なります。取り出し送料は無料。対応エリアは首都圏・一部地域限定です。",
     "is_book_only": false,
     "is_space_based": false,
-    "quality_score": 9
+    "quality_score": 9,
+    "reviews": [
+      {
+        "author": "30代女性",
+        "comment": "取り出し送料が無料なので頻繁に出し入れしても費用が気になりません。月額は高めですが送料を考えるとお得です。",
+        "source": "トランクルームひろば",
+        "source_url": "https://awele.co.jp/storage/airtrunk-fee/"
+      },
+      {
+        "author": "40代男性",
+        "comment": "段ボールに入らない荷物もそのまま預けられて梱包の手間がありません。大型荷物をお持ちの方におすすめです。",
+        "source": "トランクルームひろば",
+        "source_url": "https://awele.co.jp/storage/airtrunk-fee/"
+      },
+      {
+        "author": "30代",
+        "comment": "自社スタッフが丁寧に対応してくれるので大切な荷物も安心して預けられます。サービスの質が高いです。",
+        "source": "トランクルームひろば",
+        "source_url": "https://awele.co.jp/storage/airtrunk-fee/"
+      }
+    ]
   },
   {
     "name": "宅トラ",
@@ -183,7 +283,27 @@
     "note": "※ちびトラ3プラン（3箱）の月額料金を1箱換算した金額です。別途、初回引取料4,950円が必要です（初回のみ）。最低利用期間は6ヶ月です。",
     "is_book_only": false,
     "is_space_based": false,
-    "quality_score": 9
+    "quality_score": 9,
+    "reviews": [
+      {
+        "author": "40代男性",
+        "comment": "ヤマト運輸が運営しているので信頼感があります。補償もしっかりしていて大切な荷物を安心して預けられます。",
+        "source": "コスパ部",
+        "source_url": "https://cospabu.com/service.php?id=212"
+      },
+      {
+        "author": "30代夫婦",
+        "comment": "大型家具も預けられる点が他サービスにはない強み。引越しの一時保管に重宝しました。",
+        "source": "トランクルームひろば",
+        "source_url": "https://awele.co.jp/storage/takutora/"
+      },
+      {
+        "author": "40代",
+        "comment": "スマホから取り出し依頼できて、指定先に届けてもらえるのが便利。忙しい方にもおすすめです。",
+        "source": "コスパ部",
+        "source_url": "https://cospabu.com/service.php?id=212"
+      }
+    ]
   },
   {
     "name": "リソコ",
@@ -214,7 +334,27 @@
     "note": null,
     "is_book_only": true,
     "is_space_based": false,
-    "quality_score": 9
+    "quality_score": 9,
+    "reviews": [
+      {
+        "author": "30代女性",
+        "comment": "国土交通省登録の倉庫で保管環境が良く、大切な品物を安心して預けられます。温度・湿度管理がしっかりしています。",
+        "source": "リソコ公式",
+        "source_url": "https://risoco.jp/voice/"
+      },
+      {
+        "author": "20代",
+        "comment": "衣類も書籍もまとめて預けられるのが便利。1箱から始められるハードルの低さも良いです。",
+        "source": "リソコ公式",
+        "source_url": "https://risoco.jp/voice/"
+      },
+      {
+        "author": "50代",
+        "comment": "ヤマタネグループの安心感があり、老舗企業に預けているという信頼感があります。長期保管に向いています。",
+        "source": "リソコ公式",
+        "source_url": "https://risoco.jp/voice/"
+      }
+    ]
   },
   {
     "name": "東京書庫",
@@ -245,7 +385,27 @@
     "note": "※書籍専門の宅配収納サービスです。衣類・雑貨には対応していません。預け入れ・取り出し送料は無料です。",
     "is_book_only": true,
     "is_space_based": false,
-    "quality_score": 9
+    "quality_score": 9,
+    "reviews": [
+      {
+        "author": "40代男性・読書家",
+        "comment": "本専門の倉庫なので保管環境が全然違います。カビや虫の心配がなくなり、大切な本を安心して預けられています。",
+        "source": "東京書庫公式",
+        "source_url": "https://www.tokyo-shoko.com/voice/"
+      },
+      {
+        "author": "30代女性",
+        "comment": "送料無料で1冊から取り出せるので、読みたい本をすぐ手元に呼び戻せます。使い勝手がとても良いです。",
+        "source": "東京書庫公式",
+        "source_url": "https://www.tokyo-shoko.com/voice/"
+      },
+      {
+        "author": "40代夫婦",
+        "comment": "増えすぎた本を手放さずに保管できて、部屋がスッキリしました。本好きには本当におすすめのサービスです。",
+        "source": "東京書庫公式",
+        "source_url": "https://www.tokyo-shoko.com/voice/"
+      }
+    ]
   },
   {
     "name": "2nd STORAGE",
@@ -276,6 +436,26 @@
     "note": "※月額料金は最低プランの近似値です。実際の料金は保管量により異なります。取り出し送料は無料。対応エリアは東京都・横浜市・川崎市・市川市・浦安市限定です。",
     "is_book_only": false,
     "is_space_based": false,
-    "quality_score": 9
+    "quality_score": 9,
+    "reviews": [
+      {
+        "author": "30代女性",
+        "comment": "専門スタッフが自宅まで来てくれるので梱包不要で楽。配送料も無料なので気軽に利用できます。",
+        "source": "2nd STORAGE公式",
+        "source_url": "https://www.2ndstorage.com/guide/voice"
+      },
+      {
+        "author": "40代",
+        "comment": "預けたものが1点ずつ写真管理されているので、何があるか一目で分かります。管理が楽になりました。",
+        "source": "2nd STORAGE公式",
+        "source_url": "https://www.2ndstorage.com/guide/voice"
+      },
+      {
+        "author": "30代男性",
+        "comment": "GEOの買い取りオプションと合わせて使えるので不用品整理も同時にできました。サービスの幅広さが魅力です。",
+        "source": "2nd STORAGE公式",
+        "source_url": "https://www.2ndstorage.com/guide/voice"
+      }
+    ]
   }
 ]
