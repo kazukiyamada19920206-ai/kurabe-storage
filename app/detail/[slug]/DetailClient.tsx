@@ -26,6 +26,7 @@ type PricingItem = {
   common_pains: string[];
   affiliate_url: string;
   note: string | null;
+  image_url?: string;
   reviews?: Review[];
 };
 
@@ -127,9 +128,17 @@ export default function DetailClient() {
           </div>
         </div>
 
-        {/* サービス画像プレースホルダー */}
-        <div className="bg-gradient-to-br from-gray-200 to-gray-300 rounded-[12px] h-48 mb-8 flex items-center justify-center">
-          <span className="text-gray-600 text-lg">サービス画像</span>
+        {/* サービス画像 */}
+        <div className="rounded-[12px] h-48 mb-8 overflow-hidden bg-gray-100">
+          {service.image_url ? (
+            <img
+              src={service.image_url}
+              alt={`${service.name}のサービス画像`}
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <div className="w-full h-full flex items-center justify-center text-gray-400">画像なし</div>
+          )}
         </div>
 
         {/* 料金カード */}

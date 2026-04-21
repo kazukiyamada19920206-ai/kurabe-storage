@@ -29,6 +29,7 @@
     "is_book_only": false,
     "is_space_based": false,
     "quality_score": 9,
+    "image_url": "/images/services/summary-pocket.png",
     "reviews": [
       {
         "author": "30代女性・二人暮らし",
@@ -80,6 +81,7 @@
     "is_book_only": false,
     "is_space_based": false,
     "quality_score": 8,
+    "image_url": "/images/services/minikura.png",
     "reviews": [
       {
         "author": "20代女性",
@@ -131,6 +133,7 @@
     "is_book_only": false,
     "is_space_based": false,
     "quality_score": 7,
+    "image_url": "/images/services/azukel.png",
     "reviews": [
       {
         "author": "30代",
@@ -182,6 +185,7 @@
     "is_book_only": false,
     "is_space_based": false,
     "quality_score": 8,
+    "image_url": "/images/services/caraeto.png",
     "reviews": [
       {
         "author": "30代女性",
@@ -233,6 +237,7 @@
     "is_book_only": false,
     "is_space_based": false,
     "quality_score": 9,
+    "image_url": "/images/services/airtrunk.png",
     "reviews": [
       {
         "author": "30代女性",
@@ -284,6 +289,7 @@
     "is_book_only": false,
     "is_space_based": false,
     "quality_score": 9,
+    "image_url": "/images/services/takutora.png",
     "reviews": [
       {
         "author": "40代男性",
@@ -335,6 +341,7 @@
     "is_book_only": true,
     "is_space_based": false,
     "quality_score": 9,
+    "image_url": "/images/services/risoco.png",
     "reviews": [
       {
         "author": "30代女性",
@@ -386,6 +393,7 @@
     "is_book_only": true,
     "is_space_based": false,
     "quality_score": 9,
+    "image_url": "/images/services/tokyo-shoko.png",
     "reviews": [
       {
         "author": "40代男性・読書家",
@@ -437,6 +445,7 @@
     "is_book_only": false,
     "is_space_based": false,
     "quality_score": 9,
+    "image_url": "/images/services/2nd-storage.png",
     "reviews": [
       {
         "author": "30代女性",
