@@ -443,6 +443,14 @@ export default function DetailClient() {
           </div>
           <a
             href={service.affiliate_url}
+            onClick={() => {
+              if (typeof window !== "undefined" && window.gtag) {
+                window.gtag("event", "click_official", {
+                  event_category: "conversion",
+                  event_label: service.name,
+                });
+              }
+            }}
             className="bg-[#E8873A] hover:bg-[#D97A2D] text-white font-bold px-8 py-4 rounded-lg transition flex items-center gap-2"
           >
             公式サイトで申し込む →

@@ -362,7 +362,15 @@ export default function Home() {
 
           {/* CTA */}
           <button
-            onClick={handleDiagnose}
+            onClick={() => {
+              if (typeof window !== "undefined" && window.gtag) {
+                window.gtag("event", "click_diagnose", {
+                  event_category: "engagement",
+                  event_label: "診断開始",
+                });
+              }
+              handleDiagnose();
+            }}
             className="w-full bg-[#E8873A] hover:bg-[#D97A2D] text-white p-[18px] rounded-[12px] text-[17px] font-[700] transition mb-4"
           >
             無料で診断する →
@@ -599,12 +607,28 @@ export default function Home() {
                         <div className="space-y-3">
                           <a
                             href={`/detail/${result.slug}?boxes=${boxCount}&months=${storageMonths}`}
+                            onClick={() => {
+                              if (typeof window !== "undefined" && window.gtag) {
+                                window.gtag("event", "click_detail", {
+                                  event_category: "engagement",
+                                  event_label: result.name,
+                                });
+                              }
+                            }}
                             className="block w-full px-4 py-3 rounded-lg border-2 border-[#2D5016] text-[#2D5016] font-bold hover:bg-[#F5F0E8] transition text-center"
                           >
                             詳細を見る →
                           </a>
                           <a
                             href={`/detail/${result.slug}?boxes=${boxCount}&months=${storageMonths}`}
+                            onClick={() => {
+                              if (typeof window !== "undefined" && window.gtag) {
+                                window.gtag("event", "click_apply", {
+                                  event_category: "conversion",
+                                  event_label: result.name,
+                                });
+                              }
+                            }}
                             className="block w-full px-4 py-3 rounded-lg bg-[#2D5016] text-white font-bold hover:bg-[#1A3009] transition text-center"
                           >
                             決める
