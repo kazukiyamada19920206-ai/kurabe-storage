@@ -126,7 +126,7 @@
   {
     "name": "エアトランク",
     "slug": "airtrunk",
-    "monthly_per_box": 900,
+    "monthly_per_box": 3718,
     "initial_fee": 0,
     "retrieval_fee": 0,
     "reason": "取り出し送料が完全無料。頻繁に出し入れする人ほどお得になるサービスです。",
@@ -149,9 +149,9 @@
       "荷物の梱包が面倒"
     ],
     "affiliate_url": "https://www.air-trunk.net/",
-    "note": "※月額料金はスペース単位のサービスを箱数換算した近似値です。実際の料金は保管量により異なります。取り出し送料は無料ですが月額は他社より高めです。対応エリアは首都圏・一部地域限定です。正確な料金は公式サイトでご確認ください。",
+    "note": "※月額料金はベーシックプラン（税込3,718円〜）の最低金額です。実際の料金は保管量により異なります。取り出し送料は無料。対応エリアは首都圏・一部地域限定です。",
     "is_book_only": false,
-    "is_space_based": true,
+    "is_space_based": false,
     "quality_score": 9
   },
   {
@@ -250,7 +250,7 @@
   {
     "name": "2nd STORAGE",
     "slug": "2nd-storage",
-    "monthly_per_box": 1100,
+    "monthly_per_box": 3300,
     "initial_fee": 0,
     "retrieval_fee": 0,
     "reason": "GEOグループ運営で取り出し送料が完全無料。頻繁に出し入れする方に特におすすめです。",
@@ -273,9 +273,9 @@
       "頻繁に出し入れするのでコストが気になる"
     ],
     "affiliate_url": "https://www.2ndstorage.com/",
-    "note": "※月額料金はスペース単位のサービスを箱数換算した近似値です。実際の料金は保管量により異なります。取り出し送料は無料ですが月額は他社より高めです。対応エリアは東京都・横浜市・川崎市・市川市・浦安市限定です。正確な料金は公式サイトでご確認ください。",
+    "note": "※月額料金は最低プランの近似値です。実際の料金は保管量により異なります。取り出し送料は無料。対応エリアは東京都・横浜市・川崎市・市川市・浦安市限定です。",
     "is_book_only": false,
-    "is_space_based": true,
+    "is_space_based": false,
     "quality_score": 9
   }
 ]
