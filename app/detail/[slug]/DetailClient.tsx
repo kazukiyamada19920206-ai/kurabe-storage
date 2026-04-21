@@ -81,10 +81,10 @@ export default function DetailClient() {
       {/* ヘッダー */}
       <header className="bg-white border-b border-gray-200 py-4 sticky top-0 z-40">
         <div className="mx-auto max-w-6xl px-6 flex justify-between items-center">
-          <div className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2">
             <div className="w-6 h-6 bg-[#2D5016] rounded-sm"></div>
-            <h1 className="text-xl font-bold text-[#2D5016]">くらべる収納</h1>
-          </div>
+            <span className="text-xl font-bold text-[#2D5016]">くらべる収納</span>
+          </Link>
         </div>
       </header>
 
