@@ -29,8 +29,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!service) return {};
 
   return {
-    title: `${service.name}の料金・評判`,
-    description: `${service.name}の月額料金・取り出し送料・おすすめポイントを詳しく解説。あなたの条件での総費用も計算できます。`,
+    title: `${service.name}の評判・料金・口コミ`,
+    description: service.description,
     openGraph: {
       title: `${service.name}の料金・評判 | くらべる収納`,
       description: `${service.name}の月額料金・取り出し送料・おすすめポイントを詳しく解説。`,
