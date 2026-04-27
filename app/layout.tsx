@@ -70,7 +70,19 @@ export default function RootLayout({
           gtag('config', 'G-JKX5ZP9QR6');
         `}
       </Script>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+        <footer className="bg-white border-t border-gray-200 py-8 mt-auto">
+          <div className="mx-auto max-w-6xl px-6 text-center space-y-2">
+            <p className="text-xs text-gray-500">
+              当サイトはアフィリエイト広告（Amazonアソシエイト含む）を掲載しています。
+            </p>
+            <p className="text-xs text-gray-500">
+              運営：くらべる収納
+            </p>
+          </div>
+        </footer>
+      </body>
     </html>
   );
 }
