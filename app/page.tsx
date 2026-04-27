@@ -100,7 +100,7 @@ export default function Home() {
       };
     });
 
-    let sorted = calculated.sort((a, b) => {
+    const prioritySorted = calculated.sort((a, b) => {
       if (priority === "取り出しやすさ") {
         const aRetrieval = pricingMap[a.slug].retrieval_fee;
         const bRetrieval = pricingMap[b.slug].retrieval_fee;
@@ -112,7 +112,9 @@ export default function Home() {
       return a.total - b.total;
     });
 
-    setResults(sorted.slice(0, 3));
+    const top3 = prioritySorted.slice(0, 3).sort((a, b) => a.total - b.total);
+    setSortType("総費用順");
+    setResults(top3);
   };
 
   return (
@@ -539,7 +541,7 @@ export default function Home() {
                             総費用比較
                           </p>
                           {(() => {
-                            const maxTotal = results[results.length - 1]?.total || 1;
+                            const maxTotal = Math.max(...results.map(r => r.total));
                             const barWidth = (result.total / maxTotal) * 100;
                             const barColor = isFirst ? "#2D5016" : "#D1CBC0";
                             return (
