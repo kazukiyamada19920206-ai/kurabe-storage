@@ -15,6 +15,7 @@ const rankings = [
     tag: "コスパ重視の方に",
     monthly: 220,
     body: "月額220円と業界最安水準の料金が最大の魅力です。初期費用も無料で、短期から中期の保管を検討している方に特におすすめです。大型家具・家電にも対応しており、段ボール以外の荷物も預けられます。「とにかく安く始めたい」という方の第一選択肢です。",
+    reviewSlug: "azukel-review",
   },
   {
     rank: 2,
@@ -23,6 +24,7 @@ const rankings = [
     tag: "バランス重視の方に",
     monthly: 275,
     body: "月額275円と料金が安く、寺田倉庫の本格的な保管環境も兼ね備えたバランスの良いサービスです。本・CD専用プランも充実しており、幅広い方におすすめできます。コスパと品質の両方を求める方に向いています。",
+    reviewSlug: "minikura-review",
   },
   {
     rank: 3,
@@ -31,6 +33,7 @@ const rankings = [
     tag: "初めての方・クリーニング利用者に",
     monthly: 330,
     body: "業界トップクラスの知名度と充実したサポートで、初めて宅配収納を使う方に最適です。クリーニングオプションが便利で、衣替えと同時にメンテナンスも済ませたい方に特に向いています。",
+    reviewSlug: "summary-pocket-review",
   },
   {
     rank: 4,
@@ -39,6 +42,7 @@ const rankings = [
     tag: "アイテム管理にこだわる方に",
     monthly: 308,
     body: "預けた荷物を1点ずつ写真管理し、アイテム単位で取り出せる点が独自の強みです。フリマ出品機能もあり、不用品整理と収納を同時に進めたい方にぴったりです。",
+    reviewSlug: "caraeto-review",
   },
   {
     rank: 5,
@@ -47,6 +51,7 @@ const rankings = [
     tag: "頻繁に出し入れする方に",
     monthly: 3718,
     body: "取り出し配送料が何度でも完全無料という点で他社と大きく差別化されています。月額料金は高めですが、毎月のように荷物を出し入れする方にとってはトータルコストを抑えられます。首都圏在住で頻繁に利用したい方におすすめです。",
+    reviewSlug: null,
   },
 ];
 
@@ -112,12 +117,19 @@ export default function RankingPage() {
                     </div>
                     <p className="text-[13px] text-[#888780] mb-3">月額 ¥{item.monthly.toLocaleString()}〜</p>
                     <p className="text-[13px] text-[#5F5E5A] leading-[1.8] mb-4">{item.body}</p>
-                    <Link
-                      href={`/detail/${item.slug}`}
-                      className="inline-block bg-[#2D5016] hover:bg-[#1A3009] text-white font-[600] px-5 py-2.5 rounded-[8px] text-[13px] transition"
-                    >
-                      詳細を見る →
-                    </Link>
+                    <div className="flex flex-wrap items-center gap-4">
+                      <Link
+                        href={`/detail/${item.slug}`}
+                        className="inline-block bg-[#2D5016] hover:bg-[#1A3009] text-white font-[600] px-5 py-2.5 rounded-[8px] text-[13px] transition"
+                      >
+                        詳細を見る →
+                      </Link>
+                      {item.reviewSlug && (
+                        <Link href={`/guide/${item.reviewSlug}`} className="text-[#E8873A] text-sm font-medium hover:underline">
+                          詳しい評判・口コミを見る →
+                        </Link>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>

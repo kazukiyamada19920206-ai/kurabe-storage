@@ -205,6 +205,14 @@ export default function SeasonalStorageTipsPage() {
               </tbody>
             </table>
           </div>
+          <div className="mt-4 space-y-2">
+            <Link href="/guide/summary-pocket-review" className="block text-[#E8873A] text-sm font-medium hover:underline">
+              サマリーポケットの詳しい評判を見る →
+            </Link>
+            <Link href="/guide/minikura-review" className="block text-[#E8873A] text-sm font-medium hover:underline">
+              minikuraの詳しい評判を見る →
+            </Link>
+          </div>
         </section>
 
         {/* ⑦ 実際のコストシミュレーション */}

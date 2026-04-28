@@ -661,6 +661,29 @@ export default function Home() {
           </div>
         )}
       </div>
+
+      {/* 関連記事リンク */}
+      <div className="mx-auto max-w-6xl px-6 py-10">
+        <h2 className="text-xl font-bold text-[#2D5016] mb-6">サービスを詳しく知る</h2>
+        <div className="grid grid-cols-2 gap-3">
+          {[
+            { href: "/guide/summary-pocket-review", label: "サマリーポケットの評判・口コミ" },
+            { href: "/guide/minikura-review", label: "minikuraの評判・口コミ" },
+            { href: "/guide/azukel-review", label: "AZUKELの評判・口コミ" },
+            { href: "/guide/caraeto-review", label: "カラエトの評判・口コミ" },
+            { href: "/guide/seasonal-storage-tips", label: "衣替えに宅配収納を使う前に知っておきたいこと" },
+            { href: "/compare/summary-pocket-vs-minikura", label: "サマリーポケット vs minikura 比較" },
+          ].map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="bg-white rounded-[10px] border border-gray-200 px-4 py-3 text-sm text-[#2D5016] font-medium hover:border-[#2D5016] transition"
+            >
+              {item.label} →
+            </Link>
+          ))}
+        </div>
+      </div>
     </main>
   );
 }
