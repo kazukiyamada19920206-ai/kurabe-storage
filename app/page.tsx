@@ -73,7 +73,12 @@ export default function Home() {
 
     const filteredPricing = (pricing as PricingItem[]).filter(service => {
       if (service.is_space_based) return false;
-      if (!itemTypes.includes("本・書類") && service.is_book_only) return false;
+      // is_book_only のサービスは「本・書類」のみが選択されている場合だけ表示する
+      if (service.is_book_only) {
+        if (itemTypes.length === 0) return false;
+        if (!itemTypes.includes("本・書類")) return false;
+        if (itemTypes.some(type => type !== "本・書類")) return false;
+      }
       return true;
     });
 
