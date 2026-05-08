@@ -31,13 +31,22 @@ export const metadata: Metadata = {
     description: "箱数と保管期間を入力するだけで、8社の料金を自動比較。登録不要・3秒で最安サービスが分かります。",
     url: "https://moriyamanaomi.com",
     siteName: "くらべる収納",
+    images: [
+      {
+        url: "https://moriyamanaomi.com/ogp.png",
+        width: 1200,
+        height: 630,
+        alt: "くらべる収納 - 宅配収納サービス比較・診断",
+      },
+    ],
     locale: "ja_JP",
     type: "website",
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "宅配収納サービス比較・診断 | くらべる収納",
     description: "箱数と保管期間を入力するだけで、8社の料金を自動比較。登録不要・3秒で最安サービスが分かります。",
+    images: ["https://moriyamanaomi.com/ogp.png"],
   },
   robots: {
     index: true,
