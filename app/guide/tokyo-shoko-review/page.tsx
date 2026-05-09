@@ -183,6 +183,52 @@ export default function TokyoShokoReviewPage() {
           </div>
         </section>
 
+        {/* 料金シミュレーション */}
+        <section>
+          <h2 className="text-[20px] font-[700] text-[#2D5016] mb-4 pb-2 border-b-2 border-[#2D5016]">
+            料金シミュレーション
+          </h2>
+          <p className="text-[13px] text-[#888780] mb-4">サマリーポケット（330円/月・送料1,100円）との比較。取り出し1回分を含む。</p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-[13px]" style={{ borderCollapse: "collapse" }}>
+              <thead>
+                <tr>
+                  <th className="py-3 px-4 text-left text-white font-bold" style={{ background: "#2D5016", border: "0.5px solid #D3D1C7" }}>条件</th>
+                  <th className="py-3 px-4 text-center text-white font-bold" style={{ background: "#2D5016", border: "0.5px solid #D3D1C7" }}>東京書庫</th>
+                  <th className="py-3 px-4 text-center text-white font-bold" style={{ background: "#2D5016", border: "0.5px solid #D3D1C7" }}>サマリーポケット</th>
+                  <th className="py-3 px-4 text-center text-white font-bold" style={{ background: "#2D5016", border: "0.5px solid #D3D1C7" }}>差額</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  { label: "1箱・3ヶ月", self: 825, ref: 2090 },
+                  { label: "3箱・6ヶ月", self: 4950, ref: 7040 },
+                  { label: "5箱・6ヶ月", self: 8250, ref: 11000 },
+                  { label: "5箱・12ヶ月", self: 16500, ref: 20900 },
+                ].map(({ label, self, ref }, i) => {
+                  const cheaper = self < ref;
+                  const diff = Math.abs(self - ref);
+                  return (
+                    <tr key={label} style={{ background: i % 2 === 1 ? "#F5F0E8" : "white" }}>
+                      <td className="py-3 px-4 font-medium text-[#2C2C2A]" style={{ border: "0.5px solid #D3D1C7" }}>{label}</td>
+                      <td className={`py-3 px-4 text-center ${cheaper ? "font-[600] text-[#2D5016]" : "text-[#888780]"}`} style={{ border: "0.5px solid #D3D1C7" }}>¥{self.toLocaleString()}</td>
+                      <td className={`py-3 px-4 text-center ${!cheaper ? "font-[600] text-[#2D5016]" : "text-[#888780]"}`} style={{ border: "0.5px solid #D3D1C7" }}>¥{ref.toLocaleString()}</td>
+                      <td className={`py-3 px-4 text-center font-[600] ${cheaper ? "text-[#2D5016]" : "text-[#C4620A]"}`} style={{ border: "0.5px solid #D3D1C7" }}>
+                        {cheaper ? `${diff.toLocaleString()}円 安い` : `${diff.toLocaleString()}円 高い`}
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+          <div className="mt-6">
+            <Link href="/" className="inline-block bg-[#E8873A] hover:bg-[#D97A2D] text-white font-[700] px-8 py-3 rounded-[10px] text-[15px] transition">
+              あなたの条件で正確な料金を3秒で確認する →
+            </Link>
+          </div>
+        </section>
+
         {/* ⑥ こんな人におすすめ／向いていない人 */}
         <section>
           <h2 className="text-[20px] font-[700] text-[#2D5016] mb-4 pb-2 border-b-2 border-[#2D5016]">
