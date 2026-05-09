@@ -1,0 +1,321 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import pricing from "../../../pricing.json";
+
+export const metadata: Metadata = {
+  title: "宅トラの評判・口コミを徹底解説｜メリット・デメリットとおすすめの使い方",
+  description:
+    "宅トラの実際の口コミ・評判、料金、メリット・デメリットを徹底解説。クロネコヤマト運営の宅配型トランクルームの特徴とおすすめの使い方を紹介します。",
+};
+
+const service = pricing.find((s) => s.slug === "takutora")!;
+
+export default function TakutoraReviewPage() {
+  return (
+    <main className="min-h-screen bg-[#F5F0E8]">
+      {/* ヘッダー */}
+      <header className="bg-white border-b border-gray-200 py-4">
+        <div className="mx-auto max-w-6xl px-6">
+          <Link href="/" className="flex items-center gap-2 w-fit">
+            <div className="w-6 h-6 bg-[#2D5016] rounded-sm" />
+            <span className="text-xl font-bold text-[#2D5016]">くらべる収納</span>
+          </Link>
+        </div>
+      </header>
+
+      {/* ヒーロー */}
+      <div className="bg-white border-b border-gray-200 pt-6 pb-8">
+        <div className="mx-auto max-w-3xl px-6">
+          <nav className="text-[12px] text-[#888780] mb-4">
+            <Link href="/" className="hover:underline">ホーム</Link>
+            <span className="mx-1">›</span>
+            <span>ガイド</span>
+            <span className="mx-1">›</span>
+            <span>宅トラの評判・口コミ</span>
+          </nav>
+          <div className="flex items-center gap-2 mb-3">
+            <span className="text-sm font-[600] text-[#C4620A]">評判・口コミ</span>
+          </div>
+          <h1 className="text-[26px] font-[700] text-[#2D5016] leading-[1.4] mb-3">
+            宅トラの評判・口コミを徹底解説<br />メリット・デメリットとおすすめの使い方
+          </h1>
+          <p className="text-[12px] text-[#888780]">2026年5月更新</p>
+        </div>
+      </div>
+
+      <div className="mx-auto max-w-3xl px-6 py-10 space-y-12">
+
+        {/* ① 結論 */}
+        <section>
+          <h2 className="text-[20px] font-[700] text-[#2D5016] mb-4 pb-2 border-b-2 border-[#2D5016]">
+            結論
+          </h2>
+          <div className="bg-white rounded-[12px] p-5" style={{ border: "0.5px solid #D3D1C7" }}>
+            <p className="text-[14px] text-[#2C2C2A] leading-[1.9]">
+              宅トラは<strong className="text-[#2D5016]">クロネコヤマトが荷物の集荷・保管・配送をすべて担当する宅配型トランクルーム</strong>です。大型荷物にも対応し、補償も充実しているため「信頼できる会社に預けたい」という方に最適です。ただし最低利用期間6ヶ月・初回引取料がかかるため短期利用には向きません。
+            </p>
+          </div>
+        </section>
+
+        {/* ② 基本情報・料金テーブル */}
+        <section>
+          <h2 className="text-[20px] font-[700] text-[#2D5016] mb-4 pb-2 border-b-2 border-[#2D5016]">
+            基本情報・料金
+          </h2>
+          <div className="overflow-x-auto">
+            <table className="w-full text-[13px]" style={{ borderCollapse: "collapse" }}>
+              <thead>
+                <tr>
+                  <th className="py-3 px-4 text-left text-white font-bold" style={{ background: "#2D5016", border: "0.5px solid #D3D1C7" }}>項目</th>
+                  <th className="py-3 px-4 text-left text-white font-bold" style={{ background: "#2D5016", border: "0.5px solid #D3D1C7" }}>内容</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  ["月額（1箱換算）", "494円〜（ちびトラ3プラン）"],
+                  ["取り出し送料", "1,500円"],
+                  ["初期費用", "初回引取料4,950円（初回のみ）"],
+                  ["最低利用期間", "6ヶ月"],
+                  ["対応エリア", "全国"],
+                  ["運営会社", "ヤマト運輸（クロネコヤマト）"],
+                ].map(([label, value], i) => (
+                  <tr key={label} style={{ background: i % 2 === 1 ? "#F5F0E8" : "white" }}>
+                    <td className="py-3 px-4 font-medium text-[#2C2C2A]" style={{ border: "0.5px solid #D3D1C7" }}>{label}</td>
+                    <td className="py-3 px-4 text-[#2C2C2A]" style={{ border: "0.5px solid #D3D1C7" }}>{value}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        {/* ③ メリット */}
+        <section>
+          <h2 className="text-[20px] font-[700] text-[#2D5016] mb-4 pb-2 border-b-2 border-[#2D5016]">
+            宅トラのメリット
+          </h2>
+          <div className="space-y-3">
+            {[
+              {
+                title: "クロネコヤマト運営で信頼性が高い",
+                body: "荷物の管理・運搬をすべてヤマト運輸が担当。大手物流会社ならではの安心感と丁寧な取り扱いが期待できます。",
+              },
+              {
+                title: "大型荷物にも対応",
+                body: "ダンボールから家具・家電まで幅広く対応。ヤマトスタッフが梱包・搬出までサポートしてくれます。",
+              },
+              {
+                title: "充実した補償体制",
+                body: "1梱包30万円・1BOX60万円の補償。大切な荷物も安心して預けられます。",
+              },
+              {
+                title: "全国47都道府県対応",
+                body: "転勤族や旅行先への配送など全国どこでも荷物を受け取れます。",
+              },
+            ].map((item) => (
+              <div key={item.title} className="bg-white rounded-[12px] p-5 flex gap-4" style={{ border: "0.5px solid #D3D1C7" }}>
+                <span className="font-bold text-[#2D5016] flex-shrink-0 mt-0.5">✓</span>
+                <div>
+                  <p className="font-[700] text-[#2C2C2A] mb-1">{item.title}</p>
+                  <p className="text-[13px] text-[#5F5E5A] leading-[1.8]">{item.body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ④ デメリット */}
+        <section>
+          <h2 className="text-[20px] font-[700] text-[#2D5016] mb-4 pb-2 border-b-2 border-[#2D5016]">
+            宅トラのデメリット
+          </h2>
+          <div className="space-y-3">
+            {[
+              {
+                title: "最低利用期間が6ヶ月",
+                body: "6ヶ月未満での解約でも6ヶ月分の料金が発生します。短期利用には向きません。",
+              },
+              {
+                title: "初回引取料4,950円が別途かかる",
+                body: "他社にない初期費用です。ただし初回のみで、長期利用であれば負担感は薄れます。",
+              },
+              {
+                title: "利用開始まで書面での契約が必要",
+                body: "手続きに3週間程度かかる場合があります。すぐ使いたい方には不向きです。",
+              },
+            ].map((item) => (
+              <div key={item.title} className="bg-white rounded-[12px] p-5 flex gap-4" style={{ border: "0.5px solid #D3D1C7" }}>
+                <span className="font-bold text-[#C4620A] flex-shrink-0 mt-0.5">△</span>
+                <div>
+                  <p className="font-[700] text-[#2C2C2A] mb-1">{item.title}</p>
+                  <p className="text-[13px] text-[#5F5E5A] leading-[1.8]">{item.body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ⑤ こんな使い方がおすすめ */}
+        <section>
+          <h2 className="text-[20px] font-[700] text-[#2D5016] mb-4 pb-2 border-b-2 border-[#2D5016]">
+            こんな使い方がおすすめ
+          </h2>
+          <div className="space-y-3">
+            {[
+              {
+                title: "長期保管として使う",
+                body: "半年以上預けっぱなしにする荷物に最適。月額が安く長期利用ほどコスパが上がります。",
+              },
+              {
+                title: "大型家具・家電の一時保管",
+                body: "引越しや模様替えで不要になった家具・家電をヤマトに任せてそのまま預けられます。",
+              },
+              {
+                title: "趣味グッズの全国配送",
+                body: "ゴルフバッグをゴルフ場に、スキー板をスキー場に直送。旅先でそのまま受け取れます。",
+              },
+            ].map((item, i) => (
+              <div key={item.title} className="bg-white rounded-[12px] p-5 flex gap-4" style={{ border: "0.5px solid #D3D1C7" }}>
+                <span className="font-[700] text-[#2D5016] flex-shrink-0 text-[18px] leading-none mt-0.5">{i + 1}</span>
+                <div>
+                  <p className="font-[700] text-[#2C2C2A] mb-1">{item.title}</p>
+                  <p className="text-[13px] text-[#5F5E5A] leading-[1.8]">{item.body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ⑥ こんな人におすすめ／向いていない人 */}
+        <section>
+          <h2 className="text-[20px] font-[700] text-[#2D5016] mb-4 pb-2 border-b-2 border-[#2D5016]">
+            こんな人におすすめ／他のサービスが向いている人
+          </h2>
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="bg-white rounded-[12px] p-5" style={{ border: "0.5px solid #D3D1C7" }}>
+              <p className="font-[700] text-[#2D5016] mb-3">宅トラがおすすめ</p>
+              <ul className="space-y-2">
+                {[
+                  "ヤマト運輸の信頼性を重視する方",
+                  "大型荷物も一緒に預けたい方",
+                  "長期保管を検討している方",
+                  "補償内容を重視する方",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-[13px] text-[#2C2C2A] leading-[1.8]">
+                    <span className="font-bold text-[#2D5016] flex-shrink-0">✓</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="bg-white rounded-[12px] p-5" style={{ border: "0.5px solid #D3D1C7" }}>
+              <p className="font-[700] text-[#C4620A] mb-3">他のサービスが向いている人</p>
+              <ul className="space-y-2">
+                {[
+                  { text: "短期・少量の保管", link: "/detail/azukel", label: "AZUKEL・サマリーポケット" },
+                  { text: "頻繁に出し入れしたい", link: "/detail/airtrunk", label: "エアトランク（送料無料）" },
+                  { text: "書籍専門", link: "/detail/tokyo-shoko", label: "東京書庫・minikura" },
+                ].map((item) => (
+                  <li key={item.text} className="flex items-start gap-2 text-[13px] text-[#2C2C2A] leading-[1.8]">
+                    <span className="font-bold text-[#C4620A] flex-shrink-0">→</span>
+                    <span>{item.text} ：<Link href={item.link} className="text-[#E8873A] hover:underline">{item.label}</Link></span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* ⑦ 口コミ */}
+        <section>
+          <h2 className="text-[20px] font-[700] text-[#2D5016] mb-4 pb-2 border-b-2 border-[#2D5016]">
+            実際の口コミ・評判
+          </h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            {service.reviews?.map((review, i) => {
+              const isFemale = review.author.includes("女性");
+              return (
+                <div key={i} className="bg-white rounded-[12px] p-5 flex flex-col" style={{ border: "0.5px solid #D3D1C7" }}>
+                  <div className="flex items-center gap-3 mb-3">
+                    <svg viewBox="0 0 40 40" width="36" height="36" className="flex-shrink-0">
+                      {isFemale ? (
+                        <>
+                          <circle cx="20" cy="20" r="20" fill="#E8873A"/>
+                          <circle cx="20" cy="15" r="7" fill="white"/>
+                          <path d="M6 36 Q6 26 20 26 Q34 26 34 36" fill="white"/>
+                          <path d="M13 12 Q14 6 20 8 Q26 6 27 12" fill="#E8873A"/>
+                          <path d="M13 13 Q11 10 12 8 Q13 6 15 8" fill="white"/>
+                          <path d="M27 13 Q29 10 28 8 Q27 6 25 8" fill="white"/>
+                        </>
+                      ) : (
+                        <>
+                          <circle cx="20" cy="20" r="20" fill="#2D5016"/>
+                          <circle cx="20" cy="15" r="7" fill="white"/>
+                          <path d="M6 36 Q6 26 20 26 Q34 26 34 36" fill="white"/>
+                        </>
+                      )}
+                    </svg>
+                    <div>
+                      <p className="font-bold text-[#2C2C2A] text-[13px]">{review.author}</p>
+                      <span style={{ fontSize: "13px", color: "#E8873A" }}>★★★★★</span>
+                    </div>
+                  </div>
+                  <p className="text-[13px] text-[#5F5E5A] leading-[1.8] flex-1">{review.comment}</p>
+                  <div className="mt-3 pt-3 border-t border-gray-200">
+                    {review.source_url ? (
+                      <a
+                        href={review.source_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ fontSize: "11px", color: "#888780", textDecoration: "underline" }}
+                      >
+                        出典：{review.source}
+                      </a>
+                    ) : (
+                      <span style={{ fontSize: "11px", color: "#888780" }}>出典：{review.source}</span>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+
+        {/* ⑧ 詳細ページへの内部リンク */}
+        <section>
+          <h2 className="text-[20px] font-[700] text-[#2D5016] mb-4 pb-2 border-b-2 border-[#2D5016]">
+            料金シミュレーションで確認する
+          </h2>
+          <div className="bg-white rounded-[12px] p-5" style={{ border: "0.5px solid #D3D1C7" }}>
+            <p className="text-[13px] text-[#5F5E5A] leading-[1.8] mb-4">
+              あなたの箱数・保管期間で宅トラの総費用を計算できます。他のサービスと比べて最安かどうかも一目で確認できます。
+            </p>
+            <Link
+              href="/detail/takutora"
+              className="inline-block bg-[#2D5016] hover:bg-[#1A3009] text-white font-[600] px-6 py-3 rounded-[10px] text-[14px] transition"
+            >
+              宅トラの料金を診断で確認する →
+            </Link>
+          </div>
+        </section>
+
+        {/* 診断CTAバナー */}
+        <div className="bg-[#2D5016] rounded-[12px] px-8 py-10 text-center">
+          <p className="text-white text-[17px] font-[700] mb-2">
+            他のサービスも含めて比較したい方は
+          </p>
+          <p className="text-[#A8C78A] text-[14px] mb-6">
+            箱数と期間を入力するだけで最安サービスが3秒で分かります
+          </p>
+          <Link
+            href="/"
+            className="inline-block bg-[#E8873A] hover:bg-[#D97A2D] text-white font-[700] px-8 py-3 rounded-[10px] text-[15px] transition"
+          >
+            無料で診断する →
+          </Link>
+        </div>
+
+      </div>
+    </main>
+  );
+}
