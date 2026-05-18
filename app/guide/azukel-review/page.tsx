@@ -3,9 +3,9 @@ import Link from "next/link";
 import pricing from "../../../pricing.json";
 
 export const metadata: Metadata = {
-  title: "AZUKEL（アズケル）の評判・口コミ・料金を徹底解説",
+  title: "AZUKEL（アズケル）の評判・口コミ【株式会社日本パープル運営】料金・メリット・デメリットを徹底解説",
   description:
-    "AZUKELの実際の口コミ・評判、月額料金、メリット・デメリットを徹底解説。宅配収納サービスを初めて使う方にも分かりやすくまとめました。",
+    "AZUKELの評判・口コミ・料金を徹底解説。運営会社は1972年創業の株式会社日本パープル。業界最安水準の月額料金・ハイセキュリティな自社倉庫・LINE操作完結など特徴を紹介。",
 };
 
 const service = pricing.find((s) => s.slug === "azukel")!;
@@ -54,6 +54,48 @@ export default function AzukelReviewPage() {
             <p className="text-[14px] text-[#2C2C2A] leading-[1.9]">
               AZUKELは<strong className="text-[#2D5016]">月額220円と業界最安水準の料金</strong>が最大の強みです。初期費用も無料で、短期から中期の保管を検討している方に特におすすめです。「とにかくコストを抑えて預けたい」という方の第一選択肢として自信を持っておすすめできます。大型家具・家電への対応や1点ずつの写真管理など、機能面も充実しています。
             </p>
+          </div>
+        </section>
+
+        {/* 運営会社 */}
+        <section>
+          <h2 className="text-[20px] font-[700] text-[#2D5016] mb-4 pb-2 border-b-2 border-[#2D5016]">
+            AZUKELの運営会社：株式会社日本パープルとは
+          </h2>
+          <div className="bg-white rounded-[12px] p-5 mb-4" style={{ border: "0.5px solid #D3D1C7" }}>
+            <table className="w-full text-[13px]" style={{ borderCollapse: "collapse" }}>
+              <tbody>
+                {[
+                  ["会社名", "株式会社日本パープル"],
+                  ["設立", "1972年"],
+                  ["本社", "東京都港区六本木"],
+                  ["代表", "林 壮之介"],
+                  ["事業内容", "機密文書の保管・廃棄・データ抹消、宅配型トランクルーム運営"],
+                ].map(([label, value], i) => (
+                  <tr key={label} style={{ background: i % 2 === 1 ? "#F5F0E8" : "white" }}>
+                    <td className="py-2 px-3 font-medium text-[#2C2C2A] w-1/3" style={{ border: "0.5px solid #D3D1C7" }}>{label}</td>
+                    <td className="py-2 px-3 text-[#2C2C2A]" style={{ border: "0.5px solid #D3D1C7" }}>{value}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-[14px] text-[#2C2C2A] leading-[1.9] mb-5">
+            株式会社日本パープルは1972年創業の老舗セキュリティ企業です。機密文書の保管・廃棄・データ抹消を主力事業とし、官公庁や大手企業からの信頼も厚い日本トップクラスのデータセキュリティ企業です。その高度なセキュリティノウハウを活かして2015年に法人向け宅配トランクルーム「Stock MAMORU」を、2017年に個人向け「AZUKEL」をスタートしました。自社で保管施設を運営しているため、中間コストを排除した業界最安水準の料金と高品質な保管環境を両立しています。
+          </p>
+          <div className="space-y-3">
+            {[
+              { point: "1972年創業・官公庁取引実績あり", body: "機密文書のプロが運営するハイセキュリティな倉庫" },
+              { point: "自社倉庫運営", body: "外部委託なしで温度25℃以下・湿度65%以下を365日24時間維持" },
+              { point: "2018年「使いやすさ満足度No.1」受賞", body: "日本マーケティングリサーチ機構調査" },
+            ].map((item) => (
+              <div key={item.point} className="bg-white rounded-[12px] p-4 flex gap-3" style={{ border: "0.5px solid #D3D1C7" }}>
+                <span className="font-bold text-[#2D5016] flex-shrink-0 mt-0.5">✓</span>
+                <p className="text-[13px] text-[#2C2C2A] leading-[1.8]">
+                  <strong>{item.point}</strong>：{item.body}
+                </p>
+              </div>
+            ))}
           </div>
         </section>
 
@@ -255,6 +297,30 @@ export default function AzukelReviewPage() {
           >
             AZUKELの詳細・料金シミュレーションを見る →
           </Link>
+        </section>
+
+        {/* FAQ */}
+        <section>
+          <h2 className="text-[20px] font-[700] text-[#2D5016] mb-4 pb-2 border-b-2 border-[#2D5016]">
+            よくある質問（FAQ）
+          </h2>
+          <div className="space-y-4">
+            {[
+              {
+                q: "AZUKELの運営会社はどこですか？",
+                a: "株式会社日本パープル（東京都港区六本木）が運営しています。1972年創業の老舗セキュリティ企業で、官公庁や大手企業の機密文書管理を手がける信頼性の高い会社です。2017年に個人向け宅配収納サービスAZUKELをスタートしました。",
+              },
+              {
+                q: "AZUKELの保管環境は安全ですか？",
+                a: "自社で保管施設を直接運営しており、温度25℃以下・湿度65%以下を365日24時間維持しています。有人管理・機械警備・監視カメラによる24時間セキュリティ体制を導入しており、衣類・書籍・家電など大切な荷物を安全に保管できます。",
+              },
+            ].map((item) => (
+              <div key={item.q} className="bg-white rounded-[12px] p-5" style={{ border: "0.5px solid #D3D1C7" }}>
+                <p className="font-[700] text-[#2C2C2A] mb-2 text-[14px]">Q. {item.q}</p>
+                <p className="text-[13px] text-[#5F5E5A] leading-[1.8]">A. {item.a}</p>
+              </div>
+            ))}
+          </div>
         </section>
 
         {/* 診断CTAバナー */}
