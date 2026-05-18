@@ -3,9 +3,9 @@ import Link from "next/link";
 import pricing from "../../../pricing.json";
 
 export const metadata: Metadata = {
-  title: "2nd STORAGEの評判・口コミを徹底解説｜メリット・デメリットとおすすめの使い方",
+  title: "セカンドストレージ（2nd STORAGE）の評判・口コミ【ゲオグループ運営】料金・メリット・デメリットを徹底解説",
   description:
-    "2nd STORAGEの実際の口コミ・評判、料金、メリット・デメリットを徹底解説。GEOグループ運営・取り出し送料無料のサービスの特徴とおすすめの使い方を紹介します。",
+    "セカンドストレージの評判・口コミ・料金を徹底解説。ゲオグループ運営で大型荷物も梱包不要で預けられる宅配型トランクルーム。対応エリア・料金プラン・デメリットまで詳しく紹介。",
 };
 
 const service = pricing.find((s) => s.slug === "2nd-storage")!;
@@ -55,6 +55,79 @@ export default function SecondStorageReviewPage() {
               2nd STORAGEは<strong className="text-[#2D5016]">GEOグループが運営する宅配型トランクルーム</strong>です。集荷・配送料が完全無料で、専門スタッフが自宅まで来てくれるため梱包不要。GEO・2nd STREETでの買取オプションも利用でき、不用品整理と収納を同時に進められます。対応エリアは東京都・横浜市・川崎市・市川市・浦安市限定です。
             </p>
           </div>
+        </section>
+
+        {/* 運営会社 */}
+        <section>
+          <h2 className="text-[20px] font-[700] text-[#2D5016] mb-4 pb-2 border-b-2 border-[#2D5016]">
+            2nd STORAGEの運営会社：株式会社ゲオとは
+          </h2>
+          <div className="bg-white rounded-[12px] p-5 mb-4" style={{ border: "0.5px solid #D3D1C7" }}>
+            <table className="w-full text-[13px]" style={{ borderCollapse: "collapse" }}>
+              <tbody>
+                {[
+                  ["会社名", "株式会社ゲオ（ゲオグループ）"],
+                  ["設立", "1985年"],
+                  ["本社", "愛知県名古屋市"],
+                  ["事業内容", "DVD・ゲームレンタル、リユース事業（セカンドストリート）、宅配型トランクルーム運営"],
+                  ["サービス開始", "2022年3月"],
+                ].map(([label, value], i) => (
+                  <tr key={label} style={{ background: i % 2 === 1 ? "#F5F0E8" : "white" }}>
+                    <td className="py-2 px-3 font-medium text-[#2C2C2A] w-1/3" style={{ border: "0.5px solid #D3D1C7" }}>{label}</td>
+                    <td className="py-2 px-3 text-[#2C2C2A]" style={{ border: "0.5px solid #D3D1C7" }}>{value}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-[14px] text-[#2C2C2A] leading-[1.9] mb-5">
+            2nd STORAGEは、DVD・ゲームレンタルでおなじみのゲオグループが2022年3月に開始した宅配型トランクルームです。グループ企業のセカンドストリートで培った中古品の運送・保管ノウハウを活かした高品質な保管環境と、預けた荷物をそのままゲオ・セカンドストリートで買取査定できるオプションが特徴です。
+          </p>
+          <div className="space-y-3">
+            {[
+              { point: "ゲオグループの信頼性", body: "DVDレンタル・リユース事業で培った物品管理ノウハウ" },
+              { point: "大型荷物も梱包不要", body: "ゴルフバッグ・スーツケース・釣り道具もそのまま預けられる" },
+              { point: "ゲオ・セカンドストリートで買取査定", body: "保管中の荷物をそのまま売却できる" },
+            ].map((item) => (
+              <div key={item.point} className="bg-white rounded-[12px] p-4 flex gap-3" style={{ border: "0.5px solid #D3D1C7" }}>
+                <span className="font-bold text-[#2D5016] flex-shrink-0 mt-0.5">✓</span>
+                <p className="text-[13px] text-[#2C2C2A] leading-[1.8]">
+                  <strong>{item.point}</strong>：{item.body}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* 対応エリア */}
+        <section>
+          <h2 className="text-[20px] font-[700] text-[#2D5016] mb-4 pb-2 border-b-2 border-[#2D5016]">
+            対応エリア（重要）
+          </h2>
+          <div className="rounded-[12px] p-5 mb-4" style={{ border: "1.5px solid #E8873A", background: "#FFF8F3" }}>
+            <p className="text-[14px] text-[#2C2C2A] leading-[1.8]">
+              ⚠️ 2nd STORAGEは現在、首都圏の一部エリアのみ対応しています。申し込み前に必ず対応エリアを確認してください。
+            </p>
+          </div>
+          <div className="bg-white rounded-[12px] p-5 mb-4" style={{ border: "0.5px solid #D3D1C7" }}>
+            <ul className="space-y-2">
+              {[
+                "東京都（離島除く）",
+                "神奈川県（横浜市・川崎市）",
+                "千葉県（市川市・浦安市）",
+              ].map((area) => (
+                <li key={area} className="flex items-start gap-2 text-[14px] text-[#2C2C2A] leading-[1.8]">
+                  <span className="font-bold text-[#2D5016] flex-shrink-0">✓</span>
+                  {area}
+                </li>
+              ))}
+            </ul>
+            <p className="text-[12px] text-[#888780] mt-3">※2026年5月時点。順次エリア拡大中。</p>
+          </div>
+          <p className="text-[13px] text-[#5F5E5A] leading-[1.8]">
+            対応エリア外の方には、全国対応のサマリーポケット・minikura・カラエトをおすすめします。
+            <Link href="/compare/ranking" className="text-[#E8873A] hover:underline ml-1">→ サービス比較ランキングを見る</Link>
+          </p>
         </section>
 
         {/* ② 基本情報・料金テーブル */}
@@ -138,6 +211,10 @@ export default function SecondStorageReviewPage() {
               {
                 title: "月額料金が高め",
                 body: "スペースプランのため保管量によって料金が変動します。少量の荷物には割高になる場合があります。",
+              },
+              {
+                title: "対応エリアが首都圏の一部に限定されている",
+                body: "現在は東京都・横浜市・川崎市・市川市・浦安市のみ対応。それ以外の地域にお住まいの方は利用できません。ただし順次エリア拡大中のため、公式サイトで最新情報を確認してください。",
               },
             ].map((item) => (
               <div key={item.title} className="bg-white rounded-[12px] p-5 flex gap-4" style={{ border: "0.5px solid #D3D1C7" }}>
@@ -339,6 +416,42 @@ export default function SecondStorageReviewPage() {
             >
               2nd STORAGEの料金を診断で確認する →
             </Link>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section>
+          <h2 className="text-[20px] font-[700] text-[#2D5016] mb-4 pb-2 border-b-2 border-[#2D5016]">
+            よくある質問（FAQ）
+          </h2>
+          <div className="space-y-4">
+            {[
+              {
+                q: "2nd STORAGEの運営会社はどこですか？",
+                a: "株式会社ゲオ（ゲオグループ）が運営しています。DVDレンタルやリユース事業（セカンドストリート）で知られる大手企業で、2022年3月に宅配型トランクルームサービスとして2nd STORAGEを開始しました。",
+              },
+              {
+                q: "対応エリアはどこですか？",
+                a: "現在は東京都（離島除く）・神奈川県（横浜市・川崎市）・千葉県（市川市・浦安市）に対応しています。順次エリアを拡大中のため、最新情報は公式サイトでご確認ください。",
+              },
+              {
+                q: "箱に入らない大型荷物は預けられますか？",
+                a: "預けられます。これが2nd STORAGEの最大の特徴です。ゴルフバッグ・スーツケース・釣り道具・スキー板など、他の宅配収納サービスでは断られる大型荷物も梱包不要でそのまま預けられます。",
+              },
+              {
+                q: "取り出し送料はかかりますか？",
+                a: "小型荷物の取り出しは無料です。大型品については別途費用が発生する場合があります。頻繁に出し入れする方にとってはコスパが良いサービスです。",
+              },
+              {
+                q: "保管中の荷物を売ることはできますか？",
+                a: "ゲオグループのオプションとして、保管中の荷物をゲオ・セカンドストリートで買取査定してもらうことができます。不用品の処分と収納整理を同時に進めたい方に特におすすめの機能です。",
+              },
+            ].map((item) => (
+              <div key={item.q} className="bg-white rounded-[12px] p-5" style={{ border: "0.5px solid #D3D1C7" }}>
+                <p className="font-[700] text-[#2C2C2A] mb-2 text-[14px]">Q. {item.q}</p>
+                <p className="text-[13px] text-[#5F5E5A] leading-[1.8]">A. {item.a}</p>
+              </div>
+            ))}
           </div>
         </section>
 
