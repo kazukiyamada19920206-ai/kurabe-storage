@@ -169,7 +169,7 @@ export default function SummaryPocketReviewPage() {
             サマリーポケットのクリーニングサービスを徹底解説
           </h2>
 
-          {/* 料金テーブル */}
+          {/* 2-1: 料金テーブル */}
           <div className="overflow-x-auto mb-5">
             <table className="w-full text-[13px]" style={{ borderCollapse: "collapse" }}>
               <thead>
@@ -196,79 +196,57 @@ export default function SummaryPocketReviewPage() {
             <p className="text-[12px] text-[#888780] mt-2">※スタンダードプラン限定のオプション。エコノミープランでは利用不可。</p>
           </div>
 
-          {/* 特徴3点 */}
-          <div className="space-y-3 mb-6">
-            {[
-              { point: "保管しながらクリーニング", body: "倉庫に預けたまま依頼できるため、自分でクリーニング店に持っていく手間ゼロ" },
-              { point: "一律料金でコートもシャツも同額", body: "大型・高額アイテムほどお得。通常のクリーニング店よりコートは半額以下になるケースも" },
-              { point: "ホワイト急便が担当", body: "公式サイト記載のクリーニング業者。専門的な設備で洗浄" },
-            ].map((item) => (
-              <div key={item.point} className="bg-white rounded-[12px] p-4 flex gap-3" style={{ border: "0.5px solid #D3D1C7" }}>
-                <span className="font-bold text-[#2D5016] flex-shrink-0 mt-0.5">✓</span>
-                <p className="text-[13px] text-[#2C2C2A] leading-[1.8]">
-                  <strong>{item.point}</strong>：{item.body}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          {/* クリーニング口コミ */}
-          <h3 className="text-[16px] font-[700] text-[#2C2C2A] mb-3">クリーニングの口コミ</h3>
+          {/* 2-2: 特徴3点 */}
           <div className="space-y-3 mb-5">
-            <p className="text-[13px] font-[600] text-[#2D5016]">良い口コミ</p>
             {[
-              { body: "冬物コートをまとめて預けてクリーニングもお願いした。近所のクリーニング店と変わらない仕上がりで、家まで届けてくれるし快適。コート1点990円は安い。", author: "30代女性" },
-              { body: "羽毛布団のクリーニングをお願いしたら綺麗になって戻ってきた。自分で布団をクリーニング店に持ち込む手間を考えると断然楽。毎年お願いしている。", author: "40代女性" },
+              { title: "保管しながらクリーニングできる", body: "倉庫に預けたまま依頼できるため、自分でクリーニング店に持っていく手間がゼロ。衣替えのタイミングでまとめてクリーニングを依頼するのが最も効率的な使い方です。" },
+              { title: "一律料金でコートもシャツも同額", body: "スタンダードコース990円〜はアイテムを問わず一律料金。通常のクリーニング店ではコート1着2,000円以上かかることが多いため、大型・高額アイテムほどお得になります。" },
+              { title: "ホワイト急便が担当", body: "公式サイトによるとクリーニングはホワイト急便が担当。専門設備での洗浄のため、通常のクリーニング店と同等の仕上がりが期待できます。ただし仕上がりまで約2週間かかる点は注意が必要です。" },
             ].map((item) => (
-              <div key={item.author} className="bg-white rounded-[12px] p-4" style={{ border: "0.5px solid #D3D1C7" }}>
-                <p className="text-[13px] text-[#5F5E5A] leading-[1.8] mb-2">「{item.body}」</p>
-                <p className="text-[11px] text-[#888780]">— {item.author}</p>
-              </div>
-            ))}
-            <p className="text-[13px] font-[600] text-[#C4620A] mt-4">気になる口コミ</p>
-            {[
-              { body: "仕上がりはまずまず。クリーニング専門店ほどの精度は期待しない方がいい。ひどいシミは残った。", author: "20代男性" },
-              { body: "スタンダードコースで約2週間かかった。急ぎの場合は早めに依頼する必要がある。", author: "30代女性" },
-            ].map((item) => (
-              <div key={item.author} className="bg-white rounded-[12px] p-4" style={{ border: "0.5px solid #D3D1C7" }}>
-                <p className="text-[13px] text-[#5F5E5A] leading-[1.8] mb-2">「{item.body}」</p>
-                <p className="text-[11px] text-[#888780]">— {item.author}</p>
+              <div key={item.title} className="bg-white rounded-[12px] p-5 flex gap-4" style={{ border: "0.5px solid #D3D1C7" }}>
+                <span className="font-bold text-[#2D5016] flex-shrink-0 mt-0.5">✓</span>
+                <div>
+                  <p className="font-[700] text-[#2C2C2A] mb-1">{item.title}</p>
+                  <p className="text-[13px] text-[#5F5E5A] leading-[1.8]">{item.body}</p>
+                </div>
               </div>
             ))}
           </div>
 
-          {/* 使うべき人・使わない方がいい人 */}
-          <div className="grid md:grid-cols-2 gap-4">
-            <div className="bg-white rounded-[12px] p-5" style={{ border: "0.5px solid #D3D1C7" }}>
-              <p className="font-[700] text-[#2D5016] mb-3">クリーニングを使うべき人</p>
-              <ul className="space-y-2">
-                {[
-                  "衣替えのタイミングでクリーニングもまとめて済ませたい方",
-                  "コート・ジャケットなど大型衣類を安くクリーニングしたい方",
-                  "クリーニング店に持ち込む時間・手間を省きたい方",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-[13px] text-[#2C2C2A] leading-[1.8]">
-                    <span className="font-bold text-[#2D5016] flex-shrink-0">✓</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="bg-white rounded-[12px] p-5" style={{ border: "0.5px solid #D3D1C7" }}>
-              <p className="font-[700] text-[#C4620A] mb-3">使わない方がいい人</p>
-              <ul className="space-y-2">
-                {[
-                  "急いでクリーニングしたい方（約2〜3週間かかる）",
-                  "高級ブランド品のシミ抜きなど精密なクリーニングが必要な方",
-                  "エコノミープランを利用している方（スタンダードプランのみ対応）",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-[13px] text-[#2C2C2A] leading-[1.8]">
-                    <span className="font-bold text-[#C4620A] flex-shrink-0">△</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
+          {/* 2-3: 注意事項カード */}
+          <div className="rounded-[12px] p-5 mb-5" style={{ border: "1.5px solid #E8873A", background: "#FFF8F3" }}>
+            <p className="text-[14px] text-[#2C2C2A] leading-[1.8]">
+              ⚠️ クリーニングはスタンダードプランのみ対応です。仕上がりまで約2〜3週間かかるため、急ぎの場合はお早めに依頼してください。
+            </p>
+          </div>
+
+          {/* 2-4: 外部口コミリンク */}
+          <h3 className="text-[16px] font-[700] text-[#2C2C2A] mb-3">実際のユーザーの声はこちらで確認できます</h3>
+          <div className="space-y-3">
+            {[
+              {
+                name: "みん評（128件の口コミ）",
+                desc: "実際に利用したユーザーの良い口コミ・悪い口コミが128件掲載されています。",
+                url: "https://minhyo.jp/pocket-sumally",
+              },
+              {
+                name: "トランクルームひろば",
+                desc: "クリーニングオプションの料金・仕上がり・日数を詳しく解説しています。",
+                url: "https://awele.co.jp/storage/sumallypocket-cleaning/",
+              },
+            ].map((item) => (
+              <a
+                key={item.name}
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-white rounded-[12px] p-5 hover:bg-[#F5F0E8] transition"
+                style={{ border: "0.5px solid #D3D1C7" }}
+              >
+                <p className="font-[700] text-[#2D5016] mb-1 text-[14px]">{item.name} ↗</p>
+                <p className="text-[13px] text-[#5F5E5A] leading-[1.8]">{item.desc}</p>
+              </a>
+            ))}
           </div>
         </section>
 
@@ -549,8 +527,8 @@ export default function SummaryPocketReviewPage() {
                 a: "スタンダードプランのみ利用できます。エコノミープランでは利用できません。料金は衣類1点990円〜、布団1枚2,200円〜です。預けたまま依頼できるため、自分でクリーニング店に持ち込む手間が不要です。",
               },
               {
-                q: "クリーニングの仕上がりはどうですか？",
-                a: "ホワイト急便が担当しており、通常のクリーニング店と同等の仕上がりです。ただしひどいシミや特殊素材は完全には落ちない場合があります。また仕上がりまでスタンダードコースで約2週間かかるため、急ぎの場合は早めに依頼してください。",
+                q: "クリーニングの仕上がりと日数は？",
+                a: "ホワイト急便が担当しており、通常のクリーニング店と同等の仕上がりです。ただしひどいシミや特殊素材は完全に落ちない場合があります。仕上がりまでスタンダードコースで約2週間かかるため、急ぎの場合は早めに依頼してください。",
               },
             ].map((item) => (
               <div key={item.q} className="bg-white rounded-[12px] p-5" style={{ border: "0.5px solid #D3D1C7" }}>
