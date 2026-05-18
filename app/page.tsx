@@ -61,6 +61,18 @@ export default function Home() {
     setResults(sorted);
   }, [sortType]);
 
+  useEffect(() => {
+    if (results.length > 0 && typeof window !== "undefined" && window.gtag) {
+      window.gtag("event", "complete_diagnosis", {
+        event_category: "conversion",
+        event_label: results[0]?.name ?? "",
+        boxes: boxCount,
+        months: storageMonths,
+        top_service: results[0]?.name ?? "",
+      });
+    }
+  }, [results]);
+
   const handleDiagnose = () => {
     if (boxCount <= 0 || storageMonths <= 0) {
       alert("箱数と保管月数を正しく入力してください");
