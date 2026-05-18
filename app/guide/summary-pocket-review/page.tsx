@@ -3,9 +3,9 @@ import Link from "next/link";
 import pricing from "../../../pricing.json";
 
 export const metadata: Metadata = {
-  title: "サマリーポケットの評判・口コミ【最悪の声も掲載】メリット・デメリットを徹底解説",
+  title: "サマリーポケットの評判・口コミ【クリーニングの仕上がりも解説】メリット・デメリットを徹底解説",
   description:
-    "サマリーポケットの良い口コミ・悪い口コミ・最悪の声をリアルに掲載。月額料金・メリット・デメリット・クリーニングオプションを徹底解説。初めての宅配収納選びに。",
+    "サマリーポケットの評判・口コミ・クリーニングの料金と仕上がりを徹底解説。悪い口コミ・最悪の声も掲載。月額料金・メリット・デメリットを正直にレビュー。",
 };
 
 const service = pricing.find((s) => s.slug === "summary-pocket")!;
@@ -160,6 +160,115 @@ export default function SummaryPocketReviewPage() {
           </div>
           <div className="mt-4 bg-white rounded-[12px] p-4 text-[13px] text-[#5F5E5A] leading-[1.8]" style={{ border: "0.5px solid #D3D1C7" }}>
             クリーニングは近所の店舗だとコート1着2,000円以上かかるケースが多い中、サマリーポケットなら990円〜。しかも自宅から一歩も出ずに完結します。
+          </div>
+        </section>
+
+        {/* クリーニング専用セクション */}
+        <section>
+          <h2 className="text-[20px] font-[700] text-[#2D5016] mb-4 pb-2 border-b-2 border-[#2D5016]">
+            サマリーポケットのクリーニングサービスを徹底解説
+          </h2>
+
+          {/* 料金テーブル */}
+          <div className="overflow-x-auto mb-5">
+            <table className="w-full text-[13px]" style={{ borderCollapse: "collapse" }}>
+              <thead>
+                <tr>
+                  <th className="py-3 px-4 text-left text-white font-bold" style={{ background: "#2D5016", border: "0.5px solid #D3D1C7" }}>種類</th>
+                  <th className="py-3 px-4 text-left text-white font-bold" style={{ background: "#2D5016", border: "0.5px solid #D3D1C7" }}>料金</th>
+                  <th className="py-3 px-4 text-left text-white font-bold" style={{ background: "#2D5016", border: "0.5px solid #D3D1C7" }}>対象</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  ["スタンダードコース", "990円〜/点", "衣類全般（コート・ジャケット・シャツなど）"],
+                  ["プレミアムコース", "1,276円〜/点", "デリケート素材・高級品・ブランド品"],
+                  ["布団クリーニング", "2,200円〜/枚", "掛け布団・敷き布団・毛布・枕"],
+                ].map(([type, price, target], i) => (
+                  <tr key={type} style={{ background: i % 2 === 1 ? "#F5F0E8" : "white" }}>
+                    <td className="py-3 px-4 font-medium text-[#2C2C2A]" style={{ border: "0.5px solid #D3D1C7" }}>{type}</td>
+                    <td className="py-3 px-4 text-[#2C2C2A] whitespace-nowrap" style={{ border: "0.5px solid #D3D1C7" }}>{price}</td>
+                    <td className="py-3 px-4 text-[#2C2C2A]" style={{ border: "0.5px solid #D3D1C7" }}>{target}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <p className="text-[12px] text-[#888780] mt-2">※スタンダードプラン限定のオプション。エコノミープランでは利用不可。</p>
+          </div>
+
+          {/* 特徴3点 */}
+          <div className="space-y-3 mb-6">
+            {[
+              { point: "保管しながらクリーニング", body: "倉庫に預けたまま依頼できるため、自分でクリーニング店に持っていく手間ゼロ" },
+              { point: "一律料金でコートもシャツも同額", body: "大型・高額アイテムほどお得。通常のクリーニング店よりコートは半額以下になるケースも" },
+              { point: "ホワイト急便が担当", body: "公式サイト記載のクリーニング業者。専門的な設備で洗浄" },
+            ].map((item) => (
+              <div key={item.point} className="bg-white rounded-[12px] p-4 flex gap-3" style={{ border: "0.5px solid #D3D1C7" }}>
+                <span className="font-bold text-[#2D5016] flex-shrink-0 mt-0.5">✓</span>
+                <p className="text-[13px] text-[#2C2C2A] leading-[1.8]">
+                  <strong>{item.point}</strong>：{item.body}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* クリーニング口コミ */}
+          <h3 className="text-[16px] font-[700] text-[#2C2C2A] mb-3">クリーニングの口コミ</h3>
+          <div className="space-y-3 mb-5">
+            <p className="text-[13px] font-[600] text-[#2D5016]">良い口コミ</p>
+            {[
+              { body: "冬物コートをまとめて預けてクリーニングもお願いした。近所のクリーニング店と変わらない仕上がりで、家まで届けてくれるし快適。コート1点990円は安い。", author: "30代女性" },
+              { body: "羽毛布団のクリーニングをお願いしたら綺麗になって戻ってきた。自分で布団をクリーニング店に持ち込む手間を考えると断然楽。毎年お願いしている。", author: "40代女性" },
+            ].map((item) => (
+              <div key={item.author} className="bg-white rounded-[12px] p-4" style={{ border: "0.5px solid #D3D1C7" }}>
+                <p className="text-[13px] text-[#5F5E5A] leading-[1.8] mb-2">「{item.body}」</p>
+                <p className="text-[11px] text-[#888780]">— {item.author}</p>
+              </div>
+            ))}
+            <p className="text-[13px] font-[600] text-[#C4620A] mt-4">気になる口コミ</p>
+            {[
+              { body: "仕上がりはまずまず。クリーニング専門店ほどの精度は期待しない方がいい。ひどいシミは残った。", author: "20代男性" },
+              { body: "スタンダードコースで約2週間かかった。急ぎの場合は早めに依頼する必要がある。", author: "30代女性" },
+            ].map((item) => (
+              <div key={item.author} className="bg-white rounded-[12px] p-4" style={{ border: "0.5px solid #D3D1C7" }}>
+                <p className="text-[13px] text-[#5F5E5A] leading-[1.8] mb-2">「{item.body}」</p>
+                <p className="text-[11px] text-[#888780]">— {item.author}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* 使うべき人・使わない方がいい人 */}
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="bg-white rounded-[12px] p-5" style={{ border: "0.5px solid #D3D1C7" }}>
+              <p className="font-[700] text-[#2D5016] mb-3">クリーニングを使うべき人</p>
+              <ul className="space-y-2">
+                {[
+                  "衣替えのタイミングでクリーニングもまとめて済ませたい方",
+                  "コート・ジャケットなど大型衣類を安くクリーニングしたい方",
+                  "クリーニング店に持ち込む時間・手間を省きたい方",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-[13px] text-[#2C2C2A] leading-[1.8]">
+                    <span className="font-bold text-[#2D5016] flex-shrink-0">✓</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="bg-white rounded-[12px] p-5" style={{ border: "0.5px solid #D3D1C7" }}>
+              <p className="font-[700] text-[#C4620A] mb-3">使わない方がいい人</p>
+              <ul className="space-y-2">
+                {[
+                  "急いでクリーニングしたい方（約2〜3週間かかる）",
+                  "高級ブランド品のシミ抜きなど精密なクリーニングが必要な方",
+                  "エコノミープランを利用している方（スタンダードプランのみ対応）",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-[13px] text-[#2C2C2A] leading-[1.8]">
+                    <span className="font-bold text-[#C4620A] flex-shrink-0">△</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </section>
 
@@ -425,6 +534,30 @@ export default function SummaryPocketReviewPage() {
             >
               サマリーポケットの料金を診断で確認する →
             </Link>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section>
+          <h2 className="text-[20px] font-[700] text-[#2D5016] mb-4 pb-2 border-b-2 border-[#2D5016]">
+            よくある質問（FAQ）
+          </h2>
+          <div className="space-y-4">
+            {[
+              {
+                q: "クリーニングオプションはどのプランで使えますか？",
+                a: "スタンダードプランのみ利用できます。エコノミープランでは利用できません。料金は衣類1点990円〜、布団1枚2,200円〜です。預けたまま依頼できるため、自分でクリーニング店に持ち込む手間が不要です。",
+              },
+              {
+                q: "クリーニングの仕上がりはどうですか？",
+                a: "ホワイト急便が担当しており、通常のクリーニング店と同等の仕上がりです。ただしひどいシミや特殊素材は完全には落ちない場合があります。また仕上がりまでスタンダードコースで約2週間かかるため、急ぎの場合は早めに依頼してください。",
+              },
+            ].map((item) => (
+              <div key={item.q} className="bg-white rounded-[12px] p-5" style={{ border: "0.5px solid #D3D1C7" }}>
+                <p className="font-[700] text-[#2C2C2A] mb-2 text-[14px]">Q. {item.q}</p>
+                <p className="text-[13px] text-[#5F5E5A] leading-[1.8]">A. {item.a}</p>
+              </div>
+            ))}
           </div>
         </section>
 
