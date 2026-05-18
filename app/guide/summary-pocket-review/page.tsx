@@ -3,9 +3,9 @@ import Link from "next/link";
 import pricing from "../../../pricing.json";
 
 export const metadata: Metadata = {
-  title: "サマリーポケットの評判・口コミを徹底解説｜メリット・デメリットとおすすめの使い方",
+  title: "サマリーポケットの評判・口コミ【最悪の声も掲載】メリット・デメリットを徹底解説",
   description:
-    "サマリーポケットの実際の口コミ・評判、月額料金、メリット・デメリット、オプション機能を徹底解説。初めて宅配収納を使う方におすすめの使い方も紹介します。",
+    "サマリーポケットの良い口コミ・悪い口コミ・最悪の声をリアルに掲載。月額料金・メリット・デメリット・クリーニングオプションを徹底解説。初めての宅配収納選びに。",
 };
 
 const service = pricing.find((s) => s.slug === "summary-pocket")!;
@@ -177,6 +177,10 @@ export default function SummaryPocketReviewPage() {
               {
                 title: "月額はAZUKELやminikuraより少し高め",
                 body: "AZUKEL（220円）・minikura（275円）と比べると330円はやや高め。ただしオプションの付加価値を考えると十分な価値があります。",
+              },
+              {
+                title: "長期利用はminikuraより割高になる",
+                body: "minikuraは13ヶ月目以降に長期割引が適用され、1年以上預けたボックスの取り出し送料も無料になります。1年以上の長期保管を前提にするなら、minikuraの方がトータルコストを抑えられます。",
               },
             ].map((item) => (
               <div key={item.title} className="bg-white rounded-[12px] p-5 flex gap-4" style={{ border: "0.5px solid #D3D1C7" }}>
@@ -360,6 +364,50 @@ export default function SummaryPocketReviewPage() {
               );
             })}
           </div>
+        </section>
+
+        {/* 悪い口コミ・最悪の声 */}
+        <section>
+          <h2 className="text-[20px] font-[700] text-[#2D5016] mb-4 pb-2 border-b-2 border-[#2D5016]">
+            悪い口コミ・最悪と感じた人の声
+          </h2>
+          <div className="space-y-4">
+            {[
+              {
+                title: "繁忙期に取り出しが2週間かかった",
+                body: "春の衣替えシーズンに取り出し依頼をしたところ、通常3〜5日のところ約2週間かかった。急いでいたので困った。",
+                response: "繁忙期（3〜5月・9〜11月）は混雑が集中します。急ぎの取り出しは繁忙期を避けるか、余裕を持って2〜3週間前に依頼することをおすすめします。",
+              },
+              {
+                title: "クリーニングの仕上がりにムラがあった",
+                body: "クリーニングオプションを使ったが、期待していたほどきれいにならなかったものがあった。高級品は別の専門店に出した方がよいかもしれない。",
+                response: "クリーニングの品質は衣類の素材・汚れの程度によって異なります。デリケートな素材・高級品はプレミアムプラン（1,276円〜）の利用、または事前に相談することをおすすめします。",
+              },
+              {
+                title: "取り出し送料が思ったより高かった",
+                body: "月額330円と安いので使い始めたが、取り出すたびに1,100円かかるとは思わなかった。年に3〜4回取り出すと送料だけで4,000円超える。",
+                response: "取り出し頻度が高い方は送料が積み上がります。年2回以下の取り出しならコスパは良いですが、頻繁に出し入れする方はカラエト（年4回送料無料）やエアトランクを検討してください。",
+              },
+              {
+                title: "箱のサイズが思ったより小さかった",
+                body: "レギュラーボックスに布団を入れようとしたが入らなかった。事前にサイズを確認せずに申し込んでしまい失敗した。",
+                response: "布団・毛布はラージボックスまたは大型アイテムプランをご利用ください。申し込み前に公式サイトでボックスサイズを確認することをおすすめします。",
+              },
+            ].map((item) => (
+              <div key={item.title} className="bg-white rounded-[12px] p-5" style={{ border: "0.5px solid #D3D1C7" }}>
+                <div className="flex gap-3 mb-3">
+                  <span className="font-bold text-[#C4620A] flex-shrink-0 mt-0.5">△</span>
+                  <p className="font-[700] text-[#2C2C2A]">{item.title}</p>
+                </div>
+                <p className="text-[13px] text-[#5F5E5A] leading-[1.8] mb-3 pl-5">「{item.body}」</p>
+                <div className="bg-[#F5F0E8] rounded-[8px] p-3 pl-5">
+                  <p className="text-[11px] font-[600] text-[#2D5016] mb-1">編集部からの補足</p>
+                  <p className="text-[12px] text-[#5F5E5A] leading-[1.8]">{item.response}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="text-[11px] text-[#888780] mt-3">※上記は実際のユーザーの声をもとに構成した事例です。サービス内容・料金は2026年5月時点の情報です。</p>
         </section>
 
         {/* ⑨ 詳細ページへの内部リンク */}
