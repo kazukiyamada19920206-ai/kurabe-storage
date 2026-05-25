@@ -3,9 +3,9 @@ import Link from "next/link";
 import pricing from "../../../pricing.json";
 
 export const metadata: Metadata = {
-  title: "AZUKEL（アズケル）の評判・口コミ【株式会社日本パープル運営】料金・メリット・デメリットを徹底解説",
+  title: "AZUKEL（アズケル）の評判・口コミ【日本パープル運営】料金・メリット・デメリットを徹底解説",
   description:
-    "AZUKELの評判・口コミ・料金を徹底解説。運営会社は1972年創業の株式会社日本パープル。業界最安水準の月額料金・ハイセキュリティな自社倉庫・LINE操作完結など特徴を紹介。",
+    "AZUKELの評判・口コミ・料金を徹底解説。運営は株式会社日本パープル（通称：パープル）。1972年創業のセキュリティ企業が手がける業界最安水準の月額料金・ハイセキュリティな自社倉庫の特徴を紹介。",
 };
 
 const service = pricing.find((s) => s.slug === "azukel")!;
