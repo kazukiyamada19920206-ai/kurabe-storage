@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "サマリーポケット vs minikura 徹底比較【2026年最新】料金・口コミ・違いを解説",
+  title: "【どっちがお得？】サマリーポケットとminikuraの違いを18項目で徹底比較",
   description:
-    "ボックスサイズ・長期割引・大型アイテム対応など18項目で徹底比較。どちらを選ぶべきか料金シミュレーション付きで解説。",
+    "サマリーポケットとminikuraの月額・取り出し送料・ボックスサイズ・長期割引など18項目を徹底比較。料金シミュレーション付きでどちらがお得か一目でわかります。",
 };
 
 const patterns = [
