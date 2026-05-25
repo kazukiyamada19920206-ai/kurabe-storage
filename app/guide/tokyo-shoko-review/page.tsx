@@ -3,9 +3,9 @@ import Link from "next/link";
 import pricing from "../../../pricing.json";
 
 export const metadata: Metadata = {
-  title: "東京書庫の評判・口コミを徹底解説｜本専門の宅配収納サービスの特徴",
+  title: "東京書庫の評判・口コミ【2026年最新】本専門の宅配収納・料金・デメリットを解説",
   description:
-    "東京書庫の実際の口コミ・評判、料金、メリット・デメリットを徹底解説。本専門の書籍専用倉庫の特徴とおすすめの使い方を紹介します。",
+    "東京書庫の評判・口コミ・料金を徹底解説。本好きのための書籍専用倉庫。取り出し送料無料・RC構造倉庫・月額275円〜のコスパを正直レビュー。",
 };
 
 const service = pricing.find((s) => s.slug === "tokyo-shoko")!;

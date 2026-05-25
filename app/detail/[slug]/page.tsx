@@ -17,6 +17,8 @@ type PricingItem = {
   common_pains: string[];
   affiliate_url: string;
   note: string | null;
+  meta_title?: string;
+  meta_description?: string;
 };
 
 type Props = {
@@ -29,11 +31,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!service) return {};
 
   return {
-    title: `${service.name}の評判・料金・口コミ`,
-    description: service.description,
+    title: service.meta_title ?? `${service.name}の評判・料金・口コミ`,
+    description: service.meta_description ?? service.description,
     openGraph: {
-      title: `${service.name}の料金・評判 | くらべる収納`,
-      description: `${service.name}の月額料金・取り出し送料・おすすめポイントを詳しく解説。`,
+      title: service.meta_title ?? `${service.name}の料金・評判 | くらべる収納`,
+      description: service.meta_description ?? `${service.name}の月額料金・取り出し送料・おすすめポイントを詳しく解説。`,
       url: `https://moriyamanaomi.com/detail/${service.slug}`,
       siteName: "くらべる収納",
       locale: "ja_JP",
