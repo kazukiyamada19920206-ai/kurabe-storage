@@ -3,9 +3,9 @@ import { Suspense } from "react";
 import GuideClient from "./GuideClient";
 
 export const metadata: Metadata = {
-  title: "宅配収納サービスとは？トランクルームとの違いや使い方を解説",
+  title: "宅配収納サービスとは？【2026年最新】トランクルームとの違い・料金・選び方を徹底解説",
   description:
-    "宅配収納サービスの仕組み・トランクルームとの違い・利用の流れ・よくある質問をわかりやすく解説。初めての方でも安心して始められます。",
+    "宅配収納サービスの仕組み・料金相場・トランクルームとの違いをわかりやすく解説。初めて利用する方向けに、おすすめサービスの選び方まで紹介します。",
 };
 
 export default function GuidePage() {

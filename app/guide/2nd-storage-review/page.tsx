@@ -3,9 +3,9 @@ import Link from "next/link";
 import pricing from "../../../pricing.json";
 
 export const metadata: Metadata = {
-  title: "セカンドストレージ（2nd STORAGE）の評判・口コミ【ゲオグループ運営】料金・メリット・デメリットを徹底解説",
+  title: "2nd STORAGE（セカンドストレージ）の評判・口コミ【ゲオグループ】配送料無料・料金・デメリットを解説",
   description:
-    "セカンドストレージの評判・口コミ・料金を徹底解説。ゲオグループ運営で大型荷物も梱包不要で預けられる宅配型トランクルーム。対応エリア・料金プラン・デメリットまで詳しく紹介。",
+    "2nd STORAGEの評判・口コミ・料金を徹底解説。ゲオグループ運営・配送料完全無料・梱包不要。首都圏対応エリアや月額料金・デメリットも正直にレビュー。",
 };
 
 const service = pricing.find((s) => s.slug === "2nd-storage")!;
