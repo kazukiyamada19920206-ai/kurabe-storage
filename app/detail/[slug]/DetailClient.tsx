@@ -411,17 +411,15 @@ export default function DetailClient() {
         )}
 
         {/* 評判記事への内部リンク */}
-        {(slug === "azukel" || slug === "caraeto") && (
-          <div className="bg-white rounded-[12px] border border-gray-200 p-6 mb-8">
-            <p className="text-sm text-gray-600 mb-2">もっと詳しく知りたい方はこちら</p>
-            <Link
-              href={`/guide/${slug}-review`}
-              className="text-[#E8873A] font-bold hover:underline"
-            >
-              {service.name}の評判・口コミ・料金を詳しく見る →
-            </Link>
-          </div>
-        )}
+        <div className="bg-white rounded-[12px] border border-gray-200 p-6 mb-8">
+          <p className="text-sm text-gray-600 mb-2">もっと詳しく知りたい方はこちら</p>
+          <Link
+            href={`/guide/${slug}-review`}
+            className="text-[#E8873A] font-bold hover:underline"
+          >
+            {service.name}の評判・口コミ・料金を詳しく見る →
+          </Link>
+        </div>
 
         {/* FAQアコーディオン */}
         <div className="bg-white rounded-[12px] border border-gray-200 p-8 mb-8">
