@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import pricing from "../pricing.json";
 
 type PricingItem = {
@@ -138,57 +139,45 @@ export default function Home() {
     <main className="min-h-screen bg-[#F5F0E8]">
       {/* ヘッダー */}
       <header className="bg-white border-b border-gray-200 py-4">
-        <div className="mx-auto max-w-6xl px-6 flex justify-between items-center">
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-6 h-6 bg-[#2D5016] rounded-sm"></div>
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="flex items-center justify-center gap-2">
+            <div className="w-6 h-6 bg-[#2D5016] rounded-full" />
             <span className="text-xl font-bold text-[#2D5016]">くらべる収納</span>
-          </Link>
+          </div>
         </div>
       </header>
 
-      {/* ヒーロー */}
-      <div className="bg-white border-b border-gray-200 pt-2 pb-2">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="flex items-center gap-2 mb-4">
-            <div className="w-3 h-3 rounded-full bg-[#C4620A]"></div>
-            <span className="text-sm font-[600] text-[#C4620A]">
-              宅配収納サービス 比較診断
+      {/* ヒーロー画像 */}
+      <div className="bg-white">
+        <Image
+          src="/images/hero-main.png"
+          alt="整理されたクローゼットと宅配収納のイメージ"
+          width={800}
+          height={450}
+          className="w-full h-[200px] object-cover"
+          priority
+        />
+      </div>
+
+      {/* キャッチコピー（中央寄せ） */}
+      <div className="bg-white border-b border-gray-200 py-8 text-center px-6">
+        <p className="text-[13px] text-[#888780] leading-[1.8] mb-3">
+          捨てなくていい。判断しなくていい。<br />
+          預けるだけで、部屋が変わる。
+        </p>
+        <h1 className="text-[24px] font-[500] text-[#2C2C2A] leading-[1.5] mb-5">
+          自分に合う宅配収納を、<br />
+          3秒で見つける。
+        </h1>
+        <div className="flex flex-wrap gap-2 justify-center mb-2">
+          {["衣替え", "引越し", "一人暮らし", "単身赴任"].map((tag) => (
+            <span
+              key={tag}
+              className="text-[12px] bg-[#F5F0E8] rounded-full px-3 py-1 text-[#5F5E5A]"
+            >
+              {tag}
             </span>
-          </div>
-          <p className="text-[15px] text-[#2C2C2A] font-[500] mb-2">
-            荷物を預けたいけど、どこがお得か分からない。
-          </p>
-          <h1 className="text-[36px] font-[700] text-[#2D5016] leading-[1.3] tracking-[-0.5px] mb-4">
-            箱数と期間を<br />
-            入れるだけ。<br />
-            <span className="underline decoration-[#E8873A] decoration-4 underline-offset-[3px]">最安1社が</span><br />
-            <span className="underline decoration-[#E8873A] decoration-4 underline-offset-[3px]">すぐ分かる。</span>
-          </h1>
-          <p className="text-[14px] text-[#444441] mt-[14px]">
-            8社の料金を自動で比較。<br />
-            登録不要で3秒で診断できます。
-          </p>
-          <div className="flex gap-2 overflow-x-auto py-2">
-            {([
-              { label: "衣替えしたい", itemType: "衣類" },
-              { label: "引越しの一時保管", itemType: "季節物" },
-              { label: "趣味グッズを整理", itemType: "趣味の品" },
-              { label: "思い出の品を保管", itemType: "思い出の品" },
-            ] as { label: string; itemType: string }[]).map((chip) => (
-              <button
-                key={chip.label}
-                onClick={() => {
-                  setItemTypes((prev) =>
-                    prev.includes(chip.itemType) ? prev : [...prev, chip.itemType]
-                  );
-                  setExpandedAccordion(true);
-                }}
-                className="flex-shrink-0 bg-white border border-[#D3D1C7] rounded-[20px] px-3 py-[6px] text-[12px] text-[#5F5E5A] whitespace-nowrap cursor-pointer hover:border-[#2D5016] hover:text-[#2D5016] transition"
-              >
-                {chip.label}
-              </button>
-            ))}
-          </div>
+          ))}
         </div>
       </div>
 
