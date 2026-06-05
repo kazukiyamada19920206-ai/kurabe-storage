@@ -109,7 +109,7 @@ export default function DetailClient() {
       {/* コンテンツ */}
       <div className="mx-auto max-w-6xl px-6 py-12">
         {/* サービスヘッダー */}
-        <div className="bg-white rounded-[12px] border border-gray-200 p-8 mb-8">
+        <div className="bg-white rounded-[12px] border border-gray-200 p-8 mb-10">
           <div className="flex items-center gap-3 mb-4">
             <div className="inline-flex items-center gap-2 bg-[#2D5016] text-white px-3 py-1 rounded-lg text-sm font-bold">
               👑 総合1位
@@ -129,7 +129,7 @@ export default function DetailClient() {
         </div>
 
         {/* サービス画像 */}
-        <div className="rounded-[12px] h-48 mb-8 overflow-hidden bg-gray-100">
+        <div className="rounded-[12px] h-48 mb-10 overflow-hidden bg-gray-100">
           {service.image_url ? (
             <img
               src={service.image_url}
@@ -142,12 +142,12 @@ export default function DetailClient() {
         </div>
 
         {/* 料金カード */}
-        <div className="grid md:grid-cols-2 gap-8 mb-8">
+        <div className="grid md:grid-cols-2 gap-8 mb-10">
           <div className="bg-[#2D5016] text-white rounded-[12px] p-8">
             <p className="text-sm font-medium opacity-80 mb-2">総費用</p>
             <h3 className="text-5xl font-bold mb-4">¥{totalFeeForExample.toLocaleString()}</h3>
             <p className="text-sm opacity-80 mb-6">{months}ヶ月の条件で</p>
-            <div className="inline-block bg-[#E8873A] text-white px-4 py-2 rounded-lg font-bold text-sm">
+            <div className="inline-block bg-[#F5F0E8] text-[#5F5E5A] px-4 py-2 rounded-lg font-bold text-[11px]" style={{ border: '0.5px solid #D3D1C7' }}>
               2位より ¥{(totalFeeForExample * 0.1).toLocaleString()} おトク
             </div>
           </div>
@@ -169,10 +169,10 @@ export default function DetailClient() {
         </div>
 
         {/* WHY THIS SERVICE */}
-        <div className="bg-white rounded-[12px] border border-gray-200 p-8 mb-8">
-          <h3 className="text-2xl font-bold text-[#2D5016] mb-8">
+        <div className="bg-white rounded-[12px] border border-gray-200 p-8 mb-10">
+          <h2 className="text-[16px] font-[700] text-[#2C2C2A] mb-4 pb-2 border-b border-[#E8E6E0]">
             このサービスを選ぶ3つの理由
-          </h3>
+          </h2>
           <div className="grid md:grid-cols-3 gap-6">
             {service.selected_reasons.map((reason, index) => (
               <div
@@ -189,8 +189,8 @@ export default function DetailClient() {
         </div>
 
         {/* 4つの軸スコア */}
-        <div className="bg-white rounded-[12px] border border-gray-200 p-8 mb-8">
-          <h3 className="text-2xl font-bold text-[#2D5016] mb-8">サービススコア</h3>
+        <div className="bg-white rounded-[12px] border border-gray-200 p-8 mb-10">
+          <h2 className="text-[16px] font-[700] text-[#2C2C2A] mb-4 pb-2 border-b border-[#E8E6E0]">サービススコア</h2>
           <div className="grid md:grid-cols-2 gap-8">
             {[
               { label: "費用", score: 9, comment: "業界最安水準" },
@@ -218,8 +218,8 @@ export default function DetailClient() {
         </div>
 
         {/* 料金内訳 */}
-        <div className="bg-white rounded-[12px] border border-gray-200 p-8 mb-8">
-          <h3 className="text-2xl font-bold text-[#2D5016] mb-6">COST BREAKDOWN</h3>
+        <div className="bg-white rounded-[12px] border border-gray-200 p-8 mb-10">
+          <h2 className="text-[16px] font-[700] text-[#2C2C2A] mb-4 pb-2 border-b border-[#E8E6E0]">料金内訳</h2>
           <div className="overflow-x-auto">
             <table className="w-full">
               <tbody>
@@ -268,8 +268,8 @@ export default function DetailClient() {
         </div>
 
         {/* 比較テーブル */}
-        <div className="bg-white rounded-[12px] border border-gray-200 p-8 mb-8">
-          <h3 className="text-2xl font-bold text-[#2D5016] mb-6">COMPARE</h3>
+        <div className="bg-white rounded-[12px] border border-gray-200 p-8 mb-10">
+          <h2 className="text-[16px] font-[700] text-[#2C2C2A] mb-4 pb-2 border-b border-[#E8E6E0]">他サービスと比較</h2>
           <p className="text-gray-600 text-sm mb-4">
             他の上位サービスと比べると
           </p>
@@ -316,8 +316,8 @@ export default function DetailClient() {
         </div>
 
         {/* 基本情報テーブル */}
-        <div className="bg-white rounded-[12px] border border-gray-200 p-8 mb-8">
-          <h3 className="text-2xl font-bold text-[#2D5016] mb-6">SPEC</h3>
+        <div className="bg-white rounded-[12px] border border-gray-200 p-8 mb-10">
+          <h2 className="text-[16px] font-[700] text-[#2C2C2A] mb-4 pb-2 border-b border-[#E8E6E0]">基本情報</h2>
           <div className="space-y-4">
             <div className="grid md:grid-cols-2 gap-6 border-b pb-4">
               <div>
@@ -354,55 +354,40 @@ export default function DetailClient() {
 
         {/* 口コミセクション */}
         {service.reviews && service.reviews.length > 0 && (
-          <div className="bg-white rounded-[12px] border border-gray-200 p-8 mb-8">
-            <h3 className="text-2xl font-bold text-[#2D5016] mb-8">REVIEW - 利用者の声</h3>
-            <div className="grid md:grid-cols-3 gap-6">
+          <div className="bg-white rounded-[12px] border border-gray-200 p-8 mb-10">
+            <h2 className="text-[16px] font-[700] text-[#2C2C2A] mb-4 pb-2 border-b border-[#E8E6E0]">利用者の声</h2>
+            <div className="space-y-4">
               {service.reviews.map((review, index) => {
                 const isFemale = review.author.includes("女性");
                 return (
                   <div
                     key={index}
-                    className="bg-gradient-to-br from-[#F5F0E8] to-white rounded-[12px] border border-gray-200 p-6 flex flex-col"
+                    className="bg-[#F5F0E8] rounded-[12px] p-5"
                   >
                     <div className="flex items-center gap-3 mb-3">
-                      {isFemale ? (
-                        <svg viewBox="0 0 40 40" width="40" height="40" className="flex-shrink-0">
-                          <circle cx="20" cy="20" r="20" fill="#E8873A"/>
-                          <circle cx="20" cy="15" r="7" fill="white"/>
-                          <path d="M6 36 Q6 26 20 26 Q34 26 34 36" fill="white"/>
-                          <path d="M13 12 Q14 6 20 8 Q26 6 27 12" fill="#E8873A"/>
-                          <path d="M13 13 Q11 10 12 8 Q13 6 15 8" fill="white"/>
-                          <path d="M27 13 Q29 10 28 8 Q27 6 25 8" fill="white"/>
-                        </svg>
-                      ) : (
-                        <svg viewBox="0 0 40 40" width="40" height="40" className="flex-shrink-0">
-                          <circle cx="20" cy="20" r="20" fill="#2D5016"/>
-                          <circle cx="20" cy="15" r="7" fill="white"/>
-                          <path d="M6 36 Q6 26 20 26 Q34 26 34 36" fill="white"/>
-                        </svg>
-                      )}
-                      <div>
-                        <p className="font-bold text-gray-900 text-sm">{review.author}</p>
-                        <span style={{ fontSize: "14px", color: "#E8873A" }}>★★★★★</span>
+                      <div className={`w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center text-white font-bold text-sm ${isFemale ? "bg-[#E8873A]" : "bg-[#2D5016]"}`}>
+                        {isFemale ? "女" : "男"}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="font-bold text-[#2C2C2A] text-sm">{review.author}</p>
+                        <div className="flex items-center gap-2">
+                          <span className="text-[#E8873A] text-xs">★★★★★</span>
+                          {review.source_url ? (
+                            <a
+                              href={review.source_url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-[11px] text-[#888780] underline truncate"
+                            >
+                              {review.source}
+                            </a>
+                          ) : (
+                            <span className="text-[11px] text-[#888780]">{review.source}</span>
+                          )}
+                        </div>
                       </div>
                     </div>
-                    <p className="text-gray-700 text-sm leading-6 flex-1">{review.comment}</p>
-                    <div className="mt-4 pt-3 border-t border-gray-200">
-                      {review.source_url ? (
-                        <a
-                          href={review.source_url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          style={{ fontSize: "11px", color: "#888780", textDecoration: "underline" }}
-                        >
-                          出典：{review.source}
-                        </a>
-                      ) : (
-                        <span style={{ fontSize: "11px", color: "#888780" }}>
-                          出典：{review.source}
-                        </span>
-                      )}
-                    </div>
+                    <p className="text-[#2C2C2A] text-sm leading-6">{review.comment}</p>
                   </div>
                 );
               })}
@@ -411,19 +396,19 @@ export default function DetailClient() {
         )}
 
         {/* 評判記事への内部リンク */}
-        <div className="bg-white rounded-[12px] border border-gray-200 p-6 mb-8">
-          <p className="text-sm text-gray-600 mb-2">もっと詳しく知りたい方はこちら</p>
+        <div className="bg-[#F5F0E8] rounded-[12px] p-6 mb-10">
+          <p className="text-[11px] text-[#888780] mb-2">もっと詳しく知りたい方はこちら</p>
           <Link
             href={`/guide/${slug}-review`}
-            className="text-[#E8873A] font-bold hover:underline"
+            className="text-[14px] font-[700] text-[#2D5016] hover:underline"
           >
             {service.name}の評判・口コミ・料金を詳しく見る →
           </Link>
         </div>
 
         {/* FAQアコーディオン */}
-        <div className="bg-white rounded-[12px] border border-gray-200 p-8 mb-8">
-          <h3 className="text-2xl font-bold text-[#2D5016] mb-6">FAQ - よくある質問</h3>
+        <div className="bg-white rounded-[12px] border border-gray-200 p-8 mb-10">
+          <h2 className="text-[16px] font-[700] text-[#2C2C2A] mb-4 pb-2 border-b border-[#E8E6E0]">よくある質問</h2>
           <div className="space-y-3">
             {faqs.map((faq, index) => (
               <div key={index}>
@@ -453,13 +438,14 @@ export default function DetailClient() {
       </div>
 
       {/* フッター固定CTA */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-[#E5E0D8] px-6 py-4 h-20">
+      <div className="fixed bottom-0 left-0 right-0 bg-[#2D5016] px-6 py-4">
         <div className="max-w-3xl mx-auto flex items-center justify-between">
           <div>
-            <p className="text-gray-600 text-sm">総費用</p>
-            <p className="text-3xl font-bold text-[#2D5016]">
+            <p className="text-white text-sm opacity-80">総費用</p>
+            <p className="text-3xl font-bold text-white">
               ¥{totalFeeForExample.toLocaleString()}
             </p>
+            <p className="text-white text-[11px] opacity-70">登録不要・無料で利用できます</p>
           </div>
           <a
             href={service.affiliate_url}

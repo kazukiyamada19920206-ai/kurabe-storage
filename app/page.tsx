@@ -165,7 +165,7 @@ export default function Home() {
           捨てなくていい。判断しなくていい。<br />
           預けるだけで、部屋が変わる。
         </p>
-        <h1 className="text-[24px] font-[500] text-[#2C2C2A] leading-[1.5] mb-5">
+        <h1 className="text-[24px] font-[700] text-[#2C2C2A] leading-[1.5] mb-5">
           自分に合う宅配収納を、<br />
           3秒で見つける。
         </h1>
@@ -639,7 +639,7 @@ export default function Home() {
                             }}
                             className="block w-full px-4 py-3 rounded-lg bg-[#2D5016] text-white font-bold hover:bg-[#1A3009] transition text-center"
                           >
-                            決める
+                            公式サイトを見る →
                           </a>
                         </div>
                       </div>
