@@ -142,27 +142,30 @@ export default function DetailClient() {
         </div>
 
         {/* 料金カード */}
-        <div className="grid md:grid-cols-2 gap-8 mb-10">
-          <div className="bg-[#2D5016] text-white rounded-[12px] p-8">
-            <p className="text-sm font-medium opacity-80 mb-2">総費用</p>
-            <h3 className="text-5xl font-bold mb-4">¥{totalFeeForExample.toLocaleString()}</h3>
-            <p className="text-sm opacity-80 mb-6">{months}ヶ月の条件で</p>
-            <div className="inline-block bg-[#F5F0E8] text-[#5F5E5A] px-4 py-2 rounded-lg font-bold text-[11px]" style={{ border: '0.5px solid #D3D1C7' }}>
-              2位より ¥{(totalFeeForExample * 0.1).toLocaleString()} おトク
+        <div className="mb-10">
+          {/* 総費用 */}
+          <div className="bg-[#2D5016] text-white rounded-[12px] p-5 mb-3">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-[12px] opacity-80 mb-1">総費用（{months}ヶ月）</p>
+                <p className="text-[36px] font-[700]">¥{totalFeeForExample.toLocaleString()}</p>
+              </div>
+              <div className="bg-white bg-opacity-20 rounded-[8px] px-3 py-1">
+                <p className="text-[11px] opacity-90">2位より</p>
+                <p className="text-[13px] font-[700]">¥{(totalFeeForExample * 0.1).toFixed(0)}おトク</p>
+              </div>
             </div>
           </div>
-
-          <div className="bg-white rounded-[12px] border border-gray-200 p-8 space-y-4">
-            <div>
-              <p className="text-gray-600 text-sm font-medium mb-1">月額（1箱）</p>
-              <p className="text-3xl font-bold text-[#2D5016]">
-                ¥{service.monthly_per_box.toLocaleString()}
-              </p>
+          {/* 月額・取り出し送料を横並び */}
+          <div className="grid grid-cols-2 gap-3">
+            <div className="bg-white rounded-[12px] p-4" style={{ border: "0.5px solid #D3D1C7" }}>
+              <p className="text-[11px] text-[#888780] mb-1">月額（1箱）</p>
+              <p className="text-[20px] font-[700] text-[#2D5016]">¥{service.monthly_per_box.toLocaleString()}</p>
             </div>
-            <div>
-              <p className="text-gray-600 text-sm font-medium mb-1">取り出し送料</p>
-              <p className="text-3xl font-bold text-[#E8873A]">
-                ¥{service.retrieval_fee.toLocaleString()}
+            <div className="bg-white rounded-[12px] p-4" style={{ border: "0.5px solid #D3D1C7" }}>
+              <p className="text-[11px] text-[#888780] mb-1">取り出し送料</p>
+              <p className="text-[20px] font-[700] text-[#2D5016]">
+                {service.retrieval_fee === 0 ? "無料" : `¥${service.retrieval_fee.toLocaleString()}`}
               </p>
             </div>
           </div>
@@ -173,16 +176,13 @@ export default function DetailClient() {
           <h2 className="text-[16px] font-[700] text-[#2C2C2A] mb-4 pb-2 border-b border-[#E8E6E0]">
             このサービスを選ぶ3つの理由
           </h2>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="space-y-3">
             {service.selected_reasons.map((reason, index) => (
-              <div
-                key={index}
-                className="bg-gradient-to-br from-[#F5F0E8] to-white rounded-[12px] border-2 border-[#E8873A] p-6"
-              >
-                <div className="text-4xl font-bold text-[#E8873A] mb-3">
+              <div key={index} className="flex items-start gap-3 bg-[#F5F0E8] rounded-[10px] p-4">
+                <span className="text-[#2D5016] font-[700] text-[16px] flex-shrink-0 leading-none mt-0.5">
                   {index + 1}
-                </div>
-                <p className="text-gray-700 font-medium leading-7">{reason}</p>
+                </span>
+                <p className="text-[14px] text-[#2C2C2A] leading-[1.8]">{reason}</p>
               </div>
             ))}
           </div>
