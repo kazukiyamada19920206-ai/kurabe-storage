@@ -363,7 +363,7 @@ export default function DetailClient() {
                   >
                     <div className="flex items-center gap-3 mb-3">
                       <div className={`w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center text-white font-bold text-sm ${isFemale ? "bg-[#E8873A]" : "bg-[#2D5016]"}`}>
-                        {isFemale ? "女" : "男"}
+                        {review.author.charAt(0)}
                       </div>
                       <div className="flex-1 min-w-0">
                         <p className="font-bold text-[#2C2C2A] text-sm">{review.author}</p>
