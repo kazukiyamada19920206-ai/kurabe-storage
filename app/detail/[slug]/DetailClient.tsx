@@ -28,6 +28,8 @@ type PricingItem = {
   note: string | null;
   image_url?: string;
   reviews?: Review[];
+  quality_score?: number;
+  retrieval_score?: number;
 };
 
 const faqs = [
@@ -76,6 +78,13 @@ export default function DetailClient() {
     service.monthly_per_box * boxes * months +
     service.initial_fee +
     service.retrieval_fee;
+
+  const sortedServices = (pricing as PricingItem[])
+    .map((s) => ({
+      ...s,
+      total: s.monthly_per_box * boxes * months + s.retrieval_fee,
+    }))
+    .sort((a, b) => a.total - b.total);
 
   return (
     <main className="min-h-screen bg-[#F5F0E8]">
@@ -270,48 +279,36 @@ export default function DetailClient() {
         {/* 比較テーブル */}
         <div className="bg-white rounded-[12px] border border-gray-200 p-8 mb-10">
           <h2 className="text-[16px] font-[700] text-[#2C2C2A] mb-4 pb-2 border-b border-[#E8E6E0]">他サービスと比較</h2>
-          <p className="text-gray-600 text-sm mb-4">
-            他の上位サービスと比べると
-          </p>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b-2 border-[#2D5016]">
-                  <th className="py-4 px-4 text-left font-bold">サービス</th>
-                  <th className="py-4 px-4 text-right font-bold">総費用</th>
-                  <th className="py-4 px-4 text-right font-bold">品質</th>
-                  <th className="py-4 px-4 text-right font-bold">取り出し</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="border-b bg-[#F5F0E8]">
-                  <td className="py-4 px-4 font-bold">{service.name}</td>
-                  <td className="py-4 px-4 text-right font-bold">
-                    ¥{totalFeeForExample.toLocaleString()}
-                  </td>
-                  <td className="py-4 px-4 text-right">8/10</td>
-                  <td className="py-4 px-4 text-right">8/10</td>
-                </tr>
-                {(pricing as PricingItem[])
-                  .filter((s) => s.slug !== slug)
-                  .map((s) => {
-                    const otherTotal =
-                      s.monthly_per_box * boxes * months +
-                      s.initial_fee +
-                      s.retrieval_fee;
-                    return (
-                      <tr key={s.slug} className="border-b">
-                        <td className="py-4 px-4">{s.name}</td>
-                        <td className="py-4 px-4 text-right">
-                          ¥{otherTotal.toLocaleString()}
-                        </td>
-                        <td className="py-4 px-4 text-right">7/10</td>
-                        <td className="py-4 px-4 text-right">8/10</td>
-                      </tr>
-                    );
-                  })}
-              </tbody>
-            </table>
+          <div className="space-y-2">
+            {/* ヘッダー */}
+            <div className="grid grid-cols-4 gap-1 mb-2">
+              {["サービス", "総費用", "品質", "取り出し"].map((h) => (
+                <p key={h} className="text-[10px] text-[#888780] font-[600] text-center">{h}</p>
+              ))}
+            </div>
+            {/* 行 */}
+            {sortedServices.map((s) => (
+              <div
+                key={s.slug}
+                className={`grid grid-cols-4 gap-1 rounded-[8px] p-2 items-center ${
+                  s.slug === slug ? "bg-[#2D5016] text-white" : "bg-white"
+                }`}
+                style={s.slug !== slug ? { border: "0.5px solid #D3D1C7" } : {}}
+              >
+                <p className={`text-[11px] font-[600] truncate ${s.slug === slug ? "text-white" : "text-[#2C2C2A]"}`}>
+                  {s.name}
+                </p>
+                <p className={`text-[11px] text-center ${s.slug === slug ? "text-white" : "text-[#2D5016]"}`}>
+                  ¥{(s.monthly_per_box * boxes * months + s.retrieval_fee).toLocaleString()}
+                </p>
+                <p className={`text-[11px] text-center ${s.slug === slug ? "text-white" : "text-[#888780]"}`}>
+                  {s.quality_score ?? 8}/10
+                </p>
+                <p className={`text-[11px] text-center ${s.slug === slug ? "text-white" : "text-[#888780]"}`}>
+                  {s.retrieval_score ?? 8}/10
+                </p>
+              </div>
+            ))}
           </div>
         </div>
 
