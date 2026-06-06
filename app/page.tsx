@@ -498,9 +498,6 @@ export default function Home() {
             <div className="space-y-6">
               {results.map((result, index) => {
                 const isFirst = index === 0;
-                const priceDiff = isFirst
-                  ? 0
-                  : result.total - results[0].total;
 
                 return (
                   <div
@@ -606,27 +603,8 @@ export default function Home() {
                           <p className="text-4xl font-bold text-[#2D5016] mb-4">
                             ¥{result.total.toLocaleString()}
                           </p>
-                          {!isFirst && (
-                            <div className="inline-flex items-center bg-[#E8873A] text-white px-3 py-1 rounded-lg text-sm font-bold">
-                              1位より +¥{priceDiff.toLocaleString()}
-                            </div>
-                          )}
                         </div>
                         <div className="space-y-3">
-                          <a
-                            href={`/detail/${result.slug}?boxes=${boxCount}&months=${storageMonths}`}
-                            onClick={() => {
-                              if (typeof window !== "undefined" && window.gtag) {
-                                window.gtag("event", "click_detail", {
-                                  event_category: "engagement",
-                                  event_label: result.name,
-                                });
-                              }
-                            }}
-                            className="block w-full px-4 py-3 rounded-lg border-2 border-[#2D5016] text-[#2D5016] font-bold hover:bg-[#F5F0E8] transition text-center"
-                          >
-                            詳細を見る →
-                          </a>
                           <a
                             href={`/detail/${result.slug}?boxes=${boxCount}&months=${storageMonths}`}
                             onClick={() => {
