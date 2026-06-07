@@ -129,11 +129,31 @@ export default function DetailClient() {
           <h2 className="text-4xl font-bold text-[#2D5016] mb-2">
             {service.name}
           </h2>
-          <p className="text-gray-600 mb-4 text-lg">
-            {service.description}
-          </p>
-          <div className="text-sm text-gray-600">
-            最低契約期間：<span className="font-bold">1ヶ月</span>
+          {/* サービス説明 */}
+          <div className="space-y-3 mb-4">
+            <p className="text-[13px] text-[#5F5E5A] leading-[1.8] line-clamp-3">
+              {service.description}
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {[
+                service.retrieval_fee === 0 ? "取り出し無料" : null,
+                slug === "summary-pocket" ? "クリーニング対応" : null,
+                service.monthly_per_box <= 275 ? "業界最安水準" : null,
+                "1ヶ月から利用可",
+                "写真で管理",
+              ]
+                .filter(Boolean)
+                .slice(0, 3)
+                .map((tag) => (
+                  <span
+                    key={tag}
+                    className="text-[11px] bg-[#F5F0E8] text-[#2D5016] px-3 py-1 rounded-full font-[500]"
+                    style={{ border: "0.5px solid #D3D1C7" }}
+                  >
+                    {tag}
+                  </span>
+                ))}
+            </div>
           </div>
         </div>
 
@@ -154,16 +174,8 @@ export default function DetailClient() {
         <div className="mb-10">
           {/* 総費用 */}
           <div className="bg-[#2D5016] text-white rounded-[12px] p-5 mb-3">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-[12px] opacity-80 mb-1">総費用（{months}ヶ月）</p>
-                <p className="text-[36px] font-[700]">¥{totalFeeForExample.toLocaleString()}</p>
-              </div>
-              <div className="bg-white bg-opacity-20 rounded-[8px] px-3 py-1">
-                <p className="text-[11px] opacity-90">2位より</p>
-                <p className="text-[13px] font-[700]">¥{(totalFeeForExample * 0.1).toFixed(0)}おトク</p>
-              </div>
-            </div>
+            <p className="text-[12px] opacity-80 mb-1">総費用（{months}ヶ月）</p>
+            <p className="text-[36px] font-[700]">¥{totalFeeForExample.toLocaleString()}</p>
           </div>
           {/* 月額・取り出し送料を横並び */}
           <div className="grid grid-cols-2 gap-3">
