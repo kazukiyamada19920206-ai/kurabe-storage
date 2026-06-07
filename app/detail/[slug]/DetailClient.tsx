@@ -129,26 +129,62 @@ export default function DetailClient() {
           <h2 className="text-4xl font-bold text-[#2D5016] mb-2">
             {service.name}
           </h2>
-          {/* サービス説明 */}
-          <div className="space-y-3 mb-4">
-            <p className="text-[13px] text-[#5F5E5A] leading-[1.8] line-clamp-3">
-              {service.description}
+          <div className="mb-4">
+            <p className="text-[13px] text-[#5F5E5A] leading-[1.8] mb-4">
+              {service.description.split('。')[0]}。
             </p>
+            <div className="space-y-2 mb-4">
+              {[
+                {
+                  icon: "📱",
+                  title: "アプリで完結",
+                  body: "預け入れ・取り出し・写真管理がスマホで完了",
+                },
+                {
+                  icon: "💰",
+                  title: `月額¥${service.monthly_per_box.toLocaleString()}〜`,
+                  body: "段ボール箱無料・詰めて送るだけのシンプルな手順",
+                },
+                slug === "summary-pocket"
+                  ? {
+                      icon: "👕",
+                      title: "クリーニングオプションあり",
+                      body: "預けたままクリーニングを依頼できる",
+                    }
+                  : {
+                      icon: "📦",
+                      title: "写真で一覧管理",
+                      body: "保管中の荷物をアプリで確認できる",
+                    },
+              ].map((point) => (
+                <div
+                  key={point.title}
+                  className="flex items-start gap-3 bg-[#F5F0E8] rounded-[10px] p-3"
+                  style={{ border: "0.5px solid #D3D1C7" }}
+                >
+                  <span className="text-[16px] flex-shrink-0 mt-0.5">{point.icon}</span>
+                  <div>
+                    <p className="text-[13px] font-[600] text-[#2C2C2A] mb-0.5">{point.title}</p>
+                    <p className="text-[12px] text-[#5F5E5A] leading-[1.6]">{point.body}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
             <div className="flex flex-wrap gap-2">
               {[
                 service.retrieval_fee === 0 ? "取り出し無料" : null,
                 slug === "summary-pocket" ? "クリーニング対応" : null,
                 service.monthly_per_box <= 275 ? "業界最安水準" : null,
                 "1ヶ月から利用可",
-                "写真で管理",
+                "初心者向け",
               ]
                 .filter(Boolean)
                 .slice(0, 3)
                 .map((tag) => (
                   <span
                     key={tag}
-                    className="text-[11px] bg-[#F5F0E8] text-[#2D5016] px-3 py-1 rounded-full font-[500]"
-                    style={{ border: "0.5px solid #D3D1C7" }}
+                    className="text-[11px] bg-white text-[#2D5016] px-3 py-1 rounded-full font-[500]"
+                    style={{ border: "0.5px solid #2D5016" }}
                   >
                     {tag}
                   </span>
