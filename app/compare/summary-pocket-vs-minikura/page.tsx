@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "【どっちがお得？】サマリーポケットとminikuraの違いを18項目で徹底比較",
+  title: "サマリーポケット vs minikura【2026年最新】料金・機能を18項目比較｜どっちが安い？",
   description:
-    "サマリーポケットとminikuraの月額・取り出し送料・ボックスサイズ・長期割引など18項目を徹底比較。料金シミュレーション付きでどちらがお得か一目でわかります。",
+    "サマリーポケットとminikuraを月額・取り出し送料・クリーニング・長期割引など18項目で徹底比較。料金シミュレーション付き。あなたの使い方でどちらがお得か3分でわかります。",
 };
 
 const patterns = [
@@ -64,7 +64,7 @@ export default function VsPage() {
             <span className="text-sm font-[600] text-[#C4620A]">比較記事</span>
           </div>
           <h1 className="text-[26px] font-[700] text-[#2D5016] leading-[1.4] mb-3">
-            サマリーポケット vs minikura<br />料金・特徴・口コミを徹底比較【2026年最新】
+            サマリーポケット vs minikura<br />どっちが安い？料金・機能を徹底比較【2026年最新】
           </h1>
           <p className="text-[13px] text-[#5F5E5A] leading-[1.8] mb-3">
             「サマリーポケットとminikura、どっちがいいの？」と迷っている方向けに、料金・使い方・口コミ・実際のコストまで詳しく比較しました。結論から知りたい方は最初の比較表をご覧ください。

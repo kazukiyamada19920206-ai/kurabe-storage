@@ -3,9 +3,9 @@ import Link from "next/link";
 import pricing from "../../../pricing.json";
 
 export const metadata: Metadata = {
-  title: "2nd STORAGE（セカンドストレージ）の評判・口コミ【ゲオグループ】配送料無料・料金・デメリットを解説",
+  title: "【2026年最新】2nd STORAGEの評判・口コミ｜配送料無料は本当？デメリット・対応エリアを正直解説",
   description:
-    "2nd STORAGEの評判・口コミ・料金を徹底解説。ゲオグループ運営・配送料完全無料・梱包不要。首都圏対応エリアや月額料金・デメリットも正直にレビュー。",
+    "2nd STORAGEの評判・口コミを正直レビュー。ゲオグループ運営・配送料完全無料の実態、対応エリアの制限、月額料金、梱包不要のメリット・デメリットを徹底解説。首都圏在住の方必読。",
 };
 
 const service = pricing.find((s) => s.slug === "2nd-storage")!;
@@ -37,7 +37,7 @@ export default function SecondStorageReviewPage() {
             <span className="text-sm font-[600] text-[#C4620A]">評判・口コミ</span>
           </div>
           <h1 className="text-[26px] font-[700] text-[#2D5016] leading-[1.4] mb-3">
-            2nd STORAGEの評判・口コミを徹底解説<br />メリット・デメリットとおすすめの使い方
+            2nd STORAGEの配送料無料は本当？<br />評判・口コミ・デメリットを正直解説【2026年版】
           </h1>
           <p className="text-[12px] text-[#888780]">2026年5月更新</p>
         </div>

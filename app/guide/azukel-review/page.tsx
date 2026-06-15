@@ -3,9 +3,9 @@ import Link from "next/link";
 import pricing from "../../../pricing.json";
 
 export const metadata: Metadata = {
-  title: "AZUKEL（アズケル）の評判・口コミ【2026年最新】月額220円〜の料金・メリット・デメリットを徹底解説",
+  title: "【2026年最新】AZUKELの評判・口コミ｜月額220円は本当にお得？デメリットも正直レビュー",
   description:
-    "AZUKELの評判・口コミ・料金を徹底解説。業界最安水準の月額220円〜、1972年創業のセキュリティ企業・株式会社日本パープル運営。LINE完結の操作性とデメリットも正直レビュー。",
+    "AZUKELの評判・口コミを正直レビュー。月額220円の実態・取り出し送料・デメリット・サマリーポケットとの料金比較まで徹底解説。業界最安水準のコスパを検証。",
 };
 
 const service = pricing.find((s) => s.slug === "azukel")!;
@@ -37,7 +37,7 @@ export default function AzukelReviewPage() {
             <span className="text-sm font-[600] text-[#C4620A]">評判・口コミ</span>
           </div>
           <h1 className="text-[26px] font-[700] text-[#2D5016] leading-[1.4] mb-3">
-            AZUKEL（アズケル）の評判・口コミ・<br />料金を徹底解説
+            AZUKELは本当にお得？<br />評判・口コミ・デメリットを正直レビュー
           </h1>
           <p className="text-[12px] text-[#888780]">2026年4月更新</p>
         </div>
