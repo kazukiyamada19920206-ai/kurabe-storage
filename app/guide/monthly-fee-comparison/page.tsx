@@ -4,7 +4,7 @@ import Image from "next/image";
 import pricing from "../../../pricing.json";
 
 export const metadata: Metadata = {
-  title: "宅配収納の月額相場はいくら？9社の料金を総費用で徹底比較【2026年最新】",
+  title: "宅配収納の月額相場はいくら？9社の料金を総費用で比較",
   description: "宅配収納サービスの月額相場は220円〜880円。しかし月額だけで選ぶと損するケースも。9社の料金を総費用ベースで比較し、失敗しない選び方を解説します。",
 };
 

@@ -3,7 +3,7 @@ import Link from "next/link";
 import pricing from "../../../pricing.json";
 
 export const metadata: Metadata = {
-  title: "東京書庫の評判・口コミ【2026年最新】本専門の宅配収納・料金・デメリットを解説",
+  title: "東京書庫の評判・口コミ｜本専門の料金とデメリット",
   description:
     "東京書庫の評判・口コミ・料金を徹底解説。本好きのための書籍専用倉庫。取り出し送料無料・RC構造倉庫・月額275円〜のコスパを正直レビュー。",
 };

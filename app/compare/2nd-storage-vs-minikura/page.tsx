@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "2nd STORAGE vs minikura【2026年最新】料金・機能を徹底比較｜送料無料 vs 月額最安",
+  title: "2nd STORAGE vs minikura｜料金・機能の徹底比較",
   description:
     "2nd STORAGEとminikuraを料金・取り出し送料・対応エリア・機能で徹底比較。首都圏在住なら2nd STORAGEが有利？書籍を大量に預けるならminikura？使い方別のおすすめを解説。",
 };

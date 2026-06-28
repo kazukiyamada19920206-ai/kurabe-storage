@@ -3,7 +3,7 @@ import Link from "next/link";
 import pricing from "../../../pricing.json";
 
 export const metadata: Metadata = {
-  title: "サマリーポケットの評判・口コミ【クリーニングの仕上がりも解説】メリット・デメリットを徹底解説",
+  title: "サマリーポケットの評判・口コミ｜料金・メリット・デメリット",
   description:
     "サマリーポケットの評判・口コミ・クリーニングの料金と仕上がりを徹底解説。悪い口コミ・最悪の声も掲載。月額料金・メリット・デメリットを正直にレビュー。",
 };

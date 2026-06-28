@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "引越し前後の荷物を一時保管する方法【宅配収納が最安・最便利】2026年最新",
+  title: "引越し前後の荷物を一時保管する方法｜宅配収納活用",
   description: "引越し前後の荷物の一時保管に困っていませんか？宅配収納なら月330円〜でスマホから完結。トランクルームより安く、引越し業者の一時保管より手軽な方法を徹底解説。",
 };
 

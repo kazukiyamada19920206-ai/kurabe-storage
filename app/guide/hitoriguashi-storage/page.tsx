@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "一人暮らしで収納が足りない時の解決策【宅配収納活用法】2026年最新",
+  title: "一人暮らしの収納不足を宅配収納で解消する方法",
   description: "一人暮らしで収納スペースが足りない悩みを宅配収納で解決。月220円〜でクローゼットをスッキリさせる方法・おすすめサービス4選・料金比較を徹底解説。",
 };
 

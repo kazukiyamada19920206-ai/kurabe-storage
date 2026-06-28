@@ -3,7 +3,7 @@ import Link from "next/link";
 import pricing from "../../../pricing.json";
 
 export const metadata: Metadata = {
-  title: "【2026年最新】AZUKELの評判・口コミ｜月額220円は本当にお得？デメリットも正直レビュー",
+  title: "AZUKELの評判・口コミ｜月額220円の実態とデメリット",
   description:
     "AZUKELの評判・口コミを正直レビュー。月額220円の実態・取り出し送料・デメリット・サマリーポケットとの料金比較まで徹底解説。業界最安水準のコスパを検証。",
 };

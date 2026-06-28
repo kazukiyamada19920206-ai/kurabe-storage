@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "【2026年最新】宅配収納サービスおすすめランキング9選｜料金・口コミ・特徴を徹底比較",
+  title: "宅配収納おすすめランキング9選｜料金・口コミ比較",
   description:
     "宅配収納サービスのおすすめランキングを料金・使いやすさ・保管環境で徹底比較。コスパ最強・初心者向け・大型荷物対応など目的別1位も紹介。最安月額220円〜。",
 };

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "衣替えに宅配収納を使う前に知っておきたいこと｜後悔しない預け方と選び方",
+  title: "衣替え前に知っておきたい宅配収納の使い方と選び方",
   description:
     "衣替えで宅配収納を使う前に知っておくべき「預ける前の3つの質問」から、目的別サービスの選び方・コストシミュレーションまで徹底解説。後悔しない預け方を紹介します。",
 };

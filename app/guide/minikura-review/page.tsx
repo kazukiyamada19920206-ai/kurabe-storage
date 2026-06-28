@@ -3,7 +3,7 @@ import Link from "next/link";
 import pricing from "../../../pricing.json";
 
 export const metadata: Metadata = {
-  title: "minikura（ミニクラ）の評判・口コミを徹底解説｜メリット・デメリットとおすすめの使い方",
+  title: "minikuraの評判・口コミ｜料金・メリット・デメリット",
   description:
     "minikuraの実際の口コミ・評判、月額料金、メリット・デメリット、オプション機能を徹底解説。長期保管や書籍・コレクション保管におすすめの使い方も紹介します。",
 };

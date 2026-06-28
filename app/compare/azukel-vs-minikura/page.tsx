@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "AZUKEL vs minikura どちらを選ぶべき？料金・特徴を徹底比較",
+  title: "AZUKEL vs minikura｜料金・特徴の徹底比較",
   description:
     "AZUKELとminikuraの月額料金・取り出し送料・特徴・おすすめの人を徹底比較。保管期間によってどちらがお得か変わる逆転ポイントも解説します。",
 };

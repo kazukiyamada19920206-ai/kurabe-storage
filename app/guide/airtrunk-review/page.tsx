@@ -3,7 +3,7 @@ import Link from "next/link";
 import pricing from "../../../pricing.json";
 
 export const metadata: Metadata = {
-  title: "エアトランクの評判・口コミを徹底解説｜メリット・デメリットとおすすめの使い方",
+  title: "エアトランクの評判・口コミ｜送料無料の実態とデメリット",
   description:
     "エアトランクの実際の口コミ・評判、料金、メリット・デメリットを徹底解説。集荷・配送料が何度でも無料のサービスの特徴とおすすめの使い方を紹介します。",
 };

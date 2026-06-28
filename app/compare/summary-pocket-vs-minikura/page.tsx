@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "サマリーポケット vs minikura【2026年最新】料金・機能を18項目比較｜どっちが安い？",
+  title: "サマリーポケット vs minikura｜料金・機能の徹底比較",
   description:
     "サマリーポケットとminikuraを月額・取り出し送料・クリーニング・長期割引など18項目で徹底比較。料金シミュレーション付き。あなたの使い方でどちらがお得か3分でわかります。",
 };

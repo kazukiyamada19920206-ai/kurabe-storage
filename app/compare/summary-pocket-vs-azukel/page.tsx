@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "サマリーポケット vs AZUKEL【2026年最新】料金・機能を徹底比較｜月額110円差の実態",
+  title: "サマリーポケット vs AZUKEL｜料金・機能の徹底比較",
   description:
     "サマリーポケットとAZUKELを月額・取り出し送料・クリーニング・知名度など全項目で徹底比較。料金シミュレーション付き。どちらがあなたに合うか3分でわかります。",
 };

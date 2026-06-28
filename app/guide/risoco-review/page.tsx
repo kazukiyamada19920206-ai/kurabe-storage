@@ -3,7 +3,7 @@ import Link from "next/link";
 import pricing from "../../../pricing.json";
 
 export const metadata: Metadata = {
-  title: "リソコの評判・口コミを徹底解説｜メリット・デメリットとおすすめの使い方",
+  title: "リソコの評判・口コミ｜料金・メリット・デメリット解説",
   description:
     "リソコの実際の口コミ・評判、料金、メリット・デメリットを徹底解説。阪急阪神東宝グループ運営の本格的な保管環境の特徴とおすすめの使い方を紹介します。",
 };

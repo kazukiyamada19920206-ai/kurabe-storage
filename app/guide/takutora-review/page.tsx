@@ -3,7 +3,7 @@ import Link from "next/link";
 import pricing from "../../../pricing.json";
 
 export const metadata: Metadata = {
-  title: "宅トラの評判・口コミを徹底解説｜メリット・デメリットとおすすめの使い方",
+  title: "宅トラの評判・口コミ｜ヤマト運輸の料金とデメリット",
   description:
     "宅トラの実際の口コミ・評判、料金、メリット・デメリットを徹底解説。クロネコヤマト運営の宅配型トランクルームの特徴とおすすめの使い方を紹介します。",
 };

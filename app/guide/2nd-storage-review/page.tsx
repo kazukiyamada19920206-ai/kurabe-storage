@@ -3,7 +3,7 @@ import Link from "next/link";
 import pricing from "../../../pricing.json";
 
 export const metadata: Metadata = {
-  title: "【2026年最新】2nd STORAGEの評判・口コミ｜配送料無料は本当？デメリット・対応エリアを正直解説",
+  title: "2nd STORAGEの評判・口コミ｜配送料無料の実態とデメリット",
   description:
     "2nd STORAGEの評判・口コミを正直レビュー。ゲオグループ運営・配送料完全無料の実態、対応エリアの制限、月額料金、梱包不要のメリット・デメリットを徹底解説。首都圏在住の方必読。",
 };

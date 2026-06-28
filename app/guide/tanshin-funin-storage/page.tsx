@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "単身赴任の荷物どうする？宅配収納を使った解決法【2026年最新】",
+  title: "単身赴任の荷物を宅配収納で解決する方法",
   description: "単身赴任で荷物の置き場に困っていませんか？宅配収納を使えば月330円〜で荷物を安全に保管できます。おすすめサービス4選・料金比較・失敗しない選び方を徹底解説。",
 };
 

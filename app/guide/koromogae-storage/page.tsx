@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "衣替えに宅配収納を使うべき理由とおすすめサービス5選【2026年最新】",
+  title: "衣替えに宅配収納を使う理由とおすすめサービス5選",
   description: "衣替えのたびにクローゼットがパンパンで困っていませんか？宅配収納を使えば月330円〜で自宅完結の衣替えが実現。おすすめ5社の比較・料金シミュレーション・失敗しない選び方を徹底解説。",
 };
 
