@@ -5,11 +5,20 @@ export const metadata: Metadata = {
   title: "衣替え前に知っておきたい宅配収納の使い方と選び方",
   description:
     "衣替えで宅配収納を使う前に知っておくべき「預ける前の3つの質問」から、目的別サービスの選び方・コストシミュレーションまで徹底解説。後悔しない預け方を紹介します。",
+  openGraph: {
+    title: "衣替え前に知っておきたい宅配収納の使い方と選び方 | くらべる収納",
+    description: "衣替えで宅配収納を使う前に知っておくべき「預ける前の3つの質問」から、目的別サービスの選び方・コストシミュレーションまで徹底解説。後悔しない預け方を紹介します。",
+    url: "https://moriyamanaomi.com/guide/seasonal-storage-tips",
+    siteName: "くらべる収納",
+    locale: "ja_JP",
+    type: "article",
+  },
 };
 
 export default function SeasonalStorageTipsPage() {
   return (
     <main className="min-h-screen bg-[#F5F0E8]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"ホーム\", \"item\": \"https://moriyamanaomi.com\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"ガイド\", \"item\": \"https://moriyamanaomi.com/guide\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"衣替え前の宅配収納選び\"}]}" }} />
       {/* ヘッダー */}
       <header className="bg-white border-b border-gray-200 py-4">
         <div className="mx-auto max-w-6xl px-6">
@@ -287,6 +296,31 @@ export default function SeasonalStorageTipsPage() {
             <p className="text-[13px] text-[#7A4A1E] leading-[1.8]">
               ⚠️ 衣替え時期（4月・10月）は各社取り出しが混雑します。<strong>2週間前には依頼しておく</strong>と安心です。
             </p>
+          </div>
+        </section>
+
+        
+        {/* 関連記事 */}
+        <section>
+          <h2 className="text-[20px] font-[700] text-[#2D5016] mb-4 pb-2 border-b-2 border-[#2D5016]">
+            関連記事
+          </h2>
+          <div className="grid md:grid-cols-2 gap-3">
+            {[
+              { title: "宅配収納おすすめランキング9選", href: "/compare/ranking" },
+              { title: "衣替えに宅配収納を使う理由とおすすめ5選", href: "/guide/koromogae-storage" },
+              { title: "サマリーポケットの評判・口コミ", href: "/guide/summary-pocket-review" },
+              { title: "宅配収納の月額相場はいくら？9社比較", href: "/guide/monthly-fee-comparison" },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="block bg-white rounded-[12px] p-4 hover:bg-[#F5F0E8] transition"
+                style={{ border: "0.5px solid #D3D1C7" }}
+              >
+                <p className="text-[13px] font-[600] text-[#2D5016]">→ {item.title}</p>
+              </Link>
+            ))}
           </div>
         </section>
 

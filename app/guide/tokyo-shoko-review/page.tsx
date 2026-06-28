@@ -6,6 +6,14 @@ export const metadata: Metadata = {
   title: "東京書庫の評判・口コミ｜本専門の料金とデメリット",
   description:
     "東京書庫の評判・口コミ・料金を徹底解説。本好きのための書籍専用倉庫。取り出し送料無料・RC構造倉庫・月額275円〜のコスパを正直レビュー。",
+  openGraph: {
+    title: "東京書庫の評判・口コミ｜本専門の料金とデメリット | くらべる収納",
+    description: "東京書庫の評判・口コミ・料金を徹底解説。本好きのための書籍専用倉庫。取り出し送料無料・RC構造倉庫・月額275円〜のコスパを正直レビュー。",
+    url: "https://moriyamanaomi.com/guide/tokyo-shoko-review",
+    siteName: "くらべる収納",
+    locale: "ja_JP",
+    type: "article",
+  },
 };
 
 const service = pricing.find((s) => s.slug === "tokyo-shoko")!;
@@ -13,6 +21,7 @@ const service = pricing.find((s) => s.slug === "tokyo-shoko")!;
 export default function TokyoShokoReviewPage() {
   return (
     <main className="min-h-screen bg-[#F5F0E8]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"ホーム\", \"item\": \"https://moriyamanaomi.com\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"ガイド\", \"item\": \"https://moriyamanaomi.com/guide\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"東京書庫の評判・口コミ\"}]}" }} />
       {/* ヘッダー */}
       <header className="bg-white border-b border-gray-200 py-4">
         <div className="mx-auto max-w-6xl px-6">
@@ -338,6 +347,31 @@ export default function TokyoShokoReviewPage() {
             >
               東京書庫の料金を診断で確認する →
             </Link>
+          </div>
+        </section>
+
+        
+        {/* 関連記事 */}
+        <section>
+          <h2 className="text-[20px] font-[700] text-[#2D5016] mb-4 pb-2 border-b-2 border-[#2D5016]">
+            関連記事
+          </h2>
+          <div className="grid md:grid-cols-2 gap-3">
+            {[
+              { title: "宅配収納おすすめランキング9選", href: "/compare/ranking" },
+              { title: "リソコの評判・口コミ", href: "/guide/risoco-review" },
+              { title: "宅配収納サービスとは？仕組み・料金を解説", href: "/guide/what-is-takuhai-storage" },
+              { title: "宅配収納の月額相場はいくら？9社比較", href: "/guide/monthly-fee-comparison" },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="block bg-white rounded-[12px] p-4 hover:bg-[#F5F0E8] transition"
+                style={{ border: "0.5px solid #D3D1C7" }}
+              >
+                <p className="text-[13px] font-[600] text-[#2D5016]">→ {item.title}</p>
+              </Link>
+            ))}
           </div>
         </section>
 

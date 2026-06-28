@@ -6,6 +6,14 @@ export const metadata: Metadata = {
   title: "2nd STORAGEの評判・口コミ｜配送料無料の実態とデメリット",
   description:
     "2nd STORAGEの評判・口コミを正直レビュー。ゲオグループ運営・配送料完全無料の実態、対応エリアの制限、月額料金、梱包不要のメリット・デメリットを徹底解説。首都圏在住の方必読。",
+  openGraph: {
+    title: "2nd STORAGEの評判・口コミ｜配送料無料の実態とデメリット | くらべる収納",
+    description: "2nd STORAGEの評判・口コミを正直レビュー。ゲオグループ運営・配送料完全無料の実態、対応エリアの制限、月額料金、梱包不要のメリット・デメリットを徹底解説。首都圏在住の方必読。",
+    url: "https://moriyamanaomi.com/guide/2nd-storage-review",
+    siteName: "くらべる収納",
+    locale: "ja_JP",
+    type: "article",
+  },
 };
 
 const service = pricing.find((s) => s.slug === "2nd-storage")!;
@@ -13,6 +21,8 @@ const service = pricing.find((s) => s.slug === "2nd-storage")!;
 export default function SecondStorageReviewPage() {
   return (
     <main className="min-h-screen bg-[#F5F0E8]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"ホーム\", \"item\": \"https://moriyamanaomi.com\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"ガイド\", \"item\": \"https://moriyamanaomi.com/guide\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"2nd STORAGEの評判・口コミ\"}]}" }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: "{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"2nd STORAGEの運営会社はどこですか？\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"株式会社ゲオ（ゲオグループ）が運営しています。DVDレンタルやリユース事業（セカンドストリート）で知られる大手企業で、2022年3月に宅配型トランクルームサービスとして2nd STORAGEを開始しました。\"}}, {\"@type\": \"Question\", \"name\": \"対応エリアはどこですか？\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"現在は東京都（離島除く）・神奈川県（横浜市・川崎市）・千葉県（市川市・浦安市）に対応しています。順次エリアを拡大中のため、最新情報は公式サイトでご確認ください。\"}}, {\"@type\": \"Question\", \"name\": \"箱に入らない大型荷物は預けられますか？\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"預けられます。これが2nd STORAGEの最大の特徴です。ゴルフバッグ・スーツケース・釣り道具・スキー板など、他の宅配収納サービスでは断られる大型荷物も梱包不要でそのまま預けられます。\"}}, {\"@type\": \"Question\", \"name\": \"取り出し送料はかかりますか？\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"小型荷物の取り出しは無料です。大型品については別途費用が発生する場合があります。頻繁に出し入れする方にとってはコスパが良いサービスです。\"}}, {\"@type\": \"Question\", \"name\": \"保管中の荷物を売ることはできますか？\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"ゲオグループのオプションとして、保管中の荷物をゲオ・セカンドストリートで買取査定してもらうことができます。不用品の処分と収納整理を同時に進めたい方に特におすすめの機能です。\"}}]}" }} />
       {/* ヘッダー */}
       <header className="bg-white border-b border-gray-200 py-4">
         <div className="mx-auto max-w-6xl px-6">
@@ -451,6 +461,31 @@ export default function SecondStorageReviewPage() {
                 <p className="font-[700] text-[#2C2C2A] mb-2 text-[14px]">Q. {item.q}</p>
                 <p className="text-[13px] text-[#5F5E5A] leading-[1.8]">A. {item.a}</p>
               </div>
+            ))}
+          </div>
+        </section>
+
+        
+        {/* 関連記事 */}
+        <section>
+          <h2 className="text-[20px] font-[700] text-[#2D5016] mb-4 pb-2 border-b-2 border-[#2D5016]">
+            関連記事
+          </h2>
+          <div className="grid md:grid-cols-2 gap-3">
+            {[
+              { title: "宅配収納おすすめランキング9選", href: "/compare/ranking" },
+              { title: "2nd STORAGE vs minikura 料金・機能比較", href: "/compare/2nd-storage-vs-minikura" },
+              { title: "minikuraの評判・口コミ", href: "/guide/minikura-review" },
+              { title: "宅配収納の月額相場はいくら？9社比較", href: "/guide/monthly-fee-comparison" },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="block bg-white rounded-[12px] p-4 hover:bg-[#F5F0E8] transition"
+                style={{ border: "0.5px solid #D3D1C7" }}
+              >
+                <p className="text-[13px] font-[600] text-[#2D5016]">→ {item.title}</p>
+              </Link>
             ))}
           </div>
         </section>

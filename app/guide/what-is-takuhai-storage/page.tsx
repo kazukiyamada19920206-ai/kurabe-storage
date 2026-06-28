@@ -6,6 +6,14 @@ export const metadata: Metadata = {
   title: "宅配収納サービスとは？仕組み・料金・トランクルームとの違い",
   description:
     "宅配収納サービスの仕組み・料金相場・トランクルームとの違いをわかりやすく解説。初めて利用する方向けに、おすすめサービスの選び方まで紹介します。",
+  openGraph: {
+    title: "宅配収納サービスとは？仕組み・料金・トランクルームとの違い | くらべる収納",
+    description: "宅配収納サービスの仕組み・料金相場・トランクルームとの違いをわかりやすく解説。初めて利用する方向けに、おすすめサービスの選び方まで紹介します。",
+    url: "https://moriyamanaomi.com/guide/what-is-takuhai-storage",
+    siteName: "くらべる収納",
+    locale: "ja_JP",
+    type: "article",
+  },
 };
 
 export default function GuidePage() {

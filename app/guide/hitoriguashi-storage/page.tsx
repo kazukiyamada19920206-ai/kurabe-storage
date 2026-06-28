@@ -5,11 +5,21 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "一人暮らしの収納不足を宅配収納で解消する方法",
   description: "一人暮らしで収納スペースが足りない悩みを宅配収納で解決。月220円〜でクローゼットをスッキリさせる方法・おすすめサービス4選・料金比較を徹底解説。",
+  openGraph: {
+    title: "一人暮らしの収納不足を宅配収納で解消する方法 | くらべる収納",
+    description: "一人暮らしで収納スペースが足りない悩みを宅配収納で解決。月220円〜でクローゼットをスッキリさせる方法・おすすめサービス4選・料金比較を徹底解説。",
+    url: "https://moriyamanaomi.com/guide/hitoriguashi-storage",
+    siteName: "くらべる収納",
+    locale: "ja_JP",
+    type: "article",
+  },
 };
 
 export default function HitoriguashiStoragePage() {
   return (
     <main className="min-h-screen bg-[#F5F0E8]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"ホーム\", \"item\": \"https://moriyamanaomi.com\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"ガイド\", \"item\": \"https://moriyamanaomi.com/guide\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"一人暮らしの収納不足対策\"}]}" }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: "{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"一人暮らしの狭い部屋から集荷してもらえますか？\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"はい、対応しています。宅配収納の集荷はヤマト運輸などの宅配業者が自宅まで来てくれます。エレベーターなしの物件や狭い廊下でも対応可能です。ボックスに詰めた状態で玄関前に出しておくだけで集荷できます。\"}}, {\"@type\": \"Question\", \"name\": \"どのくらいの量から使えますか？\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"1箱から利用できます。まず試しに1箱だけ預けてみて、使い勝手を確認してから箱数を増やすという方法がおすすめです。1箱の費用は月額220〜330円なので、試しやすい金額です。\"}}, {\"@type\": \"Question\", \"name\": \"預けたものを写真で確認できますか？\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"サービスによります。サマリーポケット・minikura・カラエトはアイテムを1点ずつ写真撮影してアプリで管理できます。「何を預けたか忘れた」という問題を防げます。\"}}, {\"@type\": \"Question\", \"name\": \"契約期間の縛りはありますか？\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"ほとんどのサービスは1ヶ月単位で利用でき、縛りはありません。引越しや生活環境の変化が多い一人暮らしの方でも、気軽に始めて必要なくなったらすぐやめられます。\"}}, {\"@type\": \"Question\", \"name\": \"収納グッズを買うより本当にお得ですか？\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"長期的に見るとお得なケースが多いです。収納グッズは購入コストがかかり、使わなくなっても捨てにくい。宅配収納は月額数百円で必要な期間だけ使え、不要になればすぐやめられます。部屋のスペースを有効活用できることを考えると、コスパは高いといえます。\"}}]}" }} />
       {/* ヘッダー */}
       <header className="bg-white border-b border-gray-200 py-4">
         <div className="mx-auto max-w-6xl px-6">

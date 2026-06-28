@@ -6,6 +6,14 @@ export const metadata: Metadata = {
   title: "サマリーポケットの評判・口コミ｜料金・メリット・デメリット",
   description:
     "サマリーポケットの評判・口コミ・クリーニングの料金と仕上がりを徹底解説。悪い口コミ・最悪の声も掲載。月額料金・メリット・デメリットを正直にレビュー。",
+  openGraph: {
+    title: "サマリーポケットの評判・口コミ｜料金・メリット・デメリット | くらべる収納",
+    description: "サマリーポケットの評判・口コミ・クリーニングの料金と仕上がりを徹底解説。悪い口コミ・最悪の声も掲載。月額料金・メリット・デメリットを正直にレビュー。",
+    url: "https://moriyamanaomi.com/guide/summary-pocket-review",
+    siteName: "くらべる収納",
+    locale: "ja_JP",
+    type: "article",
+  },
 };
 
 const service = pricing.find((s) => s.slug === "summary-pocket")!;
@@ -13,6 +21,8 @@ const service = pricing.find((s) => s.slug === "summary-pocket")!;
 export default function SummaryPocketReviewPage() {
   return (
     <main className="min-h-screen bg-[#F5F0E8]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"ホーム\", \"item\": \"https://moriyamanaomi.com\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"ガイド\", \"item\": \"https://moriyamanaomi.com/guide\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"サマリーポケットの評判・口コミ\"}]}" }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: "{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"クリーニングオプションはどのプランで使えますか？\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"スタンダードプランのみ利用できます。エコノミープランでは利用できません。料金は衣類1点990円〜、布団1枚2,200円〜です。預けたまま依頼できるため、自分でクリーニング店に持ち込む手間が不要です。\"}}, {\"@type\": \"Question\", \"name\": \"クリーニングの仕上がりと日数は？\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"ホワイト急便が担当しており、通常のクリーニング店と同等の仕上がりです。ただしひどいシミや特殊素材は完全に落ちない場合があります。仕上がりまでスタンダードコースで約2週間かかるため、急ぎの場合は早めに依頼してください。\"}}]}" }} />
       {/* ヘッダー */}
       <header className="bg-white border-b border-gray-200 py-4">
         <div className="mx-auto max-w-6xl px-6">
@@ -535,6 +545,31 @@ export default function SummaryPocketReviewPage() {
                 <p className="font-[700] text-[#2C2C2A] mb-2 text-[14px]">Q. {item.q}</p>
                 <p className="text-[13px] text-[#5F5E5A] leading-[1.8]">A. {item.a}</p>
               </div>
+            ))}
+          </div>
+        </section>
+
+        
+        {/* 関連記事 */}
+        <section>
+          <h2 className="text-[20px] font-[700] text-[#2D5016] mb-4 pb-2 border-b-2 border-[#2D5016]">
+            関連記事
+          </h2>
+          <div className="grid md:grid-cols-2 gap-3">
+            {[
+              { title: "宅配収納おすすめランキング9選", href: "/compare/ranking" },
+              { title: "サマリーポケット vs minikura 料金比較", href: "/compare/summary-pocket-vs-minikura" },
+              { title: "サマリーポケット vs AZUKEL 料金比較", href: "/compare/summary-pocket-vs-azukel" },
+              { title: "minikuraの評判・口コミ", href: "/guide/minikura-review" },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="block bg-white rounded-[12px] p-4 hover:bg-[#F5F0E8] transition"
+                style={{ border: "0.5px solid #D3D1C7" }}
+              >
+                <p className="text-[13px] font-[600] text-[#2D5016]">→ {item.title}</p>
+              </Link>
             ))}
           </div>
         </section>

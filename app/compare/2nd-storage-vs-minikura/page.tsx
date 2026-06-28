@@ -5,11 +5,21 @@ export const metadata: Metadata = {
   title: "2nd STORAGE vs minikura｜料金・機能の徹底比較",
   description:
     "2nd STORAGEとminikuraを料金・取り出し送料・対応エリア・機能で徹底比較。首都圏在住なら2nd STORAGEが有利？書籍を大量に預けるならminikura？使い方別のおすすめを解説。",
+  openGraph: {
+    title: "2nd STORAGE vs minikura｜料金・機能の徹底比較 | くらべる収納",
+    description: "2nd STORAGEとminikuraを料金・取り出し送料・対応エリア・機能で徹底比較。首都圏在住なら2nd STORAGEが有利？書籍を大量に預けるならminikura？使い方別のおすすめを解説。",
+    url: "https://moriyamanaomi.com/compare/2nd-storage-vs-minikura",
+    siteName: "くらべる収納",
+    locale: "ja_JP",
+    type: "article",
+  },
 };
 
 export default function VsPage() {
   return (
     <main className="min-h-screen bg-[#F5F0E8]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"ホーム\", \"item\": \"https://moriyamanaomi.com\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"比較\", \"item\": \"https://moriyamanaomi.com/compare\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"2nd STORAGE vs minikura\"}]}" }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: "{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"2nd STORAGEとminikuraの最大の違いは何ですか？\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"最大の違いは対応エリアと料金モデルです。2nd STORAGEは首都圏限定・スペースプラン・取り出し無料、minikuraは全国対応・ボックスプラン・取り出し1,320円です。首都圏外の方はminikura一択です。首都圏在住で取り出しを頻繁にするなら2nd STORAGE、年に数回の取り出しならminikuraが有利です。\"}}, {\"@type\": \"Question\", \"name\": \"2nd STORAGEは首都圏以外では使えないのですか？\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"現在は東京都（離島除く）・横浜市・川崎市・千葉県（市川市・浦安市）のみ対応しています。それ以外の地域にお住まいの方はminikura・サマリーポケット・AZUKELなど全国対応のサービスをご利用ください。\"}}, {\"@type\": \"Question\", \"name\": \"長期保管するなら2nd STORAGEとminikuraどちらがお得ですか？\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"長期（1年以上）保管するならminikuraが有利です。13ヶ月目以降は月額が自動的に値下がりし、さらに1年以上預けたボックスの取り出し送料が無料になります。年に数回しか取り出さない場合、月額コストを抑えられるminikuraの方がトータルで安くなるケースが多いです。\"}}, {\"@type\": \"Question\", \"name\": \"本を大量に預けたいのですが、どちらがいいですか？\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"minikura一択です。minikuraには書籍・CD・コミック専用の「HAKO本棚プラン」があり、1冊単位で管理・取り出しできます。2nd STORAGEには書籍専用プランがないため、大量の書籍保管にはminikuraが圧倒的に向いています。\"}}, {\"@type\": \"Question\", \"name\": \"GEO（ゲオ）の買取と組み合わせて使えますか？\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"2nd STORAGEを利用することで、保管中の荷物をGEO・セカンドストリートで買取査定してもらうことができます。不用品の処分と収納整理を同時に進めたい方に特に向いている機能で、minikuraにはない2nd STORAGE独自の強みです。\"}}]}" }} />
       {/* ヘッダー */}
       <header className="bg-white border-b border-gray-200 py-4">
         <div className="mx-auto max-w-6xl px-6">
@@ -298,6 +308,31 @@ export default function VsPage() {
             <Link href="/compare/ranking" className="flex items-center gap-2 bg-white rounded-[12px] p-4 hover:bg-[#F5F0E8] transition" style={{ border: "0.5px solid #D3D1C7" }}>
               <span className="text-[13px] text-[#2D5016] font-[600]">→ 宅配収納サービス ランキング一覧</span>
             </Link>
+          </div>
+        </section>
+
+        
+        {/* 関連記事 */}
+        <section>
+          <h2 className="text-[20px] font-[700] text-[#2D5016] mb-4 pb-2 border-b-2 border-[#2D5016]">
+            関連記事
+          </h2>
+          <div className="grid md:grid-cols-2 gap-3">
+            {[
+              { title: "2nd STORAGEの評判・口コミ詳細", href: "/guide/2nd-storage-review" },
+              { title: "minikuraの評判・口コミ詳細", href: "/guide/minikura-review" },
+              { title: "宅配収納おすすめランキング9選", href: "/compare/ranking" },
+              { title: "宅配収納の月額相場はいくら？9社比較", href: "/guide/monthly-fee-comparison" },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="block bg-white rounded-[12px] p-4 hover:bg-[#F5F0E8] transition"
+                style={{ border: "0.5px solid #D3D1C7" }}
+              >
+                <p className="text-[13px] font-[600] text-[#2D5016]">→ {item.title}</p>
+              </Link>
+            ))}
           </div>
         </section>
 

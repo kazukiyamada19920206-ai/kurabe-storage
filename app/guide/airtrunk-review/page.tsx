@@ -6,6 +6,14 @@ export const metadata: Metadata = {
   title: "エアトランクの評判・口コミ｜送料無料の実態とデメリット",
   description:
     "エアトランクの実際の口コミ・評判、料金、メリット・デメリットを徹底解説。集荷・配送料が何度でも無料のサービスの特徴とおすすめの使い方を紹介します。",
+  openGraph: {
+    title: "エアトランクの評判・口コミ｜送料無料の実態とデメリット | くらべる収納",
+    description: "エアトランクの実際の口コミ・評判、料金、メリット・デメリットを徹底解説。集荷・配送料が何度でも無料のサービスの特徴とおすすめの使い方を紹介します。",
+    url: "https://moriyamanaomi.com/guide/airtrunk-review",
+    siteName: "くらべる収納",
+    locale: "ja_JP",
+    type: "article",
+  },
 };
 
 const service = pricing.find((s) => s.slug === "airtrunk")!;
@@ -13,6 +21,7 @@ const service = pricing.find((s) => s.slug === "airtrunk")!;
 export default function AirtrunkReviewPage() {
   return (
     <main className="min-h-screen bg-[#F5F0E8]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"ホーム\", \"item\": \"https://moriyamanaomi.com\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"ガイド\", \"item\": \"https://moriyamanaomi.com/guide\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"エアトランクの評判・口コミ\"}]}" }} />
       {/* ヘッダー */}
       <header className="bg-white border-b border-gray-200 py-4">
         <div className="mx-auto max-w-6xl px-6">
@@ -343,6 +352,31 @@ export default function AirtrunkReviewPage() {
             >
               エアトランクの料金を診断で確認する →
             </Link>
+          </div>
+        </section>
+
+        
+        {/* 関連記事 */}
+        <section>
+          <h2 className="text-[20px] font-[700] text-[#2D5016] mb-4 pb-2 border-b-2 border-[#2D5016]">
+            関連記事
+          </h2>
+          <div className="grid md:grid-cols-2 gap-3">
+            {[
+              { title: "宅配収納おすすめランキング9選", href: "/compare/ranking" },
+              { title: "宅配収納サービスとは？仕組み・料金を解説", href: "/guide/what-is-takuhai-storage" },
+              { title: "2nd STORAGEの評判・口コミ", href: "/guide/2nd-storage-review" },
+              { title: "宅配収納の月額相場はいくら？9社比較", href: "/guide/monthly-fee-comparison" },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="block bg-white rounded-[12px] p-4 hover:bg-[#F5F0E8] transition"
+                style={{ border: "0.5px solid #D3D1C7" }}
+              >
+                <p className="text-[13px] font-[600] text-[#2D5016]">→ {item.title}</p>
+              </Link>
+            ))}
           </div>
         </section>
 

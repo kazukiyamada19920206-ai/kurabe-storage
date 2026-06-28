@@ -6,6 +6,14 @@ export const metadata: Metadata = {
   title: "カラエトの評判・口コミ・料金を徹底解説",
   description:
     "カラエトの実際の口コミ・評判、月額料金、メリット・デメリットを徹底解説。アイテム単位で取り出せる宅配収納サービスの特徴をまとめました。",
+  openGraph: {
+    title: "カラエトの評判・口コミ・料金を徹底解説 | くらべる収納",
+    description: "カラエトの実際の口コミ・評判、月額料金、メリット・デメリットを徹底解説。アイテム単位で取り出せる宅配収納サービスの特徴をまとめました。",
+    url: "https://moriyamanaomi.com/guide/caraeto-review",
+    siteName: "くらべる収納",
+    locale: "ja_JP",
+    type: "article",
+  },
 };
 
 const service = pricing.find((s) => s.slug === "caraeto")!;
@@ -13,6 +21,7 @@ const service = pricing.find((s) => s.slug === "caraeto")!;
 export default function CaraetoReviewPage() {
   return (
     <main className="min-h-screen bg-[#F5F0E8]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"ホーム\", \"item\": \"https://moriyamanaomi.com\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"ガイド\", \"item\": \"https://moriyamanaomi.com/guide\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"カラエトの評判・口コミ\"}]}" }} />
       {/* ヘッダー */}
       <header className="bg-white border-b border-gray-200 py-4">
         <div className="mx-auto max-w-6xl px-6">
@@ -255,6 +264,31 @@ export default function CaraetoReviewPage() {
           >
             カラエトの詳細・料金シミュレーションを見る →
           </Link>
+        </section>
+
+        
+        {/* 関連記事 */}
+        <section>
+          <h2 className="text-[20px] font-[700] text-[#2D5016] mb-4 pb-2 border-b-2 border-[#2D5016]">
+            関連記事
+          </h2>
+          <div className="grid md:grid-cols-2 gap-3">
+            {[
+              { title: "宅配収納おすすめランキング9選", href: "/compare/ranking" },
+              { title: "宅配収納の月額相場はいくら？9社比較", href: "/guide/monthly-fee-comparison" },
+              { title: "衣替えに宅配収納を使う理由とおすすめ5選", href: "/guide/koromogae-storage" },
+              { title: "AZUKELの評判・口コミ", href: "/guide/azukel-review" },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="block bg-white rounded-[12px] p-4 hover:bg-[#F5F0E8] transition"
+                style={{ border: "0.5px solid #D3D1C7" }}
+              >
+                <p className="text-[13px] font-[600] text-[#2D5016]">→ {item.title}</p>
+              </Link>
+            ))}
+          </div>
         </section>
 
         {/* 診断CTAバナー */}

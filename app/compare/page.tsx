@@ -6,6 +6,14 @@ export const metadata: Metadata = {
   title: "宅配収納サービス9社を徹底比較",
   description:
     "サマリーポケット・minikura・AZUKELなど宅配収納サービス9社の月額料金・取り出し送料・特徴を一覧比較。あなたに合うサービスを無料診断もできます。",
+  openGraph: {
+    title: "宅配収納サービス9社を徹底比較 | くらべる収納",
+    description: "サマリーポケット・minikura・AZUKELなど宅配収納サービス9社の月額料金・取り出し送料・特徴を一覧比較。あなたに合うサービスを無料診断もできます。",
+    url: "https://moriyamanaomi.com/compare",
+    siteName: "くらべる収納",
+    locale: "ja_JP",
+    type: "website",
+  },
 };
 
 const SERVICE_TAGS: Record<string, string> = {
@@ -42,6 +50,7 @@ const sorted = [...(pricing as PricingItem[])].sort(
 export default function ComparePage() {
   return (
     <main className="min-h-screen bg-[#F5F0E8]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"ホーム\", \"item\": \"https://moriyamanaomi.com\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"比較\"}]}" }} />
       {/* ヘッダー */}
       <header className="bg-white border-b border-gray-200 py-4">
         <div className="mx-auto max-w-6xl px-6 flex justify-between items-center">

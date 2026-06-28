@@ -5,6 +5,14 @@ export const metadata: Metadata = {
   title: "サマリーポケット vs AZUKEL｜料金・機能の徹底比較",
   description:
     "サマリーポケットとAZUKELを月額・取り出し送料・クリーニング・知名度など全項目で徹底比較。料金シミュレーション付き。どちらがあなたに合うか3分でわかります。",
+  openGraph: {
+    title: "サマリーポケット vs AZUKEL｜料金・機能の徹底比較 | くらべる収納",
+    description: "サマリーポケットとAZUKELを月額・取り出し送料・クリーニング・知名度など全項目で徹底比較。料金シミュレーション付き。どちらがあなたに合うか3分でわかります。",
+    url: "https://moriyamanaomi.com/compare/summary-pocket-vs-azukel",
+    siteName: "くらべる収納",
+    locale: "ja_JP",
+    type: "article",
+  },
 };
 
 const patterns = [
@@ -49,6 +57,8 @@ const patterns = [
 export default function VsPage() {
   return (
     <main className="min-h-screen bg-[#F5F0E8]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"ホーム\", \"item\": \"https://moriyamanaomi.com\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"比較\", \"item\": \"https://moriyamanaomi.com/compare\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"サマリーポケット vs AZUKEL\"}]}" }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: "{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"サマリーポケットとAZUKELの一番の違いは何ですか？\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"最大の違いはクリーニングオプションの有無です。サマリーポケットは預けた衣類をそのままクリーニングに出せますが、AZUKELにはこの機能がありません。料金面ではAZUKELが月額110円安く、箱数・期間が多いほど差が開きます。取り出し送料は両方1,100円で同じです。\"}}, {\"@type\": \"Question\", \"name\": \"AZUKELはサマリーポケットよりどれくらい安いですか？\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"月額は1箱あたり110円安くなります。取り出し送料は同じ1,100円です。例えば5箱を12ヶ月預ける場合、月額だけで6,600円安くなります。箱数・期間が多いほど節約額は大きくなります。\"}}, {\"@type\": \"Question\", \"name\": \"AZUKELの保管品質は信頼できますか？\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"十分に信頼できます。1972年創業の老舗セキュリティ企業・株式会社日本パープルが自社倉庫で直接運営しており、温度25℃以下・湿度65%以下を365日24時間維持しています。官公庁や大手企業の機密文書保管も手がけており、セキュリティ面ではむしろ業界トップクラスです。\"}}, {\"@type\": \"Question\", \"name\": \"どちらが初心者に向いていますか？\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"初心者にはサマリーポケットをおすすめします。テレビCMでおなじみの知名度があり、サポートが手厚く、初めての方でも安心して使えます。「とにかく安く保管したい」という場合はAZUKELでも十分なサポートを受けられます。\"}}, {\"@type\": \"Question\", \"name\": \"大型家具・家電を預けたい場合はどちらがいいですか？\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"どちらも大型家具・家電に対応していますが、AZUKELはスタッフが自宅まで搬出・搬入してくれるサービスも提供しています。大型荷物の場合は事前に各サービスに確認することをおすすめします。\"}}]}" }} />
       {/* ヘッダー */}
       <header className="bg-white border-b border-gray-200 py-4">
         <div className="mx-auto max-w-6xl px-6">
@@ -363,6 +373,31 @@ export default function VsPage() {
             <Link href="/compare/ranking" className="flex items-center gap-2 bg-white rounded-[12px] p-4 hover:bg-[#F5F0E8] transition" style={{ border: "0.5px solid #D3D1C7" }}>
               <span className="text-[13px] text-[#2D5016] font-[600]">→ 宅配収納サービス ランキング一覧</span>
             </Link>
+          </div>
+        </section>
+
+        
+        {/* 関連記事 */}
+        <section>
+          <h2 className="text-[20px] font-[700] text-[#2D5016] mb-4 pb-2 border-b-2 border-[#2D5016]">
+            関連記事
+          </h2>
+          <div className="grid md:grid-cols-2 gap-3">
+            {[
+              { title: "サマリーポケットの評判・口コミ詳細", href: "/guide/summary-pocket-review" },
+              { title: "AZUKELの評判・口コミ詳細", href: "/guide/azukel-review" },
+              { title: "宅配収納おすすめランキング9選", href: "/compare/ranking" },
+              { title: "AZUKEL vs minikura 料金比較", href: "/compare/azukel-vs-minikura" },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="block bg-white rounded-[12px] p-4 hover:bg-[#F5F0E8] transition"
+                style={{ border: "0.5px solid #D3D1C7" }}
+              >
+                <p className="text-[13px] font-[600] text-[#2D5016]">→ {item.title}</p>
+              </Link>
+            ))}
           </div>
         </section>
 

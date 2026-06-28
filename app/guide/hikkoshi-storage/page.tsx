@@ -5,11 +5,21 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "引越し前後の荷物を一時保管する方法｜宅配収納活用",
   description: "引越し前後の荷物の一時保管に困っていませんか？宅配収納なら月330円〜でスマホから完結。トランクルームより安く、引越し業者の一時保管より手軽な方法を徹底解説。",
+  openGraph: {
+    title: "引越し前後の荷物を一時保管する方法｜宅配収納活用 | くらべる収納",
+    description: "引越し前後の荷物の一時保管に困っていませんか？宅配収納なら月330円〜でスマホから完結。トランクルームより安く、引越し業者の一時保管より手軽な方法を徹底解説。",
+    url: "https://moriyamanaomi.com/guide/hikkoshi-storage",
+    siteName: "くらべる収納",
+    locale: "ja_JP",
+    type: "article",
+  },
 };
 
 export default function HikkoshiStoragePage() {
   return (
     <main className="min-h-screen bg-[#F5F0E8]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"ホーム\", \"item\": \"https://moriyamanaomi.com\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"ガイド\", \"item\": \"https://moriyamanaomi.com/guide\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"引越し前後の一時保管\"}]}" }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: "{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"引越し当日に荷物を預けることはできますか？\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"当日の預け入れは難しいです。宅配収納は申し込みから専用ボックスが届くまで数日かかります。退去日の1〜2週間前には申し込みを済ませ、ボックスを受け取っておくことをおすすめします。\"}}, {\"@type\": \"Question\", \"name\": \"取り出した荷物を旧居ではなく新居に届けてもらえますか？\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"サービスによります。サマリーポケット・minikuraは届け先の変更が可能です。取り出し依頼時に新居の住所を指定するだけで、新居に直送してもらえます。\"}}, {\"@type\": \"Question\", \"name\": \"引越し業者の一時保管サービスと宅配収納はどちらがお得ですか？\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"費用面では宅配収納の方が圧倒的に安いケースがほとんどです。引越し業者の一時保管は引越し費用に上乗せされることが多く、期間が長くなるほどコスト差が広がります。ただし大型家具・家電は引越し業者の方が対応しやすい場合もあります。\"}}, {\"@type\": \"Question\", \"name\": \"繁忙期（3月・9月）でも申し込めますか？\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"はい、宅配収納はオンラインで24時間申し込みが可能で、繁忙期でも料金が変わりません。ただし集荷・取り出しの混雑により通常より時間がかかる場合があります。繁忙期は1〜2週間前に余裕を持って依頼することをおすすめします。\"}}, {\"@type\": \"Question\", \"name\": \"保管中の荷物が破損した場合の補償はありますか？\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"ほとんどのサービスに補償制度があります。サマリーポケットは1箱あたり最大10万円、minikuraは1箱あたり最大5万円の補償が付いています。貴重品・壊れやすいものは事前に確認してください。\"}}]}" }} />
       {/* ヘッダー */}
       <header className="bg-white border-b border-gray-200 py-4">
         <div className="mx-auto max-w-6xl px-6">

@@ -6,6 +6,14 @@ export const metadata: Metadata = {
   title: "AZUKELの評判・口コミ｜月額220円の実態とデメリット",
   description:
     "AZUKELの評判・口コミを正直レビュー。月額220円の実態・取り出し送料・デメリット・サマリーポケットとの料金比較まで徹底解説。業界最安水準のコスパを検証。",
+  openGraph: {
+    title: "AZUKELの評判・口コミ｜月額220円の実態とデメリット | くらべる収納",
+    description: "AZUKELの評判・口コミを正直レビュー。月額220円の実態・取り出し送料・デメリット・サマリーポケットとの料金比較まで徹底解説。業界最安水準のコスパを検証。",
+    url: "https://moriyamanaomi.com/guide/azukel-review",
+    siteName: "くらべる収納",
+    locale: "ja_JP",
+    type: "article",
+  },
 };
 
 const service = pricing.find((s) => s.slug === "azukel")!;
@@ -13,6 +21,8 @@ const service = pricing.find((s) => s.slug === "azukel")!;
 export default function AzukelReviewPage() {
   return (
     <main className="min-h-screen bg-[#F5F0E8]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"ホーム\", \"item\": \"https://moriyamanaomi.com\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"ガイド\", \"item\": \"https://moriyamanaomi.com/guide\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"AZUKELの評判・口コミ\"}]}" }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: "{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"AZUKELの運営会社はどこですか？\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"株式会社日本パープル（東京都港区六本木）が運営しています。1972年創業の老舗セキュリティ企業で、官公庁や大手企業の機密文書管理を手がける信頼性の高い会社です。2017年に個人向け宅配収納サービスAZUKELをスタートしました。\"}}, {\"@type\": \"Question\", \"name\": \"AZUKELの保管環境は安全ですか？\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"自社で保管施設を直接運営しており、温度25℃以下・湿度65%以下を365日24時間維持しています。有人管理・機械警備・監視カメラによる24時間セキュリティ体制を導入しており、衣類・書籍・家電など大切な荷物を安全に保管できます。\"}}]}" }} />
       {/* ヘッダー */}
       <header className="bg-white border-b border-gray-200 py-4">
         <div className="mx-auto max-w-6xl px-6">
@@ -319,6 +329,31 @@ export default function AzukelReviewPage() {
                 <p className="font-[700] text-[#2C2C2A] mb-2 text-[14px]">Q. {item.q}</p>
                 <p className="text-[13px] text-[#5F5E5A] leading-[1.8]">A. {item.a}</p>
               </div>
+            ))}
+          </div>
+        </section>
+
+        
+        {/* 関連記事 */}
+        <section>
+          <h2 className="text-[20px] font-[700] text-[#2D5016] mb-4 pb-2 border-b-2 border-[#2D5016]">
+            関連記事
+          </h2>
+          <div className="grid md:grid-cols-2 gap-3">
+            {[
+              { title: "宅配収納おすすめランキング9選", href: "/compare/ranking" },
+              { title: "AZUKEL vs minikura 料金・特徴の比較", href: "/compare/azukel-vs-minikura" },
+              { title: "宅配収納の月額相場はいくら？9社比較", href: "/guide/monthly-fee-comparison" },
+              { title: "minikuraの評判・口コミ", href: "/guide/minikura-review" },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="block bg-white rounded-[12px] p-4 hover:bg-[#F5F0E8] transition"
+                style={{ border: "0.5px solid #D3D1C7" }}
+              >
+                <p className="text-[13px] font-[600] text-[#2D5016]">→ {item.title}</p>
+              </Link>
             ))}
           </div>
         </section>

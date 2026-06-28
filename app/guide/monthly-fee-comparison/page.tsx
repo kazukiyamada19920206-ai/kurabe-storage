@@ -6,6 +6,14 @@ import pricing from "../../../pricing.json";
 export const metadata: Metadata = {
   title: "宅配収納の月額相場はいくら？9社の料金を総費用で比較",
   description: "宅配収納サービスの月額相場は220円〜880円。しかし月額だけで選ぶと損するケースも。9社の料金を総費用ベースで比較し、失敗しない選び方を解説します。",
+  openGraph: {
+    title: "宅配収納の月額相場はいくら？9社の料金を総費用で比較 | くらべる収納",
+    description: "宅配収納サービスの月額相場は220円〜880円。しかし月額だけで選ぶと損するケースも。9社の料金を総費用ベースで比較し、失敗しない選び方を解説します。",
+    url: "https://moriyamanaomi.com/guide/monthly-fee-comparison",
+    siteName: "くらべる収納",
+    locale: "ja_JP",
+    type: "article",
+  },
 };
 
 type PricingItem = {
@@ -21,6 +29,8 @@ export default function MonthlyFeeComparisonPage() {
 
   return (
     <main className="min-h-screen bg-[#F5F0E8]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"ホーム\", \"item\": \"https://moriyamanaomi.com\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"ガイド\", \"item\": \"https://moriyamanaomi.com/guide\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"宅配収納の月額相場比較\"}]}" }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: "{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"月額料金は箱数が増えると割引されますか？\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"サービスによります。多くのサービスは箱数に応じた割引はなく、1箱あたりの料金がそのまま積算されます。一部サービスでは複数箱のセット割引が用意されている場合もあるため、公式サイトで確認してください。\"}}, {\"@type\": \"Question\", \"name\": \"月額料金はいつから発生しますか？\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"荷物を発送した日、または倉庫に到着した日から発生するサービスが一般的です。申し込んだだけでは料金は発生しません。\"}}, {\"@type\": \"Question\", \"name\": \"解約するとお金は返ってきますか？\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"前払いの場合、未使用期間分が返金されるサービスとされないサービスがあります。最低利用期間内の解約は早期解約料が発生することもあるため、契約前に解約条件を確認しましょう。\"}}, {\"@type\": \"Question\", \"name\": \"一番総費用が安いサービスはどこですか？\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"利用期間・取り出し回数によって変わります。短期・取り出し少なめならAZUKEL、長期保管ならminikura、取り出し頻度が高いならカラエトが有利な傾向です。詳細は本記事のシミュレーション表をご参照ください。\"}}]}" }} />
       {/* ヘッダー */}
       <header className="bg-white border-b border-gray-200 py-4">
         <div className="mx-auto max-w-6xl px-6">

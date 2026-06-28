@@ -5,6 +5,14 @@ export const metadata: Metadata = {
   title: "宅配収納おすすめランキング9選｜料金・口コミ比較",
   description:
     "宅配収納サービスのおすすめランキングを料金・使いやすさ・保管環境で徹底比較。コスパ最強・初心者向け・大型荷物対応など目的別1位も紹介。最安月額220円〜。",
+  openGraph: {
+    title: "宅配収納おすすめランキング9選｜料金・口コミ比較 | くらべる収納",
+    description: "宅配収納サービスのおすすめランキングを料金・使いやすさ・保管環境で徹底比較。コスパ最強・初心者向け・大型荷物対応など目的別1位も紹介。最安月額220円〜。",
+    url: "https://moriyamanaomi.com/compare/ranking",
+    siteName: "くらべる収納",
+    locale: "ja_JP",
+    type: "website",
+  },
 };
 
 const rankings = [
@@ -58,6 +66,7 @@ const rankings = [
 export default function RankingPage() {
   return (
     <main className="min-h-screen bg-[#F5F0E8]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"ホーム\", \"item\": \"https://moriyamanaomi.com\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"比較\", \"item\": \"https://moriyamanaomi.com/compare\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"ランキング\"}]}" }} />
       {/* ヘッダー */}
       <header className="bg-white border-b border-gray-200 py-4">
         <div className="mx-auto max-w-6xl px-6">

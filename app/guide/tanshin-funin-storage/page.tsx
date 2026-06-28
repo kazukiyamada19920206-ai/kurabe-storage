@@ -5,11 +5,21 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "単身赴任の荷物を宅配収納で解決する方法",
   description: "単身赴任で荷物の置き場に困っていませんか？宅配収納を使えば月330円〜で荷物を安全に保管できます。おすすめサービス4選・料金比較・失敗しない選び方を徹底解説。",
+  openGraph: {
+    title: "単身赴任の荷物を宅配収納で解決する方法 | くらべる収納",
+    description: "単身赴任で荷物の置き場に困っていませんか？宅配収納を使えば月330円〜で荷物を安全に保管できます。おすすめサービス4選・料金比較・失敗しない選び方を徹底解説。",
+    url: "https://moriyamanaomi.com/guide/tanshin-funin-storage",
+    siteName: "くらべる収納",
+    locale: "ja_JP",
+    type: "article",
+  },
 };
 
 export default function TanshinFuninStoragePage() {
   return (
     <main className="min-h-screen bg-[#F5F0E8]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"ホーム\", \"item\": \"https://moriyamanaomi.com\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"ガイド\", \"item\": \"https://moriyamanaomi.com/guide\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"単身赴任の荷物対策\"}]}" }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: "{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"単身赴任中に荷物を取り出す場合、赴任先に届けてもらえますか？\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"サービスによります。サマリーポケット・minikuraは届け先の変更が可能で、赴任先の住所に直送できます。申し込み時または取り出し依頼時に届け先を変更してください。\"}}, {\"@type\": \"Question\", \"name\": \"単身赴任が急に終わった場合、すぐに解約できますか？\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"ほとんどのサービスは1ヶ月単位で解約できます。ただし荷物の取り出しが完了してから解約手続きが必要です。取り出し依頼から自宅到着まで数日かかるため、帰任日の1〜2週間前に手続きを始めることをおすすめします。\"}}, {\"@type\": \"Question\", \"name\": \"家具や大型家電も預けられますか？\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"通常の宅配収納（ボックス型）では対応していません。ソファ・ベッド・大型家電を預けたい場合は、スペース単位で契約できる宅トラやエアトランクをご検討ください。\"}}, {\"@type\": \"Question\", \"name\": \"単身赴任期間が2〜3年になる場合、どのサービスが最もお得ですか？\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"minikuraが最もお得です。13ヶ月目以降は月額が自動で値下がりし、1年以上預けたボックスは取り出し送料が無料になります。長期になるほどコスト優位性が高まります。\"}}, {\"@type\": \"Question\", \"name\": \"赴任先でも宅配収納を使えますか？\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"はい、使えます。宅配収納は全国対応のサービスがほとんどで、赴任先から新たに荷物を預けることも可能です。ただし2nd STORAGEのように一部エリア限定のサービスもあるため、事前に対応エリアを確認してください。\"}}]}" }} />
       {/* ヘッダー */}
       <header className="bg-white border-b border-gray-200 py-4">
         <div className="mx-auto max-w-6xl px-6">

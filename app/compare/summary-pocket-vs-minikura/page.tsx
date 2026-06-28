@@ -5,6 +5,14 @@ export const metadata: Metadata = {
   title: "サマリーポケット vs minikura｜料金・機能の徹底比較",
   description:
     "サマリーポケットとminikuraを月額・取り出し送料・クリーニング・長期割引など18項目で徹底比較。料金シミュレーション付き。あなたの使い方でどちらがお得か3分でわかります。",
+  openGraph: {
+    title: "サマリーポケット vs minikura｜料金・機能の徹底比較 | くらべる収納",
+    description: "サマリーポケットとminikuraを月額・取り出し送料・クリーニング・長期割引など18項目で徹底比較。料金シミュレーション付き。あなたの使い方でどちらがお得か3分でわかります。",
+    url: "https://moriyamanaomi.com/compare/summary-pocket-vs-minikura",
+    siteName: "くらべる収納",
+    locale: "ja_JP",
+    type: "article",
+  },
 };
 
 const patterns = [
@@ -40,6 +48,8 @@ const patterns = [
 export default function VsPage() {
   return (
     <main className="min-h-screen bg-[#F5F0E8]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"ホーム\", \"item\": \"https://moriyamanaomi.com\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"比較\", \"item\": \"https://moriyamanaomi.com/compare\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"サマリーポケット vs minikura\"}]}" }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: "{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"サマリーポケットとminikuraの一番の違いは何ですか？\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"最大の違いはクリーニングサービスの有無と書籍専用プランの有無です。衣類のクリーニングを一緒にしたい方はサマリーポケット、本・CDを大量に預けたい方はminikuraが向いています。月額料金はminikuraの方が55円安いですが、取り出し送料はサマリーポケットの方が220円安いです。\"}}, {\"@type\": \"Question\", \"name\": \"どちらの方が安いですか？\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"月額料金はminikura（275円〜）の方が安いですが、取り出し送料はサマリーポケット（1,100円）の方が安いです。取り出し頻度が年2回以上ある場合はサマリーポケットがトータルで安くなるケースもあります。上記のシミュレーションで自分の使い方に合わせて計算してみてください。\"}}, {\"@type\": \"Question\", \"name\": \"どちらも最低利用期間はありますか？\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"どちらも最低利用期間は1ヶ月からです。引越しや衣替えなどで短期間だけ使いたい場合も安心して利用できます。\"}}, {\"@type\": \"Question\", \"name\": \"本や書籍を預けるならどちらがおすすめですか？\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"minikuraがおすすめです。minikuraには書籍・CD・コミック専用の「HAKO本棚プラン」があり、1冊単位での取り出しが可能です。大量の蔵書を整理したい方に特に向いています。\"}}, {\"@type\": \"Question\", \"name\": \"サマリーポケットのクリーニングサービスはどんなものですか？\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"預けた衣類を倉庫から直接クリーニングに出してもらえるサービスです。取り出して自分でクリーニングに持っていく手間がなく、衣替えのタイミングでまとめてクリーニングできます。料金は衣類の種類によって異なります。\"}}, {\"@type\": \"Question\", \"name\": \"1年以上長期で預けるならどちらがお得ですか？\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"minikuraが明確にお得です。13ヶ月目以降は月額が自動的に値下がりし、さらに1年以上預けたボックスの取り出し送料が無料になります。長期保管を前提にするならminikura一択です。\"}}, {\"@type\": \"Question\", \"name\": \"スーツケースやゴルフバッグを預けたいのですが？\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"サマリーポケット一択です。minikuraは専用ボックス以外の大型アイテムには対応していません。サマリーポケットはスーツケース・ゴルフバッグ・スキー・スノーボードなどの大型アイテムに対応した専用プランがあります。\"}}]}" }} />
       {/* ヘッダー */}
       <header className="bg-white border-b border-gray-200 py-4">
         <div className="mx-auto max-w-6xl px-6">
@@ -421,6 +431,31 @@ export default function VsPage() {
                 <Link href="/guide/minikura-review" className="block text-[13px] text-[#2D5016] hover:underline">→ minikuraの評判・口コミ記事</Link>
               </div>
             </div>
+          </div>
+        </section>
+
+        
+        {/* 関連記事 */}
+        <section>
+          <h2 className="text-[20px] font-[700] text-[#2D5016] mb-4 pb-2 border-b-2 border-[#2D5016]">
+            関連記事
+          </h2>
+          <div className="grid md:grid-cols-2 gap-3">
+            {[
+              { title: "サマリーポケットの評判・口コミ詳細", href: "/guide/summary-pocket-review" },
+              { title: "minikuraの評判・口コミ詳細", href: "/guide/minikura-review" },
+              { title: "宅配収納おすすめランキング9選", href: "/compare/ranking" },
+              { title: "サマリーポケット vs AZUKEL 料金比較", href: "/compare/summary-pocket-vs-azukel" },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="block bg-white rounded-[12px] p-4 hover:bg-[#F5F0E8] transition"
+                style={{ border: "0.5px solid #D3D1C7" }}
+              >
+                <p className="text-[13px] font-[600] text-[#2D5016]">→ {item.title}</p>
+              </Link>
+            ))}
           </div>
         </section>
 

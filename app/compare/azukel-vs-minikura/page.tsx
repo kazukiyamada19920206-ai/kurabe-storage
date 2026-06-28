@@ -5,6 +5,14 @@ export const metadata: Metadata = {
   title: "AZUKEL vs minikura｜料金・特徴の徹底比較",
   description:
     "AZUKELとminikuraの月額料金・取り出し送料・特徴・おすすめの人を徹底比較。保管期間によってどちらがお得か変わる逆転ポイントも解説します。",
+  openGraph: {
+    title: "AZUKEL vs minikura｜料金・特徴の徹底比較 | くらべる収納",
+    description: "AZUKELとminikuraの月額料金・取り出し送料・特徴・おすすめの人を徹底比較。保管期間によってどちらがお得か変わる逆転ポイントも解説します。",
+    url: "https://moriyamanaomi.com/compare/azukel-vs-minikura",
+    siteName: "くらべる収納",
+    locale: "ja_JP",
+    type: "article",
+  },
 };
 
 const simulations = [
@@ -18,6 +26,7 @@ const simulations = [
 export default function VsPage() {
   return (
     <main className="min-h-screen bg-[#F5F0E8]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"ホーム\", \"item\": \"https://moriyamanaomi.com\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"比較\", \"item\": \"https://moriyamanaomi.com/compare\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"AZUKEL vs minikura\"}]}" }} />
       {/* ヘッダー */}
       <header className="bg-white border-b border-gray-200 py-4">
         <div className="mx-auto max-w-6xl px-6">
@@ -296,6 +305,31 @@ export default function VsPage() {
                 minikuraの詳しい評判・口コミを見る →
               </Link>
             </div>
+          </div>
+        </section>
+
+        
+        {/* 関連記事 */}
+        <section>
+          <h2 className="text-[20px] font-[700] text-[#2D5016] mb-4 pb-2 border-b-2 border-[#2D5016]">
+            関連記事
+          </h2>
+          <div className="grid md:grid-cols-2 gap-3">
+            {[
+              { title: "AZUKELの評判・口コミ詳細", href: "/guide/azukel-review" },
+              { title: "minikuraの評判・口コミ詳細", href: "/guide/minikura-review" },
+              { title: "宅配収納おすすめランキング9選", href: "/compare/ranking" },
+              { title: "宅配収納の月額相場はいくら？9社比較", href: "/guide/monthly-fee-comparison" },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="block bg-white rounded-[12px] p-4 hover:bg-[#F5F0E8] transition"
+                style={{ border: "0.5px solid #D3D1C7" }}
+              >
+                <p className="text-[13px] font-[600] text-[#2D5016]">→ {item.title}</p>
+              </Link>
+            ))}
           </div>
         </section>
 

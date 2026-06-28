@@ -4,11 +4,21 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "衣替えに宅配収納を使う理由とおすすめサービス5選",
   description: "衣替えのたびにクローゼットがパンパンで困っていませんか？宅配収納を使えば月330円〜で自宅完結の衣替えが実現。おすすめ5社の比較・料金シミュレーション・失敗しない選び方を徹底解説。",
+  openGraph: {
+    title: "衣替えに宅配収納を使う理由とおすすめサービス5選 | くらべる収納",
+    description: "衣替えのたびにクローゼットがパンパンで困っていませんか？宅配収納を使えば月330円〜で自宅完結の衣替えが実現。おすすめ5社の比較・料金シミュレーション・失敗しない選び方を徹底解説。",
+    url: "https://moriyamanaomi.com/guide/koromogae-storage",
+    siteName: "くらべる収納",
+    locale: "ja_JP",
+    type: "article",
+  },
 };
 
 export default function KoromogaeStoragePage() {
   return (
     <main className="min-h-screen bg-[#F5F0E8]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"ホーム\", \"item\": \"https://moriyamanaomi.com\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"ガイド\", \"item\": \"https://moriyamanaomi.com/guide\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"衣替えに宅配収納を使う\"}]}" }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: "{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"布団を宅配収納に預けることはできますか？\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"預けられます。ただし通常のレギュラーボックスには入らないため、ラージボックス対応のサービスを選ぶ必要があります。サマリーポケットのラージボックス（月額605円〜）、または2nd STORAGEのスペースプランが対応しています。\"}}, {\"@type\": \"Question\", \"name\": \"衣替えと同時にクリーニングもできますか？\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"サマリーポケットであればできます。預けた衣類をそのままクリーニングに出せる「クリーニングオプション（990円〜）」があります。衣替えとクリーニングを同時に完結させたい方に最適です。\"}}, {\"@type\": \"Question\", \"name\": \"最低何ヶ月から利用できますか？\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"ほとんどのサービスは1ヶ月から利用できます。ただし2ヶ月以内に取り出すと早期取り出し料金がかかるサービスもあります。衣替え用途なら最低6ヶ月程度の利用を想定しておきましょう。\"}}, {\"@type\": \"Question\", \"name\": \"預けた衣類はどんな環境で保管されますか？\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"温度・湿度を24時間管理された空調設備つきの倉庫で保管されます。サマリーポケットは三菱倉庫、minikuraは寺田倉庫と、大手倉庫会社が管理しているサービスが多く、自宅保管よりカビ・虫食いのリスクが低いです。\"}}, {\"@type\": \"Question\", \"name\": \"コートや衣類は洗濯してから預ける必要がありますか？\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"洗濯してから預けることを強くおすすめします。汚れや皮脂が残った状態で長期保管するとカビや虫食いの原因になります。クリーニングに出してから預けるか、サマリーポケットのクリーニングオプションを活用しましょう。\"}}]}" }} />
 
       {/* ヘッダー */}
       <header className="bg-white border-b border-gray-200 py-4">

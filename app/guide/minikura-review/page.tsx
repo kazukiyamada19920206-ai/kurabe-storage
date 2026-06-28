@@ -6,6 +6,14 @@ export const metadata: Metadata = {
   title: "minikuraの評判・口コミ｜料金・メリット・デメリット",
   description:
     "minikuraの実際の口コミ・評判、月額料金、メリット・デメリット、オプション機能を徹底解説。長期保管や書籍・コレクション保管におすすめの使い方も紹介します。",
+  openGraph: {
+    title: "minikuraの評判・口コミ｜料金・メリット・デメリット | くらべる収納",
+    description: "minikuraの実際の口コミ・評判、月額料金、メリット・デメリット、オプション機能を徹底解説。長期保管や書籍・コレクション保管におすすめの使い方も紹介します。",
+    url: "https://moriyamanaomi.com/guide/minikura-review",
+    siteName: "くらべる収納",
+    locale: "ja_JP",
+    type: "article",
+  },
 };
 
 const service = pricing.find((s) => s.slug === "minikura")!;
@@ -13,6 +21,7 @@ const service = pricing.find((s) => s.slug === "minikura")!;
 export default function MinikuraReviewPage() {
   return (
     <main className="min-h-screen bg-[#F5F0E8]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"ホーム\", \"item\": \"https://moriyamanaomi.com\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"ガイド\", \"item\": \"https://moriyamanaomi.com/guide\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"minikuraの評判・口コミ\"}]}" }} />
       {/* ヘッダー */}
       <header className="bg-white border-b border-gray-200 py-4">
         <div className="mx-auto max-w-6xl px-6">
@@ -378,6 +387,31 @@ export default function MinikuraReviewPage() {
             >
               minikuraの料金を診断で確認する →
             </Link>
+          </div>
+        </section>
+
+        
+        {/* 関連記事 */}
+        <section>
+          <h2 className="text-[20px] font-[700] text-[#2D5016] mb-4 pb-2 border-b-2 border-[#2D5016]">
+            関連記事
+          </h2>
+          <div className="grid md:grid-cols-2 gap-3">
+            {[
+              { title: "宅配収納おすすめランキング9選", href: "/compare/ranking" },
+              { title: "AZUKEL vs minikura 料金・特徴の比較", href: "/compare/azukel-vs-minikura" },
+              { title: "サマリーポケット vs minikura 料金比較", href: "/compare/summary-pocket-vs-minikura" },
+              { title: "AZUKELの評判・口コミ", href: "/guide/azukel-review" },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="block bg-white rounded-[12px] p-4 hover:bg-[#F5F0E8] transition"
+                style={{ border: "0.5px solid #D3D1C7" }}
+              >
+                <p className="text-[13px] font-[600] text-[#2D5016]">→ {item.title}</p>
+              </Link>
+            ))}
           </div>
         </section>
 
